@@ -1,0 +1,98 @@
+/*
+white: #FFFFFF
+black: #060137
+green: #2BA84A
+cyan: #06B7CF
+grey: #DAD9DE
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+
+  margin: 0;
+  padding: 0;
+
+  /*
+    Базовое значения для использования rem значений
+    Хотя не уверен, что буду использовать
+    */
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+/*
+Какой-то кринж ебучий
+padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
+*/
+.wrapper {
+  box-sizing: border-box;
+
+  padding: 3%;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-align-self-center {
+  align-self: center;
+}
+
+/*
+Штука со стрелочкой вниз, используется в Welcome и Contact us секциях
+*/
+.next {
+  width: 100%;
+
+  font-size: 2rem;
+}
+.next p {
+  margin: 0;
+}
+
+
+/*
+Дефолтный шаблон кнопки
+*/
+.button {
+  display: block;
+
+  box-sizing: border-box;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  width: 70%;
+  height: max-content;
+
+  border-radius: 1rem;
+
+  background-color: #2ba84a;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+}
+
+.button p {
+  margin: 0;
+}
+
+
+.font-semibold{
+    font-weight: 600;
+}
+.font-medium {
+    font-weight: 500;
+}
+.font-regular{
+    font-weight: 400;
+}
