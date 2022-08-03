@@ -1,0 +1,36 @@
+.contact-section{
+    height: 100vh;
+
+    background-image: url(../assets/contactus-background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contact-section .content{
+    width: 100%;
+    height: 100%;
+    font-size: 2.5rem;
+
+
+    /*Флекс, чтобы каждый блок был в центре*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-section .button {
+    background-color: #06B7CF;
+}
+
+.contact-section .links{
+    width: 50%;
+
+    /*Флекс, чтобы ссылка и кнопка были в центре, в своем блоке*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 10%; /*Поправка по высоте*/
+}
+
