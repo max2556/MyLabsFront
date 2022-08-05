@@ -1,19 +1,18 @@
-.video-page {
+.about-us {
   width: 100vw;
-  height: 100vh;
 
   background-image: url(../assets/hexagon.svg);
   background-repeat: no-repeat;
   background-size: cover;
 
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
-.video-page.wrapper{
+.about-us.wrapper{
     padding-top: 5vh;
 }
 
-.video-page .holder {
+.about-us .holder {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -21,23 +20,23 @@
   flex-wrap: wrap;
 
   width: 100%;
-  height: 100%;
 }
 
-.video-page .text {
+.about-us .text {
   width: 47%;
   height: 100%;
 }
 
-.video-page .description{
+.about-us .description{
     font-size: 2rem;
 }
 
-.video-page .image {
+.about-us .image {
   width: 47%;
   height: 100%;
 
-  background-image: url(../assets/computer.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
+}
+
+.about-us .image img{
+  width: 500px;
 }

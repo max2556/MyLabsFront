@@ -1,0 +1,17 @@
+/*
+Штука со стрелочкой вниз, используется в Welcome и Contact us секциях
+*/
+.next {
+  /*width: 100%;*/
+
+  font-size: 2rem;
+
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.next p {
+  margin: 0;
+}

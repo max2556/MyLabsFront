@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="./styles/welcome.css" />
     <link rel="stylesheet" href="./styles/contact-us.css" />
     <link rel="stylesheet" href="./styles/separator.css" />
-    <link rel="stylesheet" href="./styles/video-page.css" />
+    <link rel="stylesheet" href="./styles/about-us.css" />
     <link rel="stylesheet" href="./styles/our-skills.css" />
+    <link rel="stylesheet" href="./styles/next-element.css" />
   </head>
 
   <body>
@@ -24,53 +25,57 @@
       />
     </header>
 
-    <section class="welcome wrapper">
+    <section class="welcome wrapper relative">
       <div class="content">
-        <div class="holder">
-          <div class="text">
-            <h1 class="font-medium">Lorem ipsum</h1>
+        <div class="text inline-block">
+          <h1 class="title font-medium">Lorem ipsum</h1>
+          <div class="text-background">
             <p class="description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
               elementum, quam et placerat maximus, tellus enim malesuada justo,
               lacinia semper turpis est id eros.
             </p>
-            <a href="#" class="button">
-              <p>Learn more</p>
-            </a>
           </div>
+          <a href="#" class="button">
+            <p>Learn more</p>
+          </a>
+        </div>
 
-          <div class="image">
-            <!--<img src="./assets/man-on-chair.svg" alt="" srcset="" />-->
-          </div>
+        <div class="image inline-block float-right">
+          <img src="./assets/man-on-chair.svg" alt="" srcset="" />
         </div>
       </div>
 
       <div class="next">
-        <div class="flex-column flex-wrap flex-align-center">
-          <p>Contact us</p>
-          <img src="assets/arrow-down.svg" alt="" srcset="" />
-        </div>
+        <p>Contact us</p>
+        <img src="assets/arrow-down.svg" alt="" srcset="" />
       </div>
     </section>
 
-    <section class="contact-section wrapper">
+    <section class="contact-section wrapper relative">
       <div class="content flex-column">
         <div class="title font-semibold">
           <h1>Contact us</h1>
         </div>
 
         <div class="links">
-          <p class="font-medium">@MyLabs</p>
-          <a href="#" class="button">
-            <p>Open</p>
-          </a>
+          <div class="link">
+            <p class="font-medium">@MyLabs</p>
+            <a href="#" class="button tg">
+              <p>Open</p>
+            </a>
+          </div>
+          <div class="link">
+            <p class="font-medium">VK: /MyLabs</p>
+            <a href="#" class="button vk">
+              <p>Open</p>
+            </a>
+          </div>
         </div>
 
         <div class="next">
-          <div class="flex-column flex-wrap flex-align-center">
-            <p class="">Learn about us</p>
-            <img src="assets/arrow-down.svg" alt="" srcset="" />
-          </div>
+          <p class="">Learn about us</p>
+          <img src="assets/arrow-down.svg" alt="" srcset="" />
         </div>
       </div>
     </section>
@@ -92,10 +97,10 @@
       </div>
     </section>
 
-    <section class="video-page wrapper">
+    <section class="about-us wrapper">
       <div class="holder">
         <div class="text">
-          <h1 class="font-medium">Lorem ipsum</h1>
+          <h1 class="font-medium">About us</h1>
           <p class="description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             auctor quam quis sollicitudin egestas. Ut viverra mattis elit quis
@@ -108,10 +113,11 @@
           </p>
         </div>
 
-        <div class="image"></div>
+        <div class="image">
+          <img src="./assets/computer.svg" alt="" srcset="" />
+        </div>
       </div>
     </section>
-
 
     <section class="our-skills wrapper">
       <div class="content flex-column">

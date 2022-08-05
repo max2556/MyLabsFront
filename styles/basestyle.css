@@ -30,7 +30,7 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 .wrapper {
   box-sizing: border-box;
 
-  padding: 3%;
+  padding: 0 10%;
 }
 
 .flex-column {
@@ -48,17 +48,6 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   align-self: center;
 }
 
-/*
-Штука со стрелочкой вниз, используется в Welcome и Contact us секциях
-*/
-.next {
-  width: 100%;
-
-  font-size: 2rem;
-}
-.next p {
-  margin: 0;
-}
 
 
 /*
@@ -86,13 +75,24 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   margin: 0;
 }
 
-
-.font-semibold{
-    font-weight: 600;
+.font-semibold {
+  font-weight: 600;
 }
 .font-medium {
-    font-weight: 500;
+  font-weight: 500;
 }
-.font-regular{
-    font-weight: 400;
+.font-regular {
+  font-weight: 400;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.float-right {
+  float: right;
+}
+
+.relative {
+  position: relative;
 }
