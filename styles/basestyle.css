@@ -27,10 +27,11 @@ body {
 Какой-то кринж ебучий
 padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 */
-.wrapper {
+.structure {
   box-sizing: border-box;
 
-  padding: 0 10%;
+  width: 70%;
+  margin: 150px auto;
 }
 
 .flex-column {
@@ -47,8 +48,6 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 .flex-align-self-center {
   align-self: center;
 }
-
-
 
 /*
 Дефолтный шаблон кнопки
@@ -75,6 +74,9 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   margin: 0;
 }
 
+/*
+font styles
+*/
 .font-semibold {
   font-weight: 600;
 }
@@ -95,4 +97,18 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 
 .relative {
   position: relative;
+}
+
+.overflow_hidden {
+  overflow: hidden;
+}
+
+.background {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
