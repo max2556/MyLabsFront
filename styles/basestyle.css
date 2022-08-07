@@ -23,6 +23,13 @@ body {
   font-weight: 400;
 }
 
+.structure {
+  color: #060137;
+  font-size: 2rem;
+  width: 70%;
+  margin: 150px auto;
+}
+
 /*
 Какой-то кринж ебучий
 padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
