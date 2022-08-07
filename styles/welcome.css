@@ -9,12 +9,10 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: -1;
 }
 
 .home {
-  /*color: #060137;*/
-  padding-bottom: 0;
-  /*font-size: 2rem;*/
   margin-top: 200px;
   margin-bottom: 200px;
 }
@@ -24,15 +22,7 @@
   background-color: #2ba84a;
 }
 
-.home .content {
-  width: 100%;
-
-  box-sizing: border-box;
-
-  /*padding-bottom: 10%;*/
-}
-
-.home .title{
+.home .title {
   margin-bottom: 0rem;
 }
 
