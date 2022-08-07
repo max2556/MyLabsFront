@@ -1,15 +1,8 @@
 .about-us {
   width: 100vw;
 
-  background-image: url(../assets/hexagon.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
 
   font-size: 2rem;
-}
-
-.about-us.wrapper{
-    padding-top: 5vh;
 }
 
 .about-us .holder {
@@ -24,7 +17,6 @@
 
 .about-us .text {
   width: 47%;
-  height: 100%;
 }
 
 .about-us .description{
@@ -33,8 +25,6 @@
 
 .about-us .image {
   width: 47%;
-  height: 100%;
-
 }
 
 .about-us .image img{
