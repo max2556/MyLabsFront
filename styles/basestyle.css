@@ -29,7 +29,7 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 */
 .structure {
   box-sizing: border-box;
-
+  font-size: 2rem;
   width: 70%;
   margin: 150px auto;
 }

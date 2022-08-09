@@ -1,11 +1,20 @@
-.home {
-  position: relative;
-  /*
-    Как лучше делать бэк?
-    С помощью CSS или как-то в HTML выебнуться?
-    */
+.home_wrapper {
+  overflow: hidden;
+}
 
-  font-size: 2rem;
+.home_background {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.home {
+  margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 .home .button {
@@ -13,12 +22,7 @@
   background-color: #2ba84a;
 }
 
-.home_content {
-  margin-top: 200px;
-  margin-bottom: 270px; /*Хз, просто подобрал, чтобы нормально влезло в экран*/
-}
-
-.home .title{
+.home .title {
   margin-bottom: 0rem;
 }
 
