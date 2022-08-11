@@ -7,7 +7,7 @@ function homeBackgroundAppearance(): void {
         let length: number = el.getTotalLength();
         el.style.strokeDasharray = length + "px";
         el.style.strokeDashoffset = length + "px";
-        el.style.transitionDuration = (length / 800 * 3) + "s";
+        el.style.transitionDuration = (length / 800 * 6) + "s";
     });
 
     svg.classList.remove("transition_disabled");
@@ -15,15 +15,13 @@ function homeBackgroundAppearance(): void {
 }
 
 function moveLines(svg: Element): void {
-    let linesToMove: number = 5;
+    let linesToMove: number = 7;
     let lines: NodeListOf<SVGPathElement> = svg.querySelectorAll("g.lines path");
 
-    let arr: Array<number> = Array<number>(5);
     for (let i = 0; i < linesToMove; i++) {
         let el: SVGPathElement = lines[Math.floor(Math.random() * lines.length)];
         while (el.getAttribute("busy") == "1") {
-            arr[i] = Math.floor(Math.random() * lines.length);
-            el = lines[arr[i]];
+            el = lines[Math.floor(Math.random() * lines.length)];
         }
         el.setAttribute("busy", "1");
 
@@ -34,10 +32,10 @@ function moveLines(svg: Element): void {
         el.style.setProperty("stroke-dashoffset", sdo * 2 + "px", "important")
 
         setTimeout(function (): void {
-            // el.style.transitionDuration = '0s';
             el.classList.add("transition_disabled");
             el.style.setProperty("stroke-dashoffset", sdo + "px")
             el.style.transitionDuration = td + "s";
+            var triggerLayout = el.scrollHeight;
             el.classList.remove("transition_disabled");
             el.setAttribute("busy", "0");
         }, td * 2 * 1000)

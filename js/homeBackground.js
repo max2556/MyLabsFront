@@ -6,20 +6,18 @@ function homeBackgroundAppearance() {
         let length = el.getTotalLength();
         el.style.strokeDasharray = length + "px";
         el.style.strokeDashoffset = length + "px";
-        el.style.transitionDuration = (length / 800 * 3) + "s";
+        el.style.transitionDuration = (length / 800 * 6) + "s";
     });
     svg.classList.remove("transition_disabled");
     svg.classList.add("full");
 }
 function moveLines(svg) {
-    let linesToMove = 5;
+    let linesToMove = 7;
     let lines = svg.querySelectorAll("g.lines path");
-    let arr = Array(5);
     for (let i = 0; i < linesToMove; i++) {
         let el = lines[Math.floor(Math.random() * lines.length)];
         while (el.getAttribute("busy") == "1") {
-            arr[i] = Math.floor(Math.random() * lines.length);
-            el = lines[arr[i]];
+            el = lines[Math.floor(Math.random() * lines.length)];
         }
         el.setAttribute("busy", "1");
         let sdo = Number(el.style.strokeDashoffset.slice(0, -2));
@@ -27,10 +25,10 @@ function moveLines(svg) {
         el.style.transitionDuration = td * 2 + "s";
         el.style.setProperty("stroke-dashoffset", sdo * 2 + "px", "important");
         setTimeout(function () {
-            // el.style.transitionDuration = '0s';
             el.classList.add("transition_disabled");
             el.style.setProperty("stroke-dashoffset", sdo + "px");
             el.style.transitionDuration = td + "s";
+            var triggerLayout = el.scrollHeight;
             el.classList.remove("transition_disabled");
             el.setAttribute("busy", "0");
         }, td * 2 * 1000);
