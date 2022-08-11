@@ -103,3 +103,11 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 .relative {
   position: relative;
 }
+
+.transition_disabled,
+.transition_disabled * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
