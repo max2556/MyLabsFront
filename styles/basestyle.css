@@ -117,3 +117,12 @@ font styles
   right: 0;
   z-index: -1;
 }
+
+.transition_disabled,
+.transition_disabled * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
