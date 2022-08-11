@@ -1,4 +1,4 @@
-function homeBackground() {
+function homeBackgroundAppearance() {
     let svg = document.querySelector(".home_background svg");
     svg.classList.add("transition_disabled");
     let path = svg.querySelectorAll("g.lines path");
@@ -11,5 +11,52 @@ function homeBackground() {
     svg.classList.remove("transition_disabled");
     svg.classList.add("full");
 }
-homeBackground();
+function moveLines(svg) {
+    let linesToMove = 5;
+    let lines = svg.querySelectorAll("g.lines path");
+    let arr = Array(5);
+    for (let i = 0; i < linesToMove; i++) {
+        let el = lines[Math.floor(Math.random() * lines.length)];
+        while (el.getAttribute("busy") == "1") {
+            arr[i] = Math.floor(Math.random() * lines.length);
+            el = lines[arr[i]];
+        }
+        el.setAttribute("busy", "1");
+        let sdo = Number(el.style.strokeDashoffset.slice(0, -2));
+        let td = Number(el.style.transitionDuration.slice(0, -1));
+        el.style.transitionDuration = td * 2 + "s";
+        el.style.setProperty("stroke-dashoffset", sdo * 2 + "px", "important");
+        setTimeout(function () {
+            // el.style.transitionDuration = '0s';
+            el.classList.add("transition_disabled");
+            el.style.setProperty("stroke-dashoffset", sdo + "px");
+            el.style.transitionDuration = td + "s";
+            el.classList.remove("transition_disabled");
+            el.setAttribute("busy", "0");
+        }, td * 2 * 1000);
+    }
+}
+function isVisible(el) {
+    let targetPosition = {
+        bottom: Math.min(el.getBoundingClientRect().bottom, el.getBoundingClientRect().bottom) + pageYOffset,
+        top: Math.max(el.getBoundingClientRect().top, el.getBoundingClientRect().top) + pageYOffset
+    };
+    let windowPosition = {
+        top: window.pageYOffset,
+        bottom: window.pageYOffset + document.documentElement.clientHeight
+    };
+    return targetPosition.bottom > windowPosition.top &&
+        targetPosition.top < windowPosition.bottom;
+}
+function homeBackgroundMovements() {
+    let svg = document.querySelector(".home_background svg");
+    let home = document.querySelector(".home_background");
+    let intervalId = setInterval(function () {
+        if (isVisible(home)) {
+            moveLines(svg);
+        }
+    }, 2000);
+}
+homeBackgroundAppearance();
+homeBackgroundMovements();
 //# sourceMappingURL=homeBackground.js.map
