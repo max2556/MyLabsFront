@@ -43,7 +43,6 @@
   font-weight: 400;
   line-height: 40px;
   margin: 0;
-  margin-bottom: 1rem;
 }
 
 .home .text-background {
@@ -58,6 +57,8 @@
   margin-left: -1.5rem;
 
   border-radius: 1rem;
+
+  margin-bottom: 50px;
 }
 
 /*
