@@ -34,6 +34,11 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   margin: 150px auto;
 }
 
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;

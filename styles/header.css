@@ -1,25 +1,26 @@
-.header{
-    position: fixed;
-    top: 0;
-    z-index: 1;
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
 
-    width: 100vw;
-    height: 100px;
+  width: 100vw;
 
-    box-sizing: border-box;
-    padding: 10px;
+  background-color: rgba(255, 255, 255, 1);
 
-    background-color: rgba(255,255,255, 0.4);
+  align-items: center;
+  justify-content: space-around;
 }
 
-
-/*
-Не знаю, хорошее ли решение?
-По идее ничего плохого от этого быть не может
-Ведь, все, что будет ниже, если нужно - перезапишет этот параметр.
-*/
-.header *{
-    height: 100%;
+.header.structure {
+  margin: 0 auto;
 }
 
+.header .logo {
+  height: 90px;
+  margin: calc((100px - 90px) / 2) 0;
+}
 
+.header .link {
+  display: inline-block;
+  margin: 0 10px;
+}
