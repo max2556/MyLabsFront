@@ -13,17 +13,16 @@
 }
 
 .home {
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin-top: 300px;
+  margin-bottom: 300px;
 }
 
 .home .button {
-  margin: 1rem 0;
   background-color: #2ba84a;
 }
 
 .home .title {
-  margin-bottom: 0rem;
+  margin-bottom: 1rem;
 }
 
 .home .text {
@@ -39,6 +38,7 @@
   font-weight: 400;
   line-height: 40px;
   margin: 0;
+  margin-bottom: 1rem;
 }
 
 .home .text-background {
@@ -50,7 +50,7 @@
   box-sizing: border-box;
   
   padding: 1.5rem 1.5rem;
-  padding-left: 0;
+  margin-left: -1.5rem;
 
   border-radius: 1rem;
 }
@@ -72,4 +72,5 @@
 
 .home .image img {
   width: 500px;
+  float: right;
 }

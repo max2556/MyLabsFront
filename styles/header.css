@@ -5,22 +5,32 @@
 
   width: 100vw;
 
-  background-color: rgba(255, 255, 255, 1);
-
-  align-items: center;
-  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-.header.structure {
+.header .structure {
   margin: 0 auto;
+}
+
+.header .content {
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header .logo {
   height: 90px;
   margin: calc((100px - 90px) / 2) 0;
+  /*margin-left: 15%;*/
+}
+
+.header .links {
+  /*
+    margin-right: 15%;
+    float: right;*/
 }
 
 .header .link {
+  font-size: 1.4rem;
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 20px;
 }

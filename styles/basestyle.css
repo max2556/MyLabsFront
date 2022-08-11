@@ -61,8 +61,8 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   display: block;
 
   box-sizing: border-box;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
 
   width: 70%;
   height: max-content;
