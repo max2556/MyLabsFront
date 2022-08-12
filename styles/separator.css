@@ -3,6 +3,21 @@
 
     color: #FFFFFF;
     font-size: 2rem;
+
+    background: url("../assets/separator.png") no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.separator::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.43);
+    z-index: 0;
 }
 
 
@@ -10,7 +25,8 @@
     width: 100%;
     margin-top: 70px;
     margin-bottom: 70px;
-    
+    position: relative;
+    z-index: 1;
 }
 
 .separator .block{
