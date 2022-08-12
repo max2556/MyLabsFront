@@ -27,16 +27,11 @@
 }
 
 .home .title {
-  margin-bottom: 1rem;
+  margin-bottom: 30px;
 }
 
 .home .text {
-  grid-area: 1 / 1 / 2 / 2;
-
   width: 47%;
-
-
-  /*background-color: rgba(120, 0, 0, 0.2);*/
 }
 
 .home .text .description {
@@ -46,18 +41,13 @@
 }
 
 .home .text-background {
-  background: radial-gradient(
-    119.23% 119.23% at 35% 50%,
-    #ffffff 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 0px 13px rgba(255, 255, 255, 0.8);
+  -moz-box-shadow: 0px 0px 0px 13px rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 0px 13px rgba(255, 255, 255, 0.8);
+
   box-sizing: border-box;
-  
-  padding: 1.5rem 1.5rem;
-  margin-left: -1.5rem;
-
   border-radius: 1rem;
-
   margin-bottom: 50px;
 }
 
@@ -66,17 +56,12 @@
 Как делать?
 */
 .home .image {
-  grid-area: 1 / 2 / 2 / 3;
-
-  width: 47%;
-
-  /*background-color: rgba(0, 120, 0, 0.2);*/
+  width: 500px;
 
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .home .image img {
-  width: 500px;
-  float: right;
+  width: 100%;
 }
