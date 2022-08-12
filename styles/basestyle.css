@@ -61,11 +61,12 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   display: block;
 
   box-sizing: border-box;
-  padding-top: 0.85rem;
-  padding-bottom: 0.85rem;
+  padding: 15px 50px;
 
-  width: 70%;
+  width: fit-content;
   height: max-content;
+
+  font-size: 32px;
 
   border-radius: 1rem;
 
@@ -120,6 +121,7 @@ font styles
 
 .transition_disabled,
 .transition_disabled * {
+  transition: none !important;
   -webkit-transition: none !important;
   -moz-transition: none !important;
   -ms-transition: none !important;
