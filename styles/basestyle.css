@@ -63,7 +63,8 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   box-sizing: border-box;
   padding: 15px 50px;
 
-  width: fit-content;
+  white-space: nowrap;
+  width: min-content;
   height: max-content;
 
   font-size: 32px;
@@ -74,10 +75,6 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   text-decoration: none;
   text-align: center;
   color: #ffffff;
-}
-
-.button p {
-  margin: 0;
 }
 
 /*
