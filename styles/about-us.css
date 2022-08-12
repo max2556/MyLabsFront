@@ -1,0 +1,32 @@
+.about-us {
+  width: 100vw;
+
+
+  font-size: 2rem;
+}
+
+.about-us .holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-between;
+  flex-wrap: wrap;
+
+  width: 100%;
+}
+
+.about-us .text {
+  width: 47%;
+}
+
+.about-us .description{
+    font-size: 2rem;
+}
+
+.about-us .image {
+  width: 47%;
+}
+
+.about-us .image img{
+  width: 500px;
+}

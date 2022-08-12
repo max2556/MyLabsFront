@@ -1,36 +1,34 @@
-.contact-section{
-    height: 100vh;
+.contact-section .content {
+  font-size: 2.5rem;
 
-    background-image: url(../assets/contactus-background.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  text-align: center;
 }
 
-.contact-section .content{
-    width: 100%;
-    height: 100%;
-    font-size: 2.5rem;
-
-
-    /*Флекс, чтобы каждый блок был в центре*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+.contact-section .title{
+  margin-bottom: 100px;
 }
 
 .contact-section .button {
-    background-color: #06B7CF;
+  /*  background-color: #06b7cf;*/
+
+  width: 50%;
+  margin: 0 auto;
+}
+.contact-section .button.tg {
+  background-color: #06b7cf;
+}
+.contact-section .button.vk {
+  background-color: #0077ff;
 }
 
-.contact-section .links{
-    width: 50%;
+.contact-section .links {
+  width: 100%;
 
-    /*Флекс, чтобы ссылка и кнопка были в центре, в своем блоке*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  text-align: center;
 
-    margin-bottom: 10%; /*Поправка по высоте*/
+  margin-bottom: 10rem; /*Поправка по высоте*/
 }
 
+.contact-section .link{
+  margin-bottom: 50px;
+}

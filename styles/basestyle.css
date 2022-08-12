@@ -27,10 +27,16 @@ body {
 Какой-то кринж ебучий
 padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 */
-.wrapper {
+.structure {
   box-sizing: border-box;
+  font-size: 2rem;
+  width: 70%;
+  margin: 150px auto;
+}
 
-  padding: 3%;
+.flex-row{
+  display: flex;
+  flex-direction: row;
 }
 
 .flex-column {
@@ -49,30 +55,19 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 }
 
 /*
-Штука со стрелочкой вниз, используется в Welcome и Contact us секциях
-*/
-.next {
-  width: 100%;
-
-  font-size: 2rem;
-}
-.next p {
-  margin: 0;
-}
-
-
-/*
 Дефолтный шаблон кнопки
 */
 .button {
   display: block;
 
   box-sizing: border-box;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 15px 50px;
 
-  width: 70%;
+  white-space: nowrap;
+  width: min-content;
   height: max-content;
+
+  font-size: 40px;
 
   border-radius: 1rem;
 
@@ -82,17 +77,65 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   color: #ffffff;
 }
 
-.button p {
-  margin: 0;
-}
-
-
-.font-semibold{
-    font-weight: 600;
+/*
+font styles
+*/
+.font-semibold {
+  font-weight: 600;
 }
 .font-medium {
-    font-weight: 500;
+  font-weight: 500;
 }
-.font-regular{
-    font-weight: 400;
+.font-regular {
+  font-weight: 400;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.float-right {
+  float: right;
+}
+
+.relative {
+  position: relative;
+}
+
+.overflow_hidden {
+  overflow: hidden;
+}
+
+.background {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.transition_disabled,
+.transition_disabled * {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+
+
+.fs_64px{
+  font-size: 64px;
+}
+.fs_48px{
+  font-size: 48px;
+}
+.fs_32px{
+  font-size: 32px;
+}
+.fs_24ps{
+  font-size: 24px;
 }
