@@ -3,17 +3,28 @@
   top: 0;
   z-index: 99;
 
+  height: 90px;
   width: 100vw;
 
-  background: rgb(255,255,255);
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 9%,rgba(255,255,255,0.92) 40%,rgba(255,255,255,0.88) 72%,rgba(255,255,255,0.85) 100%);;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 9%,
+    rgba(255, 255, 255, 0.92) 40%,
+    rgba(255, 255, 255, 0.88) 72%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
 
   -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+  user-select: none;
 }
 
 .header .structure {
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -23,19 +34,106 @@
 }
 
 .header .logo {
-  height: 90px;
-  margin: calc((100px - 90px) / 2) 0;
+  margin-top: 10px; /*<---- поменяется высота хедера и всему пиздец*/
+  margin-bottom: 10px; /*<---- поменяется высота хедера и всему пиздец*/
+  height: 80%;
   /*margin-left: 15%;*/
 }
 
+.header .icons {
+  position: absolute;
+  left: calc(100% + 20px);
+  white-space: nowrap;
+  font-size: 0;
+
+  height: 45%; /*<---- поменяется высота хедера и всему пиздец*/
+}
+
+.header .icons .icon {
+  display: inline-block;
+  margin-right: 20px;
+  height: 100%;
+}
+
+.header .icons img {
+  height: 100%;
+}
+
+.header .icons .icon:last-child{
+  margin: 0;
+}
+
+
 .header .links {
-  /*
-    margin-right: 15%;
-    float: right;*/
+  font-size: 0px;
+  height: 100%;
+  float: right;
+
+  cursor: pointer;
 }
 
 .header .link {
-  font-size: 1.4rem;
   display: inline-block;
-  margin: 0 20px;
+
+  font-size: 1.4rem;
+
+  margin-left: 20px;
 }
+
+.header .link:first-child{
+  margin-left: 0px;
+}
+
+
+/*
+Все, что ниже отвечает за появление индикатора под li.link
+
+Идея в том, что под каждой ссылкой постоянно присутствует прозрачная полоска с position: absolute
+При этом сама li.link имеет position: relative
+
+Так, полоска перемещается относительно своей li.
+
+В ./js/activable.js на каждый элемент с классом '.header .link' навешиваются eventListener'ы на наведение мыши. При наведении полоса активируется, изменяя свой цвет
+*/
+
+.header .link{
+  position: relative;
+}
+
+.header .link span {
+  display: block;
+  transition: all 0.2s;
+}
+.header .link:hover span {
+  transform: translateY(-10px);
+  color: #2ba84a;
+}
+
+.header .link:after{
+  transition: 0.3s;
+  content: '';
+
+  background: #2ba84a;
+  opacity: 0;
+
+  height: 5px;
+
+  display: inline-block;
+  clear: both;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+
+  border-radius: 250px; /*Просто большое число, чтобы были скругленные края*/
+}
+
+.header .link:hover:after {
+  opacity: 0.5;
+  left: 0;
+  right: 0;
+}
+
+
+
