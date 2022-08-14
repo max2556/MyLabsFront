@@ -48,15 +48,21 @@
 
 .header .icons {
   position: absolute;
-  right: -200px;
+  left: calc(100% + 20px);
+  white-space: nowrap;
+  font-size: 0;
 
-  height: 60px; /*<---- поменяется высота хедера и всему пиздец*/
+  height: 45%; /*<---- поменяется высота хедера и всему пиздец*/
 }
 
 .header .icons .icon {
   display: inline-block;
   margin-right: 20px;
-  font-size: 0px; /* Иначе <a> решает сдвинуться вниз. Не, ну почему нет? Ну да. Ну. Да. Нет, ну да. Ну да*/
+  height: 100%;
+}
+
+.header .icons img {
+  height: 100%;
 }
 
 .header .icons .icon:last-child{
