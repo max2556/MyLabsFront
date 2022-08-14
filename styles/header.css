@@ -25,6 +25,8 @@
   -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+  user-select: none;
 }
 
 .header .structure {
@@ -57,25 +59,31 @@
   font-size: 0px; /* Иначе <a> решает сдвинуться вниз. Не, ну почему нет? Ну да. Ну. Да. Нет, ну да. Ну да*/
 }
 
+.header .icons .icon:last-child{
+  margin: 0;
+}
+
+
 .header .links {
-  font-size: 1.4rem;
+  font-size: 0px;
   height: 100%;
   float: right;
 
   cursor: pointer;
 }
-.header .links::selection{
-  background: rgba(0,0,0,0); /*transparent*/
-}
-.header .links *::selection{
-  background: rgba(0,0,0,0); /*transparent*/
-}
 
 .header .link {
   display: inline-block;
-  margin: 0 20px;
+
+  font-size: 1.4rem;
+
+  margin-left: 40px;
   line-height: 100px; /*<---- поменяется высота хедера и всему пиздец*/
   /*vertical-align не влияет на результат, если участвует флекс*/
+}
+
+.header .link:first-child{
+  margin-left: 0px;
 }
 
 
