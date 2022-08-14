@@ -3,10 +3,18 @@
   top: 0;
   z-index: 99;
 
+  height: 100px;
   width: 100vw;
 
-  background: rgb(255,255,255);
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 9%,rgba(255,255,255,0.92) 40%,rgba(255,255,255,0.88) 72%,rgba(255,255,255,0.85) 100%);;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 9%,
+    rgba(255, 255, 255, 0.92) 40%,
+    rgba(255, 255, 255, 0.88) 72%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
 
   -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -14,6 +22,7 @@
 }
 
 .header .structure {
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -23,28 +32,39 @@
 }
 
 .header .logo {
-  height: 90px;
-  margin: calc((100px - 90px) / 2) 0;
+  margin-top: 10px; /*<---- поменяется высота хедера и всему пиздец*/
+  height: 80%;
   /*margin-left: 15%;*/
 }
 
-.header .icons{
-  position: fixed;
-  top: 0;
-  right: 0;
-
+.header .icons {
+  position: absolute;
+  right: -200px;
   
-  margin-right: 20px;
-  margin-top: 20px; /*header-height = 100px. img = 60px. (100-60)/2 = 20px*/
+  
+  margin-top: 20px;
+  
 }
 
-.header .icons .icon{
+.header .icons .icon {
   margin-right: 20px;
 }
 
+.header .links {
+  font-size: 1.4rem;
+  height: 100%;
+  float: right;
+}
 
 .header .link {
-  font-size: 1.4rem;
-  display: inline-block;
+  display: inline;
   margin: 0 20px;
+  line-height: 100px; /*<---- поменяется высота хедера и всему пиздец*/
+  vertical-align: middle;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
 }
