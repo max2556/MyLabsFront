@@ -33,6 +33,7 @@
 
 .header .logo {
   margin-top: 10px; /*<---- поменяется высота хедера и всему пиздец*/
+  margin-bottom: 10px; /*<---- поменяется высота хедера и всему пиздец*/
   height: 80%;
   /*margin-left: 15%;*/
 }
@@ -40,14 +41,14 @@
 .header .icons {
   position: absolute;
   right: -200px;
-  
-  
-  margin-top: 20px;
-  
+
+  height: 60px; /*<---- поменяется высота хедера и всему пиздец*/
 }
 
 .header .icons .icon {
+  display: inline-block;
   margin-right: 20px;
+  font-size: 0px; /* Иначе <a> решает сдвинуться вниз. Не, ну почему нет? Ну да. Ну. Да. Нет, ну да. Ну да*/
 }
 
 .header .links {
@@ -57,10 +58,10 @@
 }
 
 .header .link {
-  display: inline;
+  display: inline-block;
   margin: 0 20px;
   line-height: 100px; /*<---- поменяется высота хедера и всему пиздец*/
-  vertical-align: middle;
+  /*vertical-align не влияет на результат, если участвует флекс*/
 }
 
 .clearfix:after {
