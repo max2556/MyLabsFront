@@ -83,6 +83,13 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 /*
 font styles
 */
+h1 {
+  font-size: 72px;
+}
+
+p {
+  font-size: 40px;
+}
 .font-semibold {
   font-weight: 600;
 }
@@ -141,4 +148,12 @@ font styles
 }
 .fs_24ps{
   font-size: 24px;
+}
+
+
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
 }
