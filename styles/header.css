@@ -97,7 +97,9 @@
 .header .link:after{
   transition: 0.3s;
   content: '';
-  background: rgba(43, 168, 74, 0);
+
+  background: #2ba84a;
+  opacity: 0;
 
   height: 5px;
   width: 100%;
@@ -113,7 +115,7 @@
 }
 
 .header .link.active:after{
-  background: rgba(43, 168, 74, 0.3);
+  opacity: 0.5;
 }
 
 
