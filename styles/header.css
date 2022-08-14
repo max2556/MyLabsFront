@@ -1,12 +1,26 @@
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 .header {
   position: fixed;
   top: 0;
   z-index: 99;
 
+  height: 100px;
   width: 100vw;
 
-  background: rgb(255,255,255);
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 9%,rgba(255,255,255,0.92) 40%,rgba(255,255,255,0.88) 72%,rgba(255,255,255,0.85) 100%);;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 9%,
+    rgba(255, 255, 255, 0.92) 40%,
+    rgba(255, 255, 255, 0.88) 72%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
 
   -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -14,6 +28,7 @@
 }
 
 .header .structure {
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -23,19 +38,85 @@
 }
 
 .header .logo {
-  height: 90px;
-  margin: calc((100px - 90px) / 2) 0;
+  margin-top: 10px; /*<---- поменяется высота хедера и всему пиздец*/
+  margin-bottom: 10px; /*<---- поменяется высота хедера и всему пиздец*/
+  height: 80%;
   /*margin-left: 15%;*/
 }
 
+.header .icons {
+  position: absolute;
+  right: -200px;
+
+  height: 60px; /*<---- поменяется высота хедера и всему пиздец*/
+}
+
+.header .icons .icon {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 0px; /* Иначе <a> решает сдвинуться вниз. Не, ну почему нет? Ну да. Ну. Да. Нет, ну да. Ну да*/
+}
+
 .header .links {
-  /*
-    margin-right: 15%;
-    float: right;*/
+  font-size: 1.4rem;
+  height: 100%;
+  float: right;
+
+  cursor: pointer;
+}
+.header .links::selection{
+  background: rgba(0,0,0,0); /*transparent*/
+}
+.header .links *::selection{
+  background: rgba(0,0,0,0); /*transparent*/
 }
 
 .header .link {
-  font-size: 1.4rem;
   display: inline-block;
   margin: 0 20px;
+  line-height: 100px; /*<---- поменяется высота хедера и всему пиздец*/
+  /*vertical-align не влияет на результат, если участвует флекс*/
 }
+
+
+/*
+Все, что ниже отвечает за появление индикатора под li.link
+
+Идея в том, что под каждой ссылкой постоянно присутствует прозрачная полоска с position: absolute
+При этом сама li.link имеет position: relative
+
+Так, полоска перемещается относительно своей li.
+
+В ./js/activable.js на каждый элемент с классом '.header .link' навешиваются eventListener'ы на наведение мыши. При наведении полоса активируется, изменяя свой цвет
+*/
+
+.header .link{
+  position: relative;
+}
+
+.header .link:after{
+  transition: 0.3s;
+  content: '';
+
+  background: #2ba84a;
+  opacity: 0;
+
+  height: 5px;
+  width: 100%;
+  
+  display: inline-block;
+  clear: both;
+
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+
+  border-radius: 250px; /*Просто большое число, чтобы были скругленные края*/
+}
+
+.header .link.active:after{
+  opacity: 0.5;
+}
+
+
+
