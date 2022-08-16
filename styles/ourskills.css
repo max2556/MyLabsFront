@@ -1,0 +1,56 @@
+.ourskills {
+  background-color: #f0f0f0;
+}
+
+.ourskills .structure {
+  margin: 100px auto;
+}
+
+.ourskills .title {
+  margin-bottom: 100px;
+}
+
+.ourskills .skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.ourskills .skill {
+  position: relative;
+  display: inline-block;
+
+  width: fit-content;
+  font-size: 0;
+}
+
+.ourskills .skill:nth-child(2n + 1) {
+  margin-top: 140px;
+}
+
+.ourskills .skill img {
+  position: relative;
+  z-index: 1;
+
+  width: 120px;
+
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+.ourskills .skill svg {
+  position: absolute;
+  left: 0;
+  top: -100px;
+}
+
+.ourskills .skill:nth-child(2n) svg {
+  top: 60px;
+  transform: scaleY(-1);
+}
+
+.ourskills .skill:last-child svg{
+    display: none;
+}
