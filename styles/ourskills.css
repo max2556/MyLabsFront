@@ -11,6 +11,8 @@
 }
 
 .ourskills .skills {
+  position: relative;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -40,17 +42,19 @@
   border-radius: 16px;
 }
 
-.ourskills .skill svg {
+.ourskills svg {
   position: absolute;
-  left: 0;
-  top: -100px;
+  left: 0px;
+  right: 500px;
+  top: 40px;
 }
 
-.ourskills .skill:nth-child(2n) svg {
+/*
+.ourskills svg {
   top: 60px;
   transform: scaleY(-1);
 }
 
 .ourskills .skill:last-child svg{
     display: none;
-}
+}*/
