@@ -33,9 +33,7 @@
 
 /*________section.info_________*/
 .about-us .info .shadow {
-  box-shadow: -2px -2px 6px 2px #06013766;
-
-  box-shadow: 2px 4px 6px 0px #06013766;
+  box-shadow: 2px 4px 6px 0px #06013766, -2px -2px 6px 2px #06013766;
 }
 
 .about-us .info h3 {
@@ -78,6 +76,7 @@
   left: 0;
   bottom: 5px;
 }
+
 
 
 /*FAQ*/

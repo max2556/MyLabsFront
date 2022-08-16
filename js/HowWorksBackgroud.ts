@@ -1,6 +1,38 @@
 const backgroundSelector = '.info .how_it_works .background'
 const MARGIN = 5
 const circleBias = 10
+const mountDiv: HTMLDivElement = document.querySelector(backgroundSelector)
+const parentEl = mountDiv.parentElement //Ищем блок .steps
+const svgEl: SVGElement = mountDiv.querySelector('svg') //svg может быть не 1-м
+
+
+function resizeSvg() {
+  svgEl.attributes.getNamedItem('height').value = (
+    parentEl.clientHeight -
+    2 * MARGIN
+  ).toString()
+}
+
+function transformGroups() {
+  const deltaY = 172;
+  const groups = svgEl.querySelectorAll('g');
+  for(let i = 0; i < groups.length; i++){
+    const transformation = (i%2==0)? `translate(0, ${deltaY*i})` : `scale(-1 1) translate(-195, ${deltaY*i})`
+    groups[i].setAttribute('transform', transformation);
+  }
+}
+
+//window.addEventListener('resize', resizeSvg);
+resizeSvg();
+transformGroups();
+
+
+
+
+
+
+
+/*
 function build(): void {
   //Ищем div с классом background
   const mountDiv: HTMLDivElement = document.querySelector(backgroundSelector)
@@ -44,3 +76,4 @@ function cloneSVG(from: SVGElement): SVGElement {
 }
 
 build()
+*/
