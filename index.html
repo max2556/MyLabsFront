@@ -19,7 +19,6 @@
 
     <script src="js/homeBackground.js" defer></script>
     <script src="./js/activable.js" defer></script>
-    <script src="./js/HowWorksBackgroud.js" defer></script>
   </head>
 
   <body>
@@ -1651,90 +1650,56 @@
           <div class="how_it_works shadow bg_white">
             <h3 class="font-medium">How it works?</h3>
             <ul class="steps">
-              <div class="background">
-                <svg
-                  width="197"
-                  height="719"
-                  viewBox="0 0 197 719"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                <!--Стартовый круг -->
-                  <path
-                    class="startCircle"
-                    data-figureType="circle"
-                    d="M27 12.5C27 19.4036 21.4036 25 14.5 25C7.59647 25 2.00003 19.4036 2.00003 12.5C2.00003 5.59648 7.59647 3.74374e-05 14.5 3.74374e-05C21.4036 3.74374e-05 27 5.59648 27 12.5Z"
-                    fill="#AADCB7"
-                  />
-                <!--Дальнейшее построение идет из g, в каждой есть линия и еще один круг-->
-                  <g>
-                    <path
-                      data-figureType="line"
-                      d="M11 20V67L185 124V183"
-                      stroke="#AADCB7"
-                      stroke-width="5"
-                      stroke-linecap="square"
-                    />
-
-                    <path
-                      d="M195 185.5C195 192.404 189.404 198 182.5 198C175.596 198 170 192.404 170 185.5C170 178.596 175.596 173 182.5 173C189.404 173 195 178.596 195 185.5Z"
-                      fill="#AADCB7"
-                    />
-                  </g>
-
-                  <g>
-                    <path
-                      data-figureType="line"
-                      d="M11 20V67L185 124V183"
-                      stroke="#AADCB7"
-                      stroke-width="5"
-                      stroke-linecap="square"
-                    />
-
-                    <path
-                      d="M195 185.5C195 192.404 189.404 198 182.5 198C175.596 198 170 192.404 170 185.5C170 178.596 175.596 173 182.5 173C189.404 173 195 178.596 195 185.5Z"
-                      fill="#AADCB7"
-                    />
-                  </g>
-                  
-                  <g>
-                    <path
-                      data-figureType="line"
-                      d="M11 20V67L185 124V183"
-                      stroke="#AADCB7"
-                      stroke-width="5"
-                      stroke-linecap="square"
-                    />
-
-                    <path
-                      d="M195 185.5C195 192.404 189.404 198 182.5 198C175.596 198 170 192.404 170 185.5C170 178.596 175.596 173 182.5 173C189.404 173 195 178.596 195 185.5Z"
-                      fill="#AADCB7"
-                    />
-                  </g>
-
-                  <g>
-                    <path
-                      data-figureType="line"
-                      d="M11 20V67L185 124V183"
-                      stroke="#AADCB7"
-                      stroke-width="5"
-                      stroke-linecap="square"
-                    />
-
-                    <path
-                      d="M195 185.5C195 192.404 189.404 198 182.5 198C175.596 198 170 192.404 170 185.5C170 178.596 175.596 173 182.5 173C189.404 173 195 178.596 195 185.5Z"
-                      fill="#AADCB7"
-                    />
-                  </g>
-                  <!-- Если количество шагов меняется - убирать группы g. Скрипт все сместит-->
+              <li class="step">
+                <span>Step 1</span>
+                <svg class="step_circle" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59647 25 3.28172e-05 19.4036 3.28172e-05 12.5C3.28172e-05 5.59648 5.59647 3.74374e-05 12.5 3.74374e-05C19.4036 3.74374e-05 25 5.59648 25 12.5Z" fill="#AADCB7"/>
+                </svg>
+              </li>
+              <div class="step_line">
+                <svg viewBox="0 0 180 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 3V50L177 107V166" stroke="#AADCB7" stroke-width="5" stroke-linecap="square"/>
                 </svg>
               </div>
-
-              <li class="step">Step 1</li>
-              <li class="step">Step 2</li>
-              <li class="step">Step 3</li>
-              <li class="step">Step 4</li>
-              <li class="step">Step 5</li>
+              <li class="step">
+                <span>Step 2</span>
+                <svg class="step_circle" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59647 25 3.28172e-05 19.4036 3.28172e-05 12.5C3.28172e-05 5.59648 5.59647 3.74374e-05 12.5 3.74374e-05C19.4036 3.74374e-05 25 5.59648 25 12.5Z" fill="#AADCB7"/>
+                </svg>
+              </li>
+              <div class="step_line">
+                <svg viewBox="0 0 180 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 3V50L177 107V166" stroke="#AADCB7" stroke-width="5" stroke-linecap="square"/>
+                </svg>
+              </div>
+              <li class="step">
+                <span>Step 3</span>
+                <svg class="step_circle" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59647 25 3.28172e-05 19.4036 3.28172e-05 12.5C3.28172e-05 5.59648 5.59647 3.74374e-05 12.5 3.74374e-05C19.4036 3.74374e-05 25 5.59648 25 12.5Z" fill="#AADCB7"/>
+                </svg>
+              </li>
+              <div class="step_line">
+                <svg viewBox="0 0 180 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 3V50L177 107V166" stroke="#AADCB7" stroke-width="5" stroke-linecap="square"/>
+                </svg>
+              </div>
+              <li class="step">
+                <span>Step 3</span>
+                <svg class="step_circle" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59647 25 3.28172e-05 19.4036 3.28172e-05 12.5C3.28172e-05 5.59648 5.59647 3.74374e-05 12.5 3.74374e-05C19.4036 3.74374e-05 25 5.59648 25 12.5Z" fill="#AADCB7"/>
+                </svg>
+              </li>
+              <div class="step_line">
+                <svg viewBox="0 0 180 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 3V50L177 107V166" stroke="#AADCB7" stroke-width="5" stroke-linecap="square"/>
+                </svg>
+              </div>
+              <li class="step">
+                <span>Step 3</span>
+                <svg class="step_circle" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59647 25 3.28172e-05 19.4036 3.28172e-05 12.5C3.28172e-05 5.59648 5.59647 3.74374e-05 12.5 3.74374e-05C19.4036 3.74374e-05 25 5.59648 25 12.5Z" fill="#AADCB7"/>
+                </svg>
+              </li>
             </ul>
           </div>
 
