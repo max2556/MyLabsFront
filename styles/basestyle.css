@@ -151,6 +151,10 @@ p {
 }
 
 
+.green{
+  color: #2ba84a;
+}
+
 
 .clearfix:after {
   content: '';
