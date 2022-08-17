@@ -39,13 +39,91 @@
   display: block;
 }
 
+/*START OF SMARTPHONE*/
+.about-us .video {
+  position: relative;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  padding-right: 18px;
+  background: #464655;
+  border-radius: 30px;
+  border-top: 7px solid #b7b7b7;
+  border-left: 7px solid #b7b7b7;
+  box-shadow: 0px 0px 20px 0px #001a11;
+}
+
+.about-us .camera {
+  position: absolute;
+  bottom: 10%;
+  left: 9px;
+  width: 2px;
+  height: 2px;
+  background: #c1c1c1;
+  border-radius: 20px;
+  border: 3px solid #585858;
+  box-shadow: 0px 0px 0px 3px black;
+}
+
+.about-us .sound {
+  position: absolute;
+  top: 50%;
+  left: 9px;
+  width: 3px;
+  height: 125px;
+  background: #181818;
+  border-radius: 20px;
+  border: 2.5px solid #585858;
+  box-shadow: 0px 0px 0px 1px black;
+  transform: translateY(-50%);
+}
+
+.about-us .buttons .power {
+  position: absolute;
+  top: -8px;
+  left: 235px;
+  width: 33px;
+  height: 7px;
+  background: #747474;
+  border-radius: 5px;
+  border-left: 2px solid #525252;
+  border-bottom: 2px solid #525252;
+  transform: rotateX(57deg);
+}
+
+.about-us .buttons .volumeup {
+  position: absolute;
+  top: -8px;
+  left: 153px;
+  width: 50px;
+  height: 7px;
+  background: #747474;
+  border-radius: 5px;
+  border-left: 2px solid #525252;
+  border-bottom: 2px solid #525252;
+  transform: rotateX(57deg);
+}
+
+.about-us .buttons .volumedown {
+  position: absolute;
+  top: -8px;
+  left: 100px;
+  width: 50px;
+  height: 7px;
+  background: #747474;
+  border-radius: 5px;
+  border-left: 2px solid #525252;
+  border-bottom: 2px solid #525252;
+  transform: rotateX(57deg);
+}
+/*END OF SMARTPHONE IMAGE*/
+
+
+
 .about-us .video_player {
   box-sizing: border-box;
-
   border-color: #464655;
   border-style: solid;
-  border-width: 4vh 4vw;
-  border-radius: 4vw 4vw 0px 0px;
+  border-radius: 20px;
 }
 
 .about-us .computer_bottom {
@@ -137,14 +215,12 @@
 }
 
 .about-us .how_it_works .step:first-child .step_background {
-
   position: absolute;
   left: 0;
   top: 0;
 
   z-index: 1;
 }
-
 
 /*FAQ*/
 .about-us .info .FAQ {

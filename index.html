@@ -1633,18 +1633,21 @@
 
         <section class="content structure video_holder">
           <!-- <img class="video_around" src="./assets/aboutUsVideo.svg" alt=""> -->
-          <video
-            onloadstart="this.volume=0.2"
-            controls
-            class="video_player"
-            src="./assets/videos/videoplayback.mp4"
-          ></video>
-          <img
-            class="computer_bottom"
-            src="./assets/aboutUsComputerBottom.svg"
-            alt=""
-            srcset=""
-          />
+          <div class="video">
+            <video
+              onloadstart="this.volume=0.2"
+              controls
+              class="video_player"
+              src="./assets/videos/videoplayback.mp4"
+            ></video>
+            <div class="camera"></div>
+            <div class="sound"></div>
+            <div class="buttons">
+              <div class="power"></div>
+              <div class="volumeup"></div>
+              <div class="volumedown"></div>
+            </div>
+          </div>
         </section>
         <section class="content structure info">
           <div class="how_it_works shadow bg_white">
