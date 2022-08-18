@@ -15,23 +15,28 @@
     <link rel="stylesheet" href="./styles/about-us.css" />
     <link rel="stylesheet" href="./styles/our-skills.css" />
     <link rel="stylesheet" href="./styles/next-element.css" />
-    <link rel="stylesheet" href="./styles/lastworks.css">
+    <link rel="stylesheet" href="./styles/lastworks.css" />
 
     <script src="js/homeBackground.js" defer></script>
-<!--    <script src="./js/activable.js" defer></script>-->
+    <script src="./js/slider.js" defer></script>
+    <!--    <script src="./js/activable.js" defer></script>-->
   </head>
 
   <body>
     <header class="header clearfix">
       <div class="flex-row structure content relative">
         <img class="logo" src="./assets/logo.svg" alt="Sorry :(" srcset="" />
-        
+
         <nav>
           <ul class="links font-medium">
             <li class="link"><span data-scrollTo="home">home page</span></li>
-            <li class="link"><span data-scrollTo="contact_us">contact us</span></li>
+            <li class="link">
+              <span data-scrollTo="contact_us">contact us</span>
+            </li>
             <li class="link"><span data-scrollTo="about_us">about us</span></li>
-            <li class="link"><span data-scrollTo="our_skills">our skills</span></li>
+            <li class="link">
+              <span data-scrollTo="our_skills">our skills</span>
+            </li>
             <li class="link"><span data-scrollTo="review">review</span></li>
           </ul>
         </nav>
@@ -1669,82 +1674,202 @@
       </div>
 
       <div class="lastworks relative overflow_hidden">
-        <img class="background" src="./assets/lastworks.svg" alt="" srcset="">
+        <img class="background" src="./assets/lastworks.svg" alt="" srcset="" />
 
         <section class="content structure">
           <h1 class="font-semibold fs_64px title">Last works</h1>
-          
-          <div class="scroll-plate blocks">
-            <div class="block">
-              <h3 class="title fs_48px font-medium">Binary tree</h3>
 
-              <p class="time green line">
-                <span class="font-semibold">Time:</span> 1 week
-              </p>
-              <p class="price line">
-                <span class="font-semibold">Price:</span> 300$
-              </p>
-              <p class="date line">
-                <span class="font-semibold">Date:</span> 24 july 2003
-              </p>
+          <div class="scroll-plate overflow_hidden">
+            <div class="blocks">
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
 
-              <img class="icon" src="./assets/ourSkillsIcons/cpp.svg" alt="">
-            </div>
-            
-            <div class="block">
-              <h3 class="title fs_48px font-medium">Binary tree</h3>
+                <p class="time green line">
+                  <span class="font-semibold">Time:</span>
+                  1 week
+                </p>
+                <p class="price line">
+                  <span class="font-semibold">Price:</span>
+                  300$
+                </p>
+                <p class="date line">
+                  <span class="font-semibold">Date:</span>
+                  24 july 2003
+                </p>
 
-              <p class="time green line">
-                <span class="font-semibold">Time:</span> 1 week
-              </p>
-              <p class="price line">
-                <span class="font-semibold">Price:</span> 300$
-              </p>
-              <p class="date line">
-                <span class="font-semibold">Date:</span> 24 july 2003
-              </p>
+                <img
+                  class="icon"
+                  src="./assets/ourSkillsIcons/cpp.svg"
+                  alt=""
+                />
+              </div>
 
-              <img class="icon" src="./assets/ourSkillsIcons/cpp.svg" alt="">
-            </div>
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
 
-            <div class="block">
-              <h3 class="title fs_48px font-medium">Binary tree</h3>
+                <p class="time green line">
+                  <span class="font-semibold">Time:</span>
+                  1 week
+                </p>
+                <p class="price line">
+                  <span class="font-semibold">Price:</span>
+                  300$
+                </p>
+                <p class="date line">
+                  <span class="font-semibold">Date:</span>
+                  24 july 2003
+                </p>
 
-              <p class="time green line">
-                <span class="font-semibold">Time:</span> 1 week
-              </p>
-              <p class="price line">
-                <span class="font-semibold">Price:</span> 300$
-              </p>
-              <p class="date line">
-                <span class="font-semibold">Date:</span> 24 july 2003
-              </p>
+                <img
+                  class="icon"
+                  src="./assets/ourSkillsIcons/cpp.svg"
+                  alt=""
+                />
+              </div>
 
-              <img class="icon" src="./assets/ourSkillsIcons/cpp.svg" alt="">
-            </div>
-            
-            <div class="block">
-              <h3 class="title fs_48px font-medium">Binary tree</h3>
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
 
-              <p class="time green line">
-                <span class="font-semibold">Time:</span> 1 week
-              </p>
-              <p class="price line">
-                <span class="font-semibold">Price:</span> 300$
-              </p>
-              <p class="date line">
-                <span class="font-semibold">Date:</span> 24 july 2003
-              </p>
+                <p class="time green line">
+                  <span class="font-semibold">Time:</span>
+                  1 week
+                </p>
+                <p class="price line">
+                  <span class="font-semibold">Price:</span>
+                  300$
+                </p>
+                <p class="date line">
+                  <span class="font-semibold">Date:</span>
+                  24 july 2003
+                </p>
 
-              <img class="icon" src="./assets/ourSkillsIcons/cpp.svg" alt="">
+                <img
+                  class="icon"
+                  src="./assets/ourSkillsIcons/cpp.svg"
+                  alt=""
+                />
+              </div>
+
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
+
+                <p class="time green line">
+                  <span class="font-semibold">Time:</span>
+                  1 week
+                </p>
+                <p class="price line">
+                  <span class="font-semibold">Price:</span>
+                  300$
+                </p>
+                <p class="date line">
+                  <span class="font-semibold">Date:</span>
+                  24 july 2003
+                </p>
+
+                <img
+                  class="icon"
+                  src="./assets/ourSkillsIcons/cpp.svg"
+                  alt=""
+                />
+              </div>
+
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
+
+                <p class="time green line">
+                  <span class="font-semibold">Time:</span>
+                  1 week
+                </p>
+                <p class="price line">
+                  <span class="font-semibold">Price:</span>
+                  300$
+                </p>
+                <p class="date line">
+                  <span class="font-semibold">Date:</span>
+                  24 july 2003
+                </p>
+
+                <img
+                  class="icon"
+                  src="./assets/ourSkillsIcons/cpp.svg"
+                  alt=""
+                />
+              </div>
+
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
+
+                <p class="time green line">
+                  <span class="font-semibold">Time:</span>
+                  1 week
+                </p>
+                <p class="price line">
+                  <span class="font-semibold">Price:</span>
+                  300$
+                </p>
+                <p class="date line">
+                  <span class="font-semibold">Date:</span>
+                  24 july 2003
+                </p>
+
+                <img
+                  class="icon"
+                  src="./assets/ourSkillsIcons/cpp.svg"
+                  alt=""
+                />
+              </div>
+
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
+
+                <p class="time green line">
+                  <span class="font-semibold">Time:</span>
+                  1 week
+                </p>
+                <p class="price line">
+                  <span class="font-semibold">Price:</span>
+                  300$
+                </p>
+                <p class="date line">
+                  <span class="font-semibold">Date:</span>
+                  24 july 2003
+                </p>
+
+                <img
+                  class="icon"
+                  src="./assets/ourSkillsIcons/cpp.svg"
+                  alt=""
+                />
+              </div>
+
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
+
+                <p class="time green line">
+                  <span class="font-semibold">Time:</span>
+                  1 week
+                </p>
+                <p class="price line">
+                  <span class="font-semibold">Price:</span>
+                  300$
+                </p>
+                <p class="date line">
+                  <span class="font-semibold">Date:</span>
+                  24 july 2003
+                </p>
+
+                <img
+                  class="icon"
+                  src="./assets/ourSkillsIcons/cpp.svg"
+                  alt=""
+                />
+              </div>
+
             </div>
           </div>
 
           <div class="scroll-interface">
-            <button id="0" onclick="this.classList.toggle('active')" class="move"></button>
-            <button id="1" onclick="this.classList.toggle('active')" class="move"></button>
-            <button id="2" onclick="this.classList.toggle('active')" class="move"></button>
-            <button id="3" onclick="this.classList.toggle('active')" class="move"></button>
+            <!--Must be empty!!!-->
           </div>
         </section>
       </div>
