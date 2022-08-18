@@ -36,7 +36,7 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   margin: 150px auto;
 }
 
-.flex-row{
+.flex-row {
   display: flex;
   flex-direction: row;
 }
@@ -71,7 +71,6 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   font-size: 40px;
 
   border-radius: 1rem;
-
 
   outline: none;
   background-color: #2ba84a;
@@ -135,22 +134,24 @@ p {
   -o-transition: none !important;
 }
 
-
-
-.fs_64px{
+.fs_64px {
   font-size: 64px;
 }
-.fs_48px{
+.fs_48px {
   font-size: 48px;
 }
-.fs_32px{
+.fs_32px {
   font-size: 32px;
 }
-.fs_24ps{
+.fs_28px{
+  font-size: 28px;
+}
+.fs_24px {
   font-size: 24px;
 }
-
-
+.fs_20px {
+  font-size: 20px;
+}
 
 .clearfix:after {
   content: '';
