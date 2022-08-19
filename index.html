@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./styles/about-us.css" />
     <link rel="stylesheet" href="./styles/our-skills.css" />
     <link rel="stylesheet" href="./styles/next-element.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
 
     <script src="js/homeBackground.js" defer></script>
     <script src="./js/activable.js" defer></script>
@@ -27,13 +28,17 @@
     <header class="header clearfix">
       <div class="flex-row structure content relative">
         <img class="logo" src="./assets/logo.svg" alt="Sorry :(" srcset="" />
-        
+
         <nav>
           <ul class="links font-medium">
             <li class="link"><span data-scrollTo="home">home page</span></li>
-            <li class="link"><span data-scrollTo="contact_us">contact us</span></li>
+            <li class="link">
+              <span data-scrollTo="contact_us">contact us</span>
+            </li>
             <li class="link"><span data-scrollTo="about_us">about us</span></li>
-            <li class="link"><span data-scrollTo="our_skills">our skills</span></li>
+            <li class="link">
+              <span data-scrollTo="our_skills">our skills</span>
+            </li>
             <li class="link"><span data-scrollTo="review">review</span></li>
           </ul>
         </nav>
@@ -1822,5 +1827,53 @@
         </div>
       </div>
     </main>
+
+    <footer class="footer relative overflow_hidden">
+      <img class="background" src="./assets/footerbg.svg" alt="" />
+      <section class="content structure">
+        <div class="title font-semibold fs_28px">
+          «MyLabs» — secure online service with trusted experts for your labs.
+        </div>
+
+        <div class="blocks">
+          <div class="block eula">
+            <p>
+              By using "MyLabs", you accept the
+              <a href="#">user agreement</a>
+              and
+              <a href="#">data processing policy</a>
+            </p>
+            <p>The site works on Moscow time: August 17, 2022 12:55</p>
+          </div>
+
+          <div class="block contact">
+            <h3 class="title font-semibold">Contact us</h3>
+
+            <p class="line"><a href="#">Telegram</a></p>
+            <p class="line"><a href="#">VK</a></p>
+            <p class="line"><a href="#">Email</a></p>
+          </div>
+
+          <div class="block information">
+            <h3 class="title font-semibold">Information</h3>
+
+            <p class="line"><a href="#">Price</a></p>
+            <p class="line"><a href="#">Time</a></p>
+            <p class="line"><a href="#">Types</a></p>
+          </div>
+
+          <div class="block about">
+            <h3 class="title font-semibold">About us</h3>
+
+            <p class="line"><a href="#">Students</a></p>
+            <p class="line"><a href="#">Last works</a></p>
+            <p class="line"><a href="#">Our skills</a></p>
+            <p class="line"><a href="#">Reviews</a></p>
+          </div>
+        </div>
+
+        <p class="copyright fs_20px">© 2022—2022 MyLabs</p>
+      </section>
+    </footer>
   </body>
 </html>
