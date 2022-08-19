@@ -12,13 +12,15 @@
   padding-right: 5px;
   height: min-content;
   white-space: nowrap;
-  box-shadow: inset 10px 0px 10px 10px #fff, inset -10px 0px 10px 10px #fff;
+  margin-bottom: 20px;
 }
 
 .lastworks .blocks {
   position: relative;
   z-index: -1;
   transition: all 0.5s;
+
+  font-size: 0;
 }
 
 /*Стили блоков*/
@@ -26,7 +28,7 @@
   position: relative;
   z-index: -1;
 
-  width: 47.5%;
+  width: calc(50% - 30px);
   display: inline-block;
 
   box-sizing: border-box;
@@ -49,9 +51,17 @@
   margin-bottom: 20px;
 }
 
+.lastworks .block .line img {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+
 .lastworks .block .line {
   font-size: 28px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
 /*Стили управления*/
@@ -59,18 +69,17 @@
   width: fit-content;
   margin: 0 auto;
 
-  background-color: rgb(106 106 106 / 10%);
   font-size: 0;
   padding: 5px 20px;
   border-radius: 100px;
 }
 .lastworks .scroll-interface .move {
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
 
   border-radius: 40px;
   border: 0;
-  margin-right: 5px;
+  margin-right: 25px;
 
   display: inline-block;
 
@@ -85,6 +94,5 @@
 
 .lastworks .scroll-interface .move.active {
   background-color: #2ba84a;
-  width: 40px;
-  border-radius: 8px;
+  width: 80px;
 }
