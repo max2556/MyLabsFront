@@ -1,0 +1,98 @@
+.lastworks {
+  width: 100%;
+}
+
+.lastworks .title {
+  margin-bottom: 50px;
+}
+
+/*Прокручивающийся штук*/
+.lastworks .scroll-plate {
+  padding-left: 5px;
+  padding-right: 5px;
+  height: min-content;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+
+.lastworks .blocks {
+  position: relative;
+  z-index: -1;
+  transition: all 0.5s;
+
+  font-size: 0;
+}
+
+/*Стили блоков*/
+.lastworks .block {
+  position: relative;
+  z-index: -1;
+
+  width: calc(50% - 30px);
+  display: inline-block;
+
+  box-sizing: border-box;
+  padding: 30px;
+
+  background-color: #ffffff;
+  box-shadow: 2px 4px 6px 0px #060137, -2px -2px 6px 2px #060137;
+
+  margin: 15px;
+}
+
+.lastworks .block .icon {
+  position: absolute;
+  right: 20px;
+  top: 20%;
+  width: 150px;
+}
+
+.lastworks .block .title {
+  margin-bottom: 20px;
+}
+
+.lastworks .block .line img {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.lastworks .block .line {
+  font-size: 28px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/*Стили управления*/
+.lastworks .scroll-interface {
+  width: fit-content;
+  margin: 0 auto;
+
+  font-size: 0;
+  padding: 5px 20px;
+  border-radius: 100px;
+}
+.lastworks .scroll-interface .move {
+  width: 25px;
+  height: 25px;
+
+  border-radius: 40px;
+  border: 0;
+  margin-right: 25px;
+
+  display: inline-block;
+
+  background-color: #b6b6b7;
+
+  transition: 0.3s all;
+}
+
+.lastworks .scroll-interface .move:last-child {
+  margin: 0;
+}
+
+.lastworks .scroll-interface .move.active {
+  background-color: #2ba84a;
+  width: 80px;
+}

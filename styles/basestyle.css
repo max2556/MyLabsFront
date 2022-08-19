@@ -153,6 +153,10 @@ p {
   font-size: 20px;
 }
 
+.green{
+  color: #2ba84a;
+}
+
 
 .clearfix:after {
   content: '';
