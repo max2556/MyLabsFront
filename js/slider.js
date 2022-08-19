@@ -6,7 +6,7 @@ const CONFIG = {
   skip: {
     once_count: 2,
   },
-  autoscrollInterval: 3000
+  autoscrollInterval: 5000,
 }
 
 const CURRENT_TYPE = TYPES.skip
@@ -14,6 +14,7 @@ const CURRENT_TYPE = TYPES.skip
 const STATE = {
   last_clicked: null,
   buttons: null,
+  autoscrollID: null,
 }
 
 //const controlButtons = document.querySelectorAll('.scroll-interface .move')
@@ -40,7 +41,8 @@ function init() {
   }
 
   prepareArrowButtons()
-  setInterval(autoscroll, CONFIG.autoscrollInterval);
+  let autoscrollID = setInterval(autoscroll, CONFIG.autoscrollInterval)
+  STATE.autoscrollID = autoscrollID
 }
 
 /**
@@ -54,11 +56,16 @@ function prepareSkip() {
 
   for (let i = 0; i < buttons.length; i++) {
     const button = buttons[i]
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
       callback(button.id)
       if (STATE.last_clicked) STATE.last_clicked.classList.remove('active')
       STATE.last_clicked = button
       button.classList.add('active')
+
+      //Без клика - браузер считает isTrusted false
+      //С кликом - true
+      //Если нажатие вызвано пользователем - паузим автоскролл
+      if (event.isTrusted) pauseAutoscroll()
     })
   }
 
@@ -105,14 +112,18 @@ function prepareArrowButtons() {
 
   leftButton.addEventListener('click', () => {
     let currentId = STATE.last_clicked.id
-    let newId = parseInt(currentId) - 1
-    if (newId >= 0) STATE.buttons[newId].click()
+    let newId = (STATE.buttons.length + parseInt(currentId) - 1) % STATE.buttons.length
+    STATE.buttons[newId].click()
+
+    pauseAutoscroll();
   })
 
   rightButton.addEventListener('click', () => {
     let currentId = STATE.last_clicked.id
-    let newId = parseInt(currentId) + 1
-    if (newId < STATE.buttons.length) STATE.buttons[newId].click()
+    let newId = (STATE.buttons.length + parseInt(currentId) + 1) % STATE.buttons.length
+    STATE.buttons[newId].click()
+
+    pauseAutoscroll()
   })
 }
 
@@ -124,4 +135,18 @@ function autoscroll() {
   let newId = parseInt(currentId) + 1
   if (newId >= STATE.buttons.length) newId = 0
   STATE.buttons[newId].click()
+}
+
+/**
+ * Останавливает автоскролл
+ * Возобновляет его через CONFIG.autoscrollInterval
+ * @returns void
+ */
+function pauseAutoscroll() {
+  if (!STATE.autoscrollID) return
+
+  setTimeout(() => {
+    clearInterval(STATE.autoscrollID)
+    STATE.autoscrollID = setInterval(autoscroll, CONFIG.autoscrollInterval)
+  }, CONFIG.autoscrollInterval)
 }

@@ -18,7 +18,7 @@
 .lastworks .blocks {
   position: relative;
   z-index: -1;
-  transition: all 0.5s;
+  transition: all 1s;
 
   font-size: 0;
 }
@@ -110,6 +110,10 @@
 .lastworks .slider-control .move.active {
   background-color: #2ba84a;
   width: 80px;
+}
+
+.lastworks .slider-control .move.active:hover{
+  transform: none;
 }
 
 .lastworks .slider-control .move-arrow {
