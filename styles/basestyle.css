@@ -150,8 +150,6 @@ p {
   font-size: 24px;
 }
 
-
-
 .clearfix:after {
   content: '';
   display: block;
