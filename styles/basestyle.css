@@ -77,6 +77,19 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   text-decoration: none;
   text-align: center;
   color: #ffffff;
+
+  transition: all 0.15s;
+}
+
+.button:hover{
+  background-color: #ffffff !important;
+  color: #2ba84a;
+  outline: 5px solid #2ba84a;
+}
+.button:active{
+  background-color: #ffffff !important;
+  color: #2ba84a;
+  outline: none !important;
 }
 
 /*
