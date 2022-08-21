@@ -131,25 +131,28 @@ function animateScroll(value) {
     )
       HEADER_STATE.scrollTimeoutID = setTimeout(go, baseDeltaTime)
   }
-  setTimeout(go, baseDeltaTime)
+  go();
 }
 
 function checkScroll() {
-  let target = null
+  let target = null;
   for (let block in TARGET_ELEMENTS) {
-    let visibility = isVisible(TARGET_ELEMENTS[block]);
+    let visibility = _isVisible(TARGET_ELEMENTS[block]);
     if (!visibility) continue
     target = block
-    break
   }
 
   removeActive(HEADER_STATE.last_active)
   addActive(LINKS_DICT[target])
 }
 
-function isVisible(el) {
-  let rect = el.getBoundingClientRect()
+function _isVisible(el) {
   const offset = 0
+  let rect = el.getBoundingClientRect()
 
-  return (rect.bottom - offset > 0) || (rect.top - offset - window.innerHeight > 0)
+  let bottom = (rect.bottom <= window.innerHeight) && rect.bottom >= 0;
+  let top = (rect.top <= window.innerHeight) && rect.top >= 0;
+  let between = rect.top <= 0 && rect.bottom >= window.innerHeight;
+  let result = bottom || top || between;
+  return result
 }
