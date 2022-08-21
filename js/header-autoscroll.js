@@ -137,7 +137,7 @@ function animateScroll(value) {
 function checkScroll() {
   let target = null;
   for (let block in TARGET_ELEMENTS) {
-    let visibility = _isVisible(TARGET_ELEMENTS[block]);
+    let visibility = isVisible(TARGET_ELEMENTS[block]);
     if (!visibility) continue
     target = block
   }
@@ -146,13 +146,15 @@ function checkScroll() {
   addActive(LINKS_DICT[target])
 }
 
-function _isVisible(el) {
-  const offset = 0
-  let rect = el.getBoundingClientRect()
-
-  let bottom = (rect.bottom <= window.innerHeight) && rect.bottom >= 0;
-  let top = (rect.top <= window.innerHeight) && rect.top >= 0;
-  let between = rect.top <= 0 && rect.bottom >= window.innerHeight;
-  let result = bottom || top || between;
-  return result
+function isVisible(el) {
+  let targetPosition = {
+      bottom: Math.min(el.getBoundingClientRect().bottom, el.getBoundingClientRect().bottom) + pageYOffset,
+      top: Math.max(el.getBoundingClientRect().top, el.getBoundingClientRect().top) + pageYOffset
+  };
+  let windowPosition = {
+      top: window.pageYOffset,
+      bottom: window.pageYOffset + document.documentElement.clientHeight
+  };
+  return targetPosition.bottom > windowPosition.top &&
+      targetPosition.top < windowPosition.bottom;
 }
