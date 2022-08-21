@@ -98,10 +98,11 @@
 
 .header .link {
   display: inline-block;
-
-  font-size: 1.4rem;
-
   margin-left: 20px;
+}
+
+.header .link span{
+  font-size: 1.4rem !important;
 }
 
 .header .link:first-child {
@@ -121,6 +122,11 @@
 
 .header .link {
   position: relative;
+}
+
+.header .link.active span{
+  transform: translateY(-10px);
+  color: #2ba84a;
 }
 
 .header .link span {
@@ -196,18 +202,23 @@
   }
   .header .links::before {
     content: '';
+    display: contents;
+
+    cursor: auto;
+
     position: fixed;
     left: -100vw;
     top: 0;
     z-index: -1;
 
-    width: 0vw;
+    width: 200vw;
     height: 100vh;
 
     transition: 0.25s;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0);
   }
   .header .links.active::before {
+    display: block;
     width: 200vw;
   }
 
@@ -218,7 +229,7 @@
     position: fixed;
     right: 0px;
     top: 90px;
-    transform: translateX(100%);
+    transform: translateX(101%);
 
     width: 300px;
     height: calc(100vh - 90px);
@@ -258,7 +269,7 @@
   }
 
   .header .hamburger-menu.active + nav > ul.links::before {
-    width: 200vw;
+    background: rgba(255, 255, 255, 0.3);
   }
 
   .header .icons {

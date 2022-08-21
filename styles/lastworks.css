@@ -29,7 +29,7 @@
   position: relative;
   z-index: -1;
 
-  width: calc(50% - 30px);
+  width: calc(100% / 3 - 30px);
   height: calc(100% - 45px);
   display: inline-block;
 
@@ -150,4 +150,16 @@
 
 .lastworks .slider-control .move-arrow.right {
   float: right;
+}
+
+@media (max-width: 1575px) {
+  .lastworks .block{
+    width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 850px) {
+  .lastworks .block{
+    width: calc(100% - 30px);
+  }
 }

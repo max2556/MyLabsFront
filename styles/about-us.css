@@ -209,7 +209,7 @@
   /*top: -42px;*/
   /*z-index: -1;*/
   margin: -2px 9px -15px;
-  height: 150px;
+  height: 138px;
   position: relative;
   overflow: hidden;
 }
@@ -310,15 +310,16 @@
 }
 
 @media (max-width: 1025px) {
-  .about-us .structure{
+  .about-us .structure {
     margin-top: 50px;
     margin-bottom: 50px;
   }
   .about-us .FAQ .block {
     font-size: 16px;
   }
-
-
+  .about-us .info .FAQ {
+    padding: 20px 25px;
+  }
 }
 @media (max-width: 900px) {
   .about-us .video {
@@ -329,11 +330,11 @@
     border-top: 5px solid #b7b7b7;
     border-left: 4px solid #b7b7b7;
     box-shadow: 0px 0px 10px 0px #001a11;
-  } 
-  .about-us .video .camera{
+  }
+  .about-us .video .camera {
     left: 5px;
   }
-  .about-us .video .sound{
+  .about-us .video .sound {
     left: 5px;
   }
 
@@ -351,6 +352,9 @@
     box-shadow: none;
   }
 
+  .about-us .how_it_works .step_line {
+    margin: -2px 4px -15px;
+  }
   .about-us .how_it_works .step_line .large-screen {
     display: none;
   }
@@ -405,10 +409,20 @@
   .about-us .FAQ hr {
     display: none;
   }
+  .about-us .info .FAQ {
+    padding: 10px 15px;
+  }
 }
 
 @media (max-width: 500px) {
   .about-us .how_it_works .steps .step_line svg {
     transform: translateY(-50%) scaleY(1.5);
   }
+  .about-us .info .FAQ {
+    padding: 10px;
+  }
+  .about-us .info .FAQ .block span{
+    font-size: 16px !important;
+  }
+
 }
