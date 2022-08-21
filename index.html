@@ -23,6 +23,7 @@
     <script src="./js/homeBackground.js" defer></script>
     <script src="./js/activable.js" defer></script>
     <script src="./js/slider.js" defer></script>
+    <script src="./js/header-autoscroll.js" defer></script>
   </head>
 
   <body>
@@ -32,15 +33,15 @@
 
         <nav>
           <ul class="links font-medium">
-            <li class="link"><span data-scrollTo="home">home page</span></li>
-            <li class="link">
-              <span data-scrollTo="contact_us">contact us</span>
+            <li data-scrollTo="home" class="link"><span>home page</span></li>
+            <li data-scrollTo="contact_us" class="link">
+              <span>contact us</span>
             </li>
-            <li class="link"><span data-scrollTo="about_us">about us</span></li>
-            <li class="link">
-              <span data-scrollTo="our_skills">our skills</span>
+            <li data-scrollTo="about_us" class="link"><span>about us</span></li>
+            <li data-scrollTo="our_skills" class="link">
+              <span>our skills</span>
             </li>
-            <li class="link"><span data-scrollTo="review">review</span></li>
+            <li data-scrollTo="review" class="link"><span>review</span></li>
           </ul>
         </nav>
 
@@ -56,7 +57,7 @@
     </header>
 
     <main>
-      <div class="home_wrapper relative">
+      <div data-move="home" class="home_wrapper relative">
         <div class="home_background">
           <!--                      <svg width="1426" height="793" viewBox="0 0 1426 793" fill="none" xmlns="http://www.w3.org/2000/svg">-->
           <svg
@@ -1623,7 +1624,7 @@
         </section>
       </div>
 
-      <div class="about-us relative overflow_hidden">
+      <div data-move="about_us" class="about-us relative overflow_hidden">
        <!-- <img class="background" src="./assets/hexagon.svg" alt="" />-->
         
         <div class="bg overflow_hidden">
@@ -2046,7 +2047,7 @@
         </section>
       </div>
 
-      <div class="contact-section relative overflow_hidden">
+      <div data-move="contact_us" class="contact-section relative overflow_hidden">
         <img
           class="background"
           src="./assets/contactus-background.svg"

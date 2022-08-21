@@ -60,15 +60,13 @@
   height: 100%;
 }
 
-.header .icons .icon:last-child{
+.header .icons .icon:last-child {
   margin: 0;
 }
-
 
 .header .links {
   font-size: 0px;
 
-  
   height: 100%;
   float: right;
 
@@ -83,10 +81,9 @@
   margin-left: 20px;
 }
 
-.header .link:first-child{
+.header .link:first-child {
   margin-left: 0px;
 }
-
 
 /*
 Все, что ниже отвечает за появление индикатора под li.link
@@ -99,7 +96,7 @@
 В ./js/activable.js на каждый элемент с классом '.header .link' навешиваются eventListener'ы на наведение мыши. При наведении полоса активируется, изменяя свой цвет
 */
 
-.header .link{
+.header .link {
   position: relative;
 }
 
@@ -107,12 +104,17 @@
   display: block;
   transition: all 0.2s;
 }
+
+.header .link.active span {
+  transform: translateY(-10px);
+  color: #2ba84a;
+}
 .header .link:hover span {
   transform: translateY(-10px);
   color: #2ba84a;
 }
 
-.header .link:after{
+.header .link:after {
   transition: 0.3s;
   content: '';
 
@@ -138,4 +140,8 @@
   right: 0;
 }
 
-
+.header .link.active:after {
+  opacity: 0.5;
+  left: 0;
+  right: 0;
+}
