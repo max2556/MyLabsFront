@@ -18,8 +18,8 @@ const STATE = {
 }
 
 //const controlButtons = document.querySelectorAll('.scroll-interface .move')
-const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
-const slider = document.querySelector('.scroll-plate .blocks')
+let blocks = null
+let slider = null
 
 function skip(num) {
   const deltaX = -100
@@ -28,8 +28,10 @@ function skip(num) {
   slider.setAttribute('transform', movement)
 }
 
-init()
-function init() {
+function buildSlider() {
+  blocks = document.querySelectorAll('.scroll-plate .blocks .block')
+  slider = document.querySelector('.scroll-plate .blocks')
+
   switch (CURRENT_TYPE) {
     case TYPES.skip:
       prepareSkip()
@@ -112,15 +114,17 @@ function prepareArrowButtons() {
 
   leftButton.addEventListener('click', () => {
     let currentId = STATE.last_clicked.id
-    let newId = (STATE.buttons.length + parseInt(currentId) - 1) % STATE.buttons.length
+    let newId =
+      (STATE.buttons.length + parseInt(currentId) - 1) % STATE.buttons.length
     STATE.buttons[newId].click()
 
-    pauseAutoscroll();
+    pauseAutoscroll()
   })
 
   rightButton.addEventListener('click', () => {
     let currentId = STATE.last_clicked.id
-    let newId = (STATE.buttons.length + parseInt(currentId) + 1) % STATE.buttons.length
+    let newId =
+      (STATE.buttons.length + parseInt(currentId) + 1) % STATE.buttons.length
     STATE.buttons[newId].click()
 
     pauseAutoscroll()

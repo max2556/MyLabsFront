@@ -19,9 +19,12 @@
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/lastworks.css" />
 
+    <script src="./js/backend-connect.js"></script>
     <script src="./js/homeBackground.js" defer></script>
     <script src="./js/activable.js" defer></script>
     <script src="./js/slider.js" defer></script>
+    <script src="./js/build-reviews.js" defer></script>
+    <script src="./js/build-separator.js" defer></script>
   </head>
 
   <body>
@@ -1617,7 +1620,7 @@
           <!-- Не буду пока убирать div.block, вдруг снова поменяется дизайн-->
           <!--            и не убирай, хер с ним-->
           <div class="block font-medium">
-            <p>1984 Labs completed</p>
+            <p><span class="count"></span> Labs completed</p>
           </div>
         </section>
       </div>
@@ -1895,24 +1898,27 @@
 
           <div class="scroll-plate overflow_hidden">
             <div class="blocks">
+              <!-- ЗДЕСЬ ДОЛЖЕН БЫТЬ template ОДНОГО БЛОКА !!!-->
+              <!-- ВСЕ ОСТАЛЬНЫЕ СОЗДАЮТСЯ СКРИПТОМ build-reviews.js -->
+              <template class="block-template">
               <div class="block">
-                <h3 class="title fs_48px font-medium">Binary tree</h3>
+                <h3 class="name title fs_48px font-medium">Binary tree</h3>
 
-                <p class="time green line">
+                <p class="time-holder green line">
                   <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
-                  <span>
+                  <span class="time">
                     1 week
                   </span>
                 </p>
-                <p class="price line">
+                <p class="price-holder line">
                   <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
-                  <span>
+                  <span class="price">
                     300
                   </span>
                 </p>
-                <p class="date line">
+                <p class="date-holder line">
                   <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
-                  <span>
+                  <span class="date">
                     24 july 2003
                   </span>
                 </p>
@@ -1923,209 +1929,8 @@
                   alt=""
                 />
               </div>
+            </template>
 
-              <div class="block">
-                <h3 class="title fs_48px font-medium">Binary tree</h3>
-
-                <p class="time green line">
-                  <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
-                  <span>
-                    1 week
-                  </span>
-                </p>
-                <p class="price line">
-                  <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
-                  <span>
-                    300
-                  </span>
-                </p>
-                <p class="date line">
-                  <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
-                  <span>
-                    24 july 2003
-                  </span>
-                </p>
-
-                <img
-                  class="icon"
-                  src="./assets/ourSkillsIcons/cpp.svg"
-                  alt=""
-                />
-              </div>
-
-              <div class="block">
-                <h3 class="title fs_48px font-medium">Binary tree</h3>
-
-                <p class="time green line">
-                  <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
-                  <span>
-                    1 week
-                  </span>
-                </p>
-                <p class="price line">
-                  <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
-                  <span>
-                    300
-                  </span>
-                </p>
-                <p class="date line">
-                  <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
-                  <span>
-                    24 july 2003
-                  </span>
-                </p>
-
-                <img
-                  class="icon"
-                  src="./assets/ourSkillsIcons/cpp.svg"
-                  alt=""
-                />
-              </div>
-
-              <div class="block">
-                <h3 class="title fs_48px font-medium">Binary tree</h3>
-
-                <p class="time green line">
-                  <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
-                  <span>
-                    1 week
-                  </span>
-                </p>
-                <p class="price line">
-                  <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
-                  <span>
-                    300
-                  </span>
-                </p>
-                <p class="date line">
-                  <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
-                  <span>
-                    24 july 2003
-                  </span>
-                </p>
-
-                <img
-                  class="icon"
-                  src="./assets/ourSkillsIcons/cpp.svg"
-                  alt=""
-                />
-              </div>
-
-              <div class="block">
-                <h3 class="title fs_48px font-medium">Binary tree</h3>
-
-                <p class="time green line">
-                  <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
-                  <span>
-                    1 week
-                  </span>
-                </p>
-                <p class="price line">
-                  <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
-                  <span>
-                    300
-                  </span>
-                </p>
-                <p class="date line">
-                  <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
-                  <span>
-                    24 july 2003
-                  </span>
-                </p>
-
-                <img
-                  class="icon"
-                  src="./assets/ourSkillsIcons/cpp.svg"
-                  alt=""
-                />
-              </div>
-
-              <div class="block">
-                <h3 class="title fs_48px font-medium">Binary tree</h3>
-
-                <p class="time green line">
-                  <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
-                  <span>
-                    1 week
-                  </span>
-                </p>
-                <p class="price line">
-                  <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
-                  <span>
-                    300
-                  </span>
-                </p>
-                <p class="date line">
-                  <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
-                  <span>
-                    24 july 2003
-                  </span>
-                </p>
-
-                <img
-                  class="icon"
-                  src="./assets/ourSkillsIcons/cpp.svg"
-                  alt=""
-                />
-              </div>
-
-              <div class="block">
-                <h3 class="title fs_48px font-medium">Binary tree</h3>
-
-                <p class="time green line">
-                  <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
-                  <span>
-                    1 week
-                  </span>
-                </p>
-                <p class="price line">
-                  <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
-                  <span>
-                    300
-                  </span>
-                </p>
-                <p class="date line">
-                  <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
-                  <span>
-                    24 july 2003
-                  </span>
-                </p>
-
-                <img
-                  class="icon"
-                  src="./assets/ourSkillsIcons/cpp.svg"
-                  alt=""
-                />
-              </div>
-
-              <div class="block">
-                <h3 class="title fs_48px font-medium">Binary tree</h3>
-
-                <p class="time green line">
-                  <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
-                  <span>
-                    1 week
-                  </span>
-                </p>
-                <p class="price line">
-                  <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
-                  <span>
-                    300
-                  </span>
-                </p>
-                <p class="date line">
-                  <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
-                  <span>
-                    24 july 2003
-                  </span>
-                </p>
-
-                <img
-                  class="icon"
-                  src="./assets/ourSkillsIcons/cpp.svg"
-                  alt=""
-                />
-              </div>
             </div>
           </div>
 
