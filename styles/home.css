@@ -68,10 +68,13 @@
 /*ADAPTATION*/
 
 @media (max-aspect-ratio: 1426/793) {
-  .home_background{
-    height: 100%;
-  }
   .home_background svg{
     height: 100%;
   }
 }
+@media (max-width: 1600px){
+  .home_background svg{
+    height: 100%;
+  }
+}
+
