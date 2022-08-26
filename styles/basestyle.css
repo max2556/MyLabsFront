@@ -176,3 +176,10 @@ p {
   display: block;
   clear: both;
 }
+
+
+@media (max-width: 1025px) {
+  .structure{
+    width: 90%;
+  }
+}
