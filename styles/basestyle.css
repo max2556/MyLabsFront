@@ -89,7 +89,8 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 .button:active{
   background-color: #ffffff !important;
   color: #2ba84a;
-  outline: none !important;
+  outline: 1px solid transparent  !important;
+  transition: outline 0.08s;
 }
 
 /*
