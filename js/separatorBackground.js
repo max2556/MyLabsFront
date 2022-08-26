@@ -1,7 +1,11 @@
 const separator = document.querySelector('div.separator')
 const canvas = separator.querySelector('canvas.background')
 const ctx = canvas.getContext('2d')
-
+const SEPARATOR_STATE = {
+  lines:[],
+  lines_count: 30,
+  isRunning: false
+}
 
 
 class Line {
@@ -10,80 +14,90 @@ class Line {
   X = 0 //X coord
   Y = 0 //Y coord
   string = '' //Text content
-  
-  bias = 0;
-  deltaBias = 0;
+
+  bias = 0
+  deltaBias = 0
 
   constructor(x_pos, y_pos) {
     this.X = x_pos
     this.Y = y_pos
-    
-    this.length = canvas.height*5/this.fs;
+
+    this.length = (canvas.height * 1.2) / this.fs
 
     for (let i = 0; i < this.length; i++) {
       let newChar = Math.random() < 0.5 ? '0' : '1'
       this.string = this.string.concat(newChar)
     }
 
-    this.deltaBias = Math.round(Math.random()*7)/1000 + 0.001
+    this.deltaBias = Math.round(Math.random() * 7) / 1000 + 0.001
+    this.bias = 0
   }
 
   update() {
-    this.bias += this.deltaBias;
+    this.bias += this.deltaBias
 
-    if (this.bias > 0.7) replaceLine(this)
+    if (this.bias > 0.7) this.bias = 0.1
   }
 
   draw(ctx) {
     ctx.font = `${this.fs}px sans-serif`
     let width = ctx.measureText(this.string).width * 2
 
-    ctx.shadowColor = '#37feff'
-    ctx.shadowBlur = 1;
     ctx.fillStyle = getGradient(width, this.fs, this.bias)
     ctx.fillText(this.string, this.Y, -this.X)
   }
 }
 
-const lines = []
-const lineCount = 50;
-
-
 ;(function init() {
   canvas.width = separator.clientWidth
-  canvas.height = separator.clientHeight
+  canvas.height = separator.clientHeight * 3
+  canvas.style.transform = 'translateY(-33%)'
+
   ctx.rotate(Math.PI / 2)
 
+  getLines(SEPARATOR_STATE.lines_count)
 
-  getLines(lineCount)
+  updateAllLines()
+  drawAllLines()
 
-  const deltaTime = 50 //ms
-  setInterval(updateAllLines, deltaTime)
-  setInterval(drawAllLines, deltaTime)
+  window.addEventListener('scroll', ()=>{
+    if(isVisible(separator) && !SEPARATOR_STATE.isRunning){
+      updateAllLines()
+      drawAllLines()
+    }
+  })
 })()
 
 function getGradient(w, h, bias) {
   let gradient = ctx.createLinearGradient(0, 0, w, h)
+  let delta = 0.07
 
-  gradient.addColorStop(0+bias, 'rgba(168,222,255,0.1)')
-  gradient.addColorStop(0.05+bias, 'rgba(215,253,255,1)')
-  gradient.addColorStop(0.1+bias, 'rgba(168,222,255,0.1)')
+  gradient.addColorStop(0 + bias, 'rgba(168,222,255,0.02)')
+  gradient.addColorStop(delta + bias, 'rgba(215,253,255,1)')
+  gradient.addColorStop(delta * 2 + bias, 'rgba(168,222,255,0.02)')
 
   return gradient
 }
 
 function updateAllLines() {
-  for (let line of lines) {
+  SEPARATOR_STATE.isRunning = true;
+  for (let line of SEPARATOR_STATE.lines) {
     line.update()
   }
+  if (isVisible(separator)) window.requestAnimationFrame(updateAllLines)
+  else SEPARATOR_STATE.isRunning = false;
 }
 
 function drawAllLines() {
   clearCanvas()
 
-  for (let line of lines) {
+  ctx.shadowColor = '#37feff'
+  ctx.shadowBlur = 1
+
+  for (let line of SEPARATOR_STATE.lines) {
     line.draw(ctx)
   }
+  if (isVisible(separator)) window.requestAnimationFrame(drawAllLines)
 }
 
 function clearCanvas() {
@@ -91,25 +105,16 @@ function clearCanvas() {
   ctx.fillRect(0, 0, canvas.height, -canvas.width)
 }
 
-function replaceLine(line) {
-  let pos = lines.findIndex((element)=>{
-    return element === line
-  })
-  lines.splice(pos, 1)
-  getLine()
-}
-
 function getLine() {
   let newX = Math.round(Math.random() * canvas.width)
-  let newY = -(1 + Math.random()*0.2)*canvas.height
-  lines.push(new Line(newX, newY))
+  let newY = Math.random() * 0.2 * canvas.height
+  SEPARATOR_STATE.lines.push(new Line(newX, newY))
 }
 
 function getLines(number) {
-  if(lines.length<number)
-  setTimeout(()=>{
-    getLines(number)
-  }, 6.66)
-
-  getLine();
+  if (SEPARATOR_STATE.lines.length < number)
+    setTimeout(() => {
+      getLine()
+      getLines(number)
+    }, 50)
 }
