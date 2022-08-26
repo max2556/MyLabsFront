@@ -208,4 +208,9 @@
   .header .hamburger-menu:active ~ nav > ul.links {
     display: flex;
   }
+
+  .header .icons{
+    left: 100%;
+    transform: translateX(-100%);
+  }
 }
