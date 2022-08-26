@@ -54,14 +54,27 @@
   display: inline-block;
   margin-right: 20px;
   height: 100%;
+  border-radius: 100%;
 
   transition: all 0.15s;
 }
+.header .icons svg {
+  height: 100%;
+}
 
 .header .icons .icon:hover {
-  transform: translateY(-10px) scale(1.1);
-  box-shadow: 0px 0px 10px 0px #000000;
-  border-radius: 100%;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0px 0px 3px 0px #000000;
+}
+.header .icons .icon svg{
+  fill: #060137;
+  transition: 0.15s all;
+}
+.header .icons .icon.tg:hover svg path{
+  fill: #06b7cf;
+}
+.header .icons .icon.vk:hover svg path{
+  fill: #0077ff;
 }
 
 .header .icons .icon:active {
@@ -69,9 +82,6 @@
   transition: 0.05s;
 }
 
-.header .icons img {
-  height: 100%;
-}
 
 .header .icons .icon:last-child {
   margin: 0;
@@ -154,13 +164,14 @@
 }
 
 .header .hamburger-menu {
+  --hamburger-size: 40px;
   position: absolute;
   right: 0;
 
   cursor: pointer;
 
-  width: 40px;
-  height: 40px;
+  width: var(--hamburger-size);
+  height: var(--hamburger-size);
 
   transition: 0.2s all;
 }
@@ -179,27 +190,35 @@
 
 @media (max-width: 1024px) {
   .header .links {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    right: 0;
-    top: 100%;
-    align-items: center;
-    transform: translateX(calc(50% - 20px));
+    box-sizing: border-box;
 
-    display: none;
+    position: fixed;
+    right: 0px;
+    top: 90px;
+    
+    width: 300px;
+    height: calc(90vh - 90px);
+
+    display: none; /*will be flex with active*/
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    
+    border: 2px solid #060137;
+    border-top: none;
+    border-radius: 0px 0px 10px 10px;
   }
 
   .header .link {
     text-align: center;
-    font-size: 32px;
+    font-size: 40px;
 
     width: 100%;
 
     margin: 0;
     padding: 6px 15px;
-
-    background: rgb(255 255 255 / 60%);
   }
   .header .link:hover::after {
     display: none;
@@ -207,10 +226,19 @@
 
   .header .hamburger-menu:active ~ nav > ul.links {
     display: flex;
+    background: white;
+    box-shadow: 0px 0px 0px 100vw rgb(255 255 255 / 70%);
+    z-index: -1;
   }
 
-  .header .icons{
-    left: 100%;
+  .header .icons {
+    left: calc(100% - (40px + 20px)); /*40px == --hamburger-size; 20px -> some margin*/
     transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 900px) {
+  .header .links{
+    width: 100%;
   }
 }
