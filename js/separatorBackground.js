@@ -2,11 +2,10 @@ const separator = document.querySelector('div.separator')
 const canvas = separator.querySelector('canvas.background')
 const ctx = canvas.getContext('2d')
 const SEPARATOR_STATE = {
-  lines:[],
+  lines: [],
   lines_count: 30,
-  isRunning: false
+  isRunning: false,
 }
-
 
 class Line {
   fs = 20 //font-size
@@ -29,8 +28,9 @@ class Line {
       this.string = this.string.concat(newChar)
     }
 
-    this.deltaBias = Math.round(Math.random() * 7) / 1000 + 0.001
-    this.bias = 0
+    let speedRange = 2
+    this.deltaBias = Math.round(Math.random() * speedRange) / 1000 + 0.001 //You can change speed by changing speedRange
+    this.bias = Math.random() / 10
   }
 
   update() {
@@ -60,8 +60,8 @@ class Line {
   updateAllLines()
   drawAllLines()
 
-  window.addEventListener('scroll', ()=>{
-    if(isVisible(separator) && !SEPARATOR_STATE.isRunning){
+  window.addEventListener('scroll', () => {
+    if (isVisible(separator) && !SEPARATOR_STATE.isRunning) {
       updateAllLines()
       drawAllLines()
     }
@@ -80,12 +80,12 @@ function getGradient(w, h, bias) {
 }
 
 function updateAllLines() {
-  SEPARATOR_STATE.isRunning = true;
+  SEPARATOR_STATE.isRunning = true
   for (let line of SEPARATOR_STATE.lines) {
     line.update()
   }
   if (isVisible(separator)) window.requestAnimationFrame(updateAllLines)
-  else SEPARATOR_STATE.isRunning = false;
+  else SEPARATOR_STATE.isRunning = false
 }
 
 function drawAllLines() {
