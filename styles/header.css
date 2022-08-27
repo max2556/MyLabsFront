@@ -38,6 +38,7 @@
   margin-bottom: 10px; /*<---- поменяется высота хедера и всему пиздец*/
   height: 80%;
   /*margin-left: 15%;*/
+  z-index: 1;
 }
 
 .header .icons {
@@ -66,14 +67,14 @@
   transform: translateY(-3px) scale(1.1);
   box-shadow: 0px 0px 3px 0px #000000;
 }
-.header .icons .icon svg{
+.header .icons .icon svg {
   fill: #060137;
   transition: 0.15s all;
 }
-.header .icons .icon.tg:hover svg path{
-  fill: #06b7cf;
+.header .icons .icon.tg:hover svg path {
+  fill: #0088cc;
 }
-.header .icons .icon.vk:hover svg path{
+.header .icons .icon.vk:hover svg path {
   fill: #0077ff;
 }
 
@@ -81,7 +82,6 @@
   transform: scale(1.1);
   transition: 0.05s;
 }
-
 
 .header .icons .icon:last-child {
   margin: 0;
@@ -174,6 +174,8 @@
   height: var(--hamburger-size);
 
   transition: 0.2s all;
+
+  z-index: 1;
 }
 
 .header .hamburger-menu:hover {
@@ -189,25 +191,45 @@
 }
 
 @media (max-width: 1024px) {
+  .header .links::before {
+    content: '';
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    z-index: -1;
+
+    width: 0vw;
+    height: 100vh;
+
+    transition: 0.25s;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .header .links.active::before {
+    width: 200vw;
+  }
+
   .header .links {
+    display: flex;
     box-sizing: border-box;
 
     position: fixed;
     right: 0px;
     top: 90px;
-    
+    transform: translateX(100%);
+
     width: 300px;
     height: calc(100vh - 90px);
 
-    display: none; /*will be flex with active*/
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
-    justify-content: space-around;
     align-items: center;
-    
-    border: 2px solid #060137;
-    border-top: none;
+
+    box-shadow: 0px 0px 2px 0px #060137;
+
+    background: white;
+
+    transition: 0.25s;
   }
 
   .header .link {
@@ -217,27 +239,35 @@
     width: 100%;
 
     margin: 0;
-    padding: 6px 15px;
+    margin-bottom: 60px;
   }
-  .header .link:hover::after {
+
+  .header .link:first-of-type {
+    margin-top: 20px !important;
+  }
+
+  .header .link::after{
     display: none;
   }
 
-  .header .hamburger-menu:active ~ nav > ul.links {
-    display: flex;
-    background: white;
-    box-shadow: 0px 0px 0px 100vw rgb(255 255 255 / 30%);
-    z-index: -1;
+  .header .hamburger-menu.active + nav > ul.links {
+    transform: none;
+  }
+
+  .header .hamburger-menu.active + nav > ul.links::before {
+    width: 200vw;
   }
 
   .header .icons {
-    left: calc(100% - (40px + 20px)); /*40px == --hamburger-size; 20px -> some margin*/
+    left: calc(
+      100% - (40px + 20px)
+    ); /*40px == --hamburger-size; 20px -> some margin*/
     transform: translateX(-100%);
   }
 }
 
-@media (max-width: 900px) {
-  .header .links{
+@media (max-width: 700px) {
+  .header .links {
     width: 100%;
   }
 }
