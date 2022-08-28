@@ -3,7 +3,19 @@ const canvas = separator.querySelector('canvas.background')
 let ctx = canvas.getContext('2d')
 const SEPARATOR_STATE = {
   lines: [],
-  lines_count: 30,
+  //lines_count меняется в зависимости от размера экрана
+  //маленький экран - 15
+  //средний - 20
+  //десктоп - 30
+  lines_count: (() => {
+    const small_screen = 15
+    const medium_screen = 20
+    const large_screen = 30
+
+    if (window.innerWidth < 600) return small_screen
+    if (window.innerWidth < 1100) return medium_screen
+    return large_screen
+  })(),
   isRunning: false,
   prevWidth: 0,
 }
