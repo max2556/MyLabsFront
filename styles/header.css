@@ -191,6 +191,9 @@
 }
 
 @media (max-width: 1024px) {
+  .header .hamburger-menu{
+    display: block;
+  }
   .header .links::before {
     content: '';
     position: fixed;

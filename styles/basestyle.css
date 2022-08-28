@@ -181,7 +181,7 @@ p {
 @media (max-width: 1025px) {
   .structure{
     width: 90% !important;
-    margin: 50px auto !important;
+    margin: 50px auto;
   }
 }
 @media (max-width: 500px) {
