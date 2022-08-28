@@ -1,10 +1,11 @@
 const separator = document.querySelector('div.separator')
 const canvas = separator.querySelector('canvas.background')
-const ctx = canvas.getContext('2d')
+let ctx = canvas.getContext('2d')
 const SEPARATOR_STATE = {
   lines: [],
   lines_count: 30,
   isRunning: false,
+  prevWidth: 0,
 }
 
 class Line {
@@ -52,8 +53,9 @@ class Line {
   canvas.width = separator.clientWidth
   canvas.height = separator.clientHeight * 3
   canvas.style.transform = 'translateY(-33%)'
-
   ctx.rotate(Math.PI / 2)
+
+  SEPARATOR_STATE.prevWidth = separator.clientWidth
 
   getLines(SEPARATOR_STATE.lines_count)
 
@@ -66,6 +68,7 @@ class Line {
       drawAllLines()
     }
   })
+  window.addEventListener('resize', onresize)
 })()
 
 function getGradient(w, h, bias) {
@@ -117,4 +120,17 @@ function getLines(number) {
       getLine()
       getLines(number)
     }, 50)
+}
+
+function onresize() {
+  canvas.width = separator.clientWidth
+  ctx = canvas.getContext('2d')
+  ctx.rotate(Math.PI / 2)
+  let currentWidth = separator.clientWidth
+
+  if (true)
+    SEPARATOR_STATE.lines.forEach((line) => {
+      line.X = line.X * (currentWidth / SEPARATOR_STATE.prevWidth)
+    })
+  SEPARATOR_STATE.prevWidth = currentWidth
 }
