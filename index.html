@@ -26,7 +26,6 @@
     <script src="./js/header-autoscroll.js" defer></script>
     <script src="./js/adaptation.js" defer></script>
     <script src="./js/separatorBackground.js" defer></script>
-
   </head>
 
   <body>
@@ -96,7 +95,7 @@
     </header>
 
     <main>
-      <div class="home_wrapper relative">
+      <div data-move="home" class="home_wrapper relative">
         <div class="home_background">
           <!--                      <svg width="1426" height="793" viewBox="0 0 1426 793" fill="none" xmlns="http://www.w3.org/2000/svg">-->
           <svg
@@ -1663,10 +1662,8 @@
           </div>
         </section>
       </div>
-
-      <div class="about-us relative overflow_hidden">
+      <div data-move="about_us" class="about-us relative overflow_hidden">
         <!-- <img class="background" src="./assets/hexagon.svg" alt="" />-->
-
         <div class="bg overflow_hidden">
           <svg
             viewBox="0 0 1920 2160"
@@ -1989,7 +1986,7 @@
         </section>
       </div>
 
-      <div class="lastworks relative overflow_hidden">
+      <div data-move="review" class="lastworks relative overflow_hidden">
         <img class="background" src="./assets/lastworks.svg" alt="" srcset="" />
 
         <section class="content structure">
@@ -2163,7 +2160,10 @@
         </section>
       </div>
 
-      <div class="contact-section relative overflow_hidden">
+      <div
+        data-move="contact_us"
+        class="contact-section relative overflow_hidden"
+      >
         <img
           class="background"
           src="./assets/contactus-background.svg"

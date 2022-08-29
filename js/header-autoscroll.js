@@ -78,21 +78,18 @@ function removeActive(el) {
 function initLinks() {
   for (let link of links) {
     LINKS_DICT[link.dataset.scrollto] = link
-    TARGET_ELEMENTS[link.dataset.scrollto] = document.querySelector(
-      `.${link.dataset.scrollto}`,
-    )
     link.addEventListener('click', () => {
       if (HEADER_STATE.last_active) removeActive(HEADER_STATE.last_active)
       addActive(link)
+      let targetAttr = link.dataset.scrollto
 
-      let targetEl = document.querySelector(`.${link.dataset.scrollto}`)
+      let targetEl = TARGET_ELEMENTS[targetAttr]
       if (!targetEl) {
-        console.warn(`Can not go to ${link.dataset.scrollto} block!`)
+        console.warn(`Can not go to ${targetAttr} block!`)
         return
       }
 
       let topValue = targetEl.offsetTop
-
       animateScroll(topValue)
     })
   }
@@ -107,7 +104,7 @@ function animateScroll(value) {
     clearTimeout(HEADER_STATE.scrollTimeoutID)
   }
 
-  const speedMult = 1
+  const speedMult = 3
   const EPS = 10
   const baseDeltaTime = 10
 
