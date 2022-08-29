@@ -177,3 +177,20 @@ p {
   display: block;
   clear: both;
 }
+
+
+@media (max-width: 1025px) {
+  .structure{
+    width: 90% !important;
+    margin: 50px auto;
+  }
+}
+@media (max-width: 500px) {
+  .structure{
+    width: 96% !important;
+  }
+}
+
+.blured{
+  filter: blur(2px);
+}

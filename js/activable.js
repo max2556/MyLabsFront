@@ -5,47 +5,42 @@
  */
 function toggleActive(el) {
   const activeClass = 'active'
+  const parent = el.parentNode
 
   el.classList.toggle(activeClass)
+  if (!parent) return
+
+
+  const val = parent.getAttribute('hasactive')
+  if (val === 'true') {
+    parent.setAttribute('hasactive', false)
+  } else {
+    parent.setAttribute('hasactive', true)
+  }
 }
 
 /**
  * Инициализирует логику "активации" элементов '.link'. При наведении на любой из '.link' вызывается toggleActive, добавляющий под заданным элементом плоский индикатор.
  */
-function linksInit() {
-  const linkSelector = '.header .link'
+;(function init() {
+  const selector_click = '.activable-click'
+  const selector_hover = '.activable-hover'
 
-  const headerLinks = document.querySelectorAll(linkSelector)
-  for (let link of headerLinks) {
-    link.addEventListener('mouseover', () => {
-      toggleActive(link)
-    })
-    link.addEventListener('mouseleave', () => {
-      toggleActive(link)
+  let objects_click = document.querySelectorAll(selector_click)
+  let objects_hover = document.querySelectorAll(selector_hover)
+
+  for (let obj of objects_click) {
+    obj.addEventListener('click', () => {
+      toggleActive(obj)
     })
   }
-}
 
-linksInit()
-
-/*
-function init() {
-    //Можно сделать общую функцию. Мб потом нужно будет накладывать active на другие элементы
-    const selectors = [
-        '.header .link',
-    '.something else',
-    '#another one selector',
-]
-for (let selector of selectors) {
-    const selectorElements = document.querySelectorAll(selector)
-    for (let element of selectorElements) {
-        element.addEventListener('mouseover', () => {
-            toggleActive(element)
-        })
-        element.addEventListener('mouseleave', () => {
-            toggleActive(element)
-        })
-    }
-}
-}
-*/
+  for (let obj of objects_hover) {
+    obj.addEventListener('mouseover', () => {
+      toggleActive(obj)
+    })
+    obj.addEventListener('mouseleave', () => {
+      toggleActive(obj)
+    })
+  }
+})()

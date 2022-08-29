@@ -63,3 +63,58 @@
 .home .image img {
   width: 100%;
 }
+
+
+/*ADAPTATION*/
+
+@media (max-aspect-ratio: 1426/793) {
+  .home_background svg{
+    height: 100%;
+  }
+}
+@media (max-width: 1600px){
+  .home_background svg{
+    height: 100%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .home{
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
+  .home .text{
+    display: block;
+    margin: 0 auto;
+
+    width: 100%;
+  
+    text-align: center;
+  }
+  .home .text .button{
+    margin: 0 auto;
+  }
+
+
+  .home .image{
+    display: block;
+    float: none;
+
+    width: 60%;
+
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .home .text{
+    width: 80%;
+  }
+}
+
+@media (max-width: 700px) {
+  .home .text{
+    width: 90%
+  }
+}

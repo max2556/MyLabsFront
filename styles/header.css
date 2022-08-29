@@ -38,6 +38,7 @@
   margin-bottom: 10px; /*<---- поменяется высота хедера и всему пиздец*/
   height: 80%;
   /*margin-left: 15%;*/
+  z-index: 1;
 }
 
 .header .icons {
@@ -54,23 +55,32 @@
   display: inline-block;
   margin-right: 20px;
   height: 100%;
+  border-radius: 100%;
 
   transition: all 0.15s;
 }
+.header .icons svg {
+  height: 100%;
+}
 
 .header .icons .icon:hover {
-  transform: translateY(-10px) scale(1.1);
-  box-shadow: 0px 0px 10px 0px #000000;
-  border-radius: 100%;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0px 0px 3px 0px #000000;
+}
+.header .icons .icon svg {
+  fill: #060137;
+  transition: 0.15s all;
+}
+.header .icons .icon.tg:hover svg path {
+  fill: #0088cc;
+}
+.header .icons .icon.vk:hover svg path {
+  fill: #0077ff;
 }
 
-.header .icons .icon:active{
+.header .icons .icon:active {
   transform: scale(1.1);
   transition: 0.05s;
-}
-
-.header .icons img {
-  height: 100%;
 }
 
 .header .icons .icon:last-child {
@@ -88,10 +98,11 @@
 
 .header .link {
   display: inline-block;
-
-  font-size: 1.4rem;
-
   margin-left: 20px;
+}
+
+.header .link span{
+  font-size: 1.4rem !important;
 }
 
 .header .link:first-child {
@@ -111,6 +122,11 @@
 
 .header .link {
   position: relative;
+}
+
+.header .link.active span{
+  transform: translateY(-10px);
+  color: #2ba84a;
 }
 
 .header .link span {
@@ -146,4 +162,126 @@
   opacity: 0.5;
   left: 0;
   right: 0;
+}
+
+.header .hamburger-menu svg {
+  width: 100%;
+  height: 100%;
+}
+
+.header .hamburger-menu {
+  --hamburger-size: 40px;
+  position: absolute;
+  right: 0;
+
+  cursor: pointer;
+
+  width: var(--hamburger-size);
+  height: var(--hamburger-size);
+
+  transition: 0.2s all;
+
+  z-index: 1;
+}
+
+.header .hamburger-menu:hover {
+  transform: scale(1.2);
+}
+
+/*media*/
+
+@media (max-width: 1100px) {
+  .header .link {
+    margin-left: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header .hamburger-menu{
+    display: block;
+  }
+  .header .links::before {
+    content: '';
+    display: contents;
+
+    cursor: auto;
+
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    z-index: -1;
+
+    width: 200vw;
+    height: 100vh;
+
+    transition: 0.25s;
+    background: rgba(255, 255, 255, 0);
+  }
+  .header .links.active::before {
+    display: block;
+    width: 200vw;
+  }
+
+  .header .links {
+    display: flex;
+    box-sizing: border-box;
+
+    position: fixed;
+    right: 0px;
+    top: 90px;
+    transform: translateX(101%);
+
+    width: 300px;
+    height: calc(100vh - 90px);
+
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+    box-shadow: 0px 0px 2px 0px #060137;
+
+    background: white;
+
+    transition: 0.25s;
+  }
+
+  .header .link {
+    text-align: center;
+    font-size: 40px;
+
+    width: 100%;
+
+    margin: 0;
+    margin-bottom: 60px;
+  }
+
+  .header .link:first-of-type {
+    margin-top: 20px !important;
+  }
+
+  .header .link::after{
+    display: none;
+  }
+
+  .header .hamburger-menu.active + nav > ul.links {
+    transform: none;
+  }
+
+  .header .hamburger-menu.active + nav > ul.links::before {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .header .icons {
+    left: calc(
+      100% - (40px + 20px)
+    ); /*40px == --hamburger-size; 20px -> some margin*/
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 700px) {
+  .header .links {
+    width: 100%;
+  }
 }
