@@ -38,10 +38,6 @@
   );
 }
 
-.about-us .structure {
-  width: 70%;
-}
-
 .about-us .video_holder * {
   width: 100%;
   display: block;

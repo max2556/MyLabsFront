@@ -180,14 +180,15 @@ p {
 
 
 @media (max-width: 1025px) {
-  .structure{
-    width: 90% !important;
-    margin: 50px auto;
+  .structure {
+    width: auto;
+    margin-right: 25px;
+    margin-left: 25px;
   }
 }
 @media (max-width: 500px) {
   .structure{
-    width: 96% !important;
+    /*width: 96% !important;*/
   }
 }
 

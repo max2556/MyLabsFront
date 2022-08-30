@@ -25,7 +25,8 @@
 
 .header .structure {
   height: 100%;
-  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .header .content {
@@ -99,6 +100,9 @@
 .header .link {
   display: inline-block;
   margin-left: 20px;
+
+  width: min-content;
+  white-space: nowrap;
 }
 
 .header .link span {
@@ -163,6 +167,7 @@
   border-radius: 250px; /*Просто большое число, чтобы были скругленные края*/
 }
 
+.header .active:after,
 .header .link:hover:after {
   opacity: 0.5;
   left: 0;
@@ -202,6 +207,9 @@
 }
 
 @media (max-width: 1024px) {
+  .header ul {
+    padding: 20px 20px;
+  }
   .header .hamburger-menu {
     display: block;
   }
@@ -231,6 +239,7 @@
     display: flex;
     box-sizing: border-box;
 
+
     position: fixed;
     right: 0px;
     top: 90px;
@@ -241,10 +250,10 @@
 
     flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
-    align-items: center;
+    justify-items: center;
+    align-items: flex-end;
 
-    box-shadow: 0px 0px 2px 0px #060137;
+    box-shadow: 0px 4px 8px 0px rgb(34 60 80 / 20%);
 
     background: white;
 
@@ -252,13 +261,11 @@
   }
 
   .header .link {
-    text-align: center;
+    text-align: right;
     font-size: 40px;
-
-    width: 100%;
-
+    
     margin: 0;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   .header .link:first-of-type {
@@ -266,7 +273,7 @@
   }
 
   .header .link::after {
-    display: none;
+    /*display: none;*/
   }
 
   .header .hamburger-menu.active + nav > ul.links {
@@ -287,7 +294,7 @@
 
 @media (max-width: 700px) {
   .header .links {
-    width: 100%;
+    width: 70%;
   }
 
   .header .link.active:after {
