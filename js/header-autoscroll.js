@@ -117,18 +117,14 @@ function animateScroll(value) {
 
   const go = () => {
     current += deltaY
-    window.scroll({
-      top: current,
-      left: 0,
-      behavior: 'smooth',
-    })
+    window.scrollTo(window.scrollX, current)
     if (
       (direction === 'down' && current < value) ||
       (direction === 'up' && current > value)
     )
-      HEADER_STATE.scrollTimeoutID = setTimeout(go, baseDeltaTime)
+      HEADER_STATE.scrollTimeoutID = window.requestAnimationFrame(go)
   }
-  go()
+  HEADER_STATE.scrollTimeoutID = window.requestAnimationFrame(go)
 }
 
 function checkScroll() {
