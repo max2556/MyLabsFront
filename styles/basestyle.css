@@ -179,16 +179,17 @@ p {
 }
 
 
+@media (min-width: 2000px) {
+  .structure {
+    width: 1300px;
+  }
+}
+
 @media (max-width: 1025px) {
   .structure {
     width: auto;
     margin-right: 25px;
     margin-left: 25px;
-  }
-}
-@media (max-width: 500px) {
-  .structure{
-    /*width: 96% !important;*/
   }
 }
 
