@@ -1,13 +1,13 @@
 .footer {
-  background-color: #060137;
-
   color: #ffffff;
+  
+  background-color: #060137;
+  background-image: url('../assets/footerbg.svg');
+  background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
 }
 
-.footer .background {
-  height: 100%;
-  z-index: 0;
-}
 
 .footer .content {
   position: relative;
@@ -56,4 +56,21 @@
 
 .footer .blocks .eula a {
   color: #2ba84a;
+}
+
+
+
+@media (max-width: 1400px) {
+  .footer .blocks .block * {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 1025px) {
+  .footer .content {
+    position: relative;
+    z-index: 1;
+  
+    margin: 110px 25px;
+  }
 }

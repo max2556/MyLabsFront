@@ -8,7 +8,7 @@ const SEPARATOR_STATE = {
   //средний - 20
   //десктоп - 30
   lines_count: (() => {
-    const small_screen = 15
+    const small_screen = 10
     const medium_screen = 20
     const large_screen = 30
 

@@ -3,8 +3,9 @@ const TYPES = {
   skip: 'skip',
 }
 const CONFIG = {
-  skip: {
-    once_count: 2,
+  screens: {
+    middleScreen: 1575,
+    lowScreen: 800,
   },
   autoscrollInterval: 5000,
 }
@@ -15,6 +16,9 @@ const STATE = {
   last_clicked: null,
   buttons: null,
   autoscrollID: null,
+  slides: 0,
+  prevScreen: 0,
+  once_count: getOnceCount(),
 }
 
 //const controlButtons = document.querySelectorAll('.scroll-interface .move')
@@ -28,8 +32,8 @@ function skip(num) {
   slider.setAttribute('transform', movement)
 }
 
-init()
-function init() {
+buildSlider()
+function buildSlider() {
   switch (CURRENT_TYPE) {
     case TYPES.skip:
       prepareSkip()
@@ -43,16 +47,20 @@ function init() {
   prepareArrowButtons()
   let autoscrollID = setInterval(autoscroll, CONFIG.autoscrollInterval)
   STATE.autoscrollID = autoscrollID
+
+  window.addEventListener('resize', resizeEvent)
 }
 
 /**
  * Подготавливает слайдер в режиме переключения фиксированного количества блоков(пропускает 2 и более)
  */
 function prepareSkip() {
-  const slides = Math.ceil(blocks.length / CONFIG.skip.once_count)
   const callback = skip
 
-  const buttons = generateButtons(slides)
+  const slides = Math.ceil(blocks.length / STATE.once_count)
+  STATE.slides = slides
+
+  const buttons = generateButtons(blocks.length)
 
   for (let i = 0; i < buttons.length; i++) {
     const button = buttons[i]
@@ -67,6 +75,7 @@ function prepareSkip() {
       //Если нажатие вызвано пользователем - паузим автоскролл
       if (event.isTrusted) pauseAutoscroll()
     })
+    if (i >= slides) button.style.display = 'none'
   }
 
   STATE.buttons = buttons
@@ -81,6 +90,7 @@ function prepareSkip() {
 function generateButtons(count) {
   const buttonsParentSelector = '.slider-control .buttons'
   const parent = document.querySelector(buttonsParentSelector)
+  clearChildren(parent)
   for (let i = 0; i < count; i++) {
     let newButton = document.createElement('button')
     newButton.classList.add('move')
@@ -92,6 +102,13 @@ function generateButtons(count) {
   STATE.last_clicked = parent.children[0]
   parent.children[0].classList.add('active')
   return parent.children
+}
+
+function clearChildren(elem) {
+  while (elem.children.length > 0) {
+    let child = elem.children[0]
+    child.remove()
+  }
 }
 
 /**
@@ -112,15 +129,15 @@ function prepareArrowButtons() {
 
   leftButton.addEventListener('click', () => {
     let currentId = STATE.last_clicked.id
-    let newId = (STATE.buttons.length + parseInt(currentId) - 1) % STATE.buttons.length
+    let newId = (STATE.slides + parseInt(currentId) - 1) % STATE.slides
     STATE.buttons[newId].click()
 
-    pauseAutoscroll();
+    pauseAutoscroll()
   })
 
   rightButton.addEventListener('click', () => {
     let currentId = STATE.last_clicked.id
-    let newId = (STATE.buttons.length + parseInt(currentId) + 1) % STATE.buttons.length
+    let newId = (STATE.slides + parseInt(currentId) + 1) % STATE.slides
     STATE.buttons[newId].click()
 
     pauseAutoscroll()
@@ -133,7 +150,7 @@ function prepareArrowButtons() {
 function autoscroll() {
   let currentId = STATE.last_clicked.id
   let newId = parseInt(currentId) + 1
-  if (newId >= STATE.buttons.length) newId = 0
+  if (newId >= STATE.slides) newId = 0
   STATE.buttons[newId].click()
 }
 
@@ -145,8 +162,40 @@ function autoscroll() {
 function pauseAutoscroll() {
   if (!STATE.autoscrollID) return
 
+  clearInterval(STATE.autoscrollID)
   setTimeout(() => {
     clearInterval(STATE.autoscrollID)
     STATE.autoscrollID = setInterval(autoscroll, CONFIG.autoscrollInterval)
   }, CONFIG.autoscrollInterval)
+}
+
+function resizeEvent() {
+  if (!isChangeScreen()) return
+  pauseAutoscroll()
+  STATE.once_count = getOnceCount()
+  prepareSkip()
+
+  STATE.prevScreen = window.innerWidth
+}
+
+function getOnceCount() {
+  if (window.innerWidth < CONFIG.screens.lowScreen) return 1
+  if (window.innerWidth < CONFIG.screens.middleScreen) return 2
+  return 3
+}
+
+function isChangeScreen() {
+  const current = window.innerWidth
+  const prev = STATE.prevScreen
+
+  const middleDeltaCurrent = current - CONFIG.screens.middleScreen
+  const middleDeltaPrev = prev - CONFIG.screens.middleScreen
+
+  const lowDeltaCurrent = current - CONFIG.screens.lowScreen
+  const lowDeltaPrev = prev - CONFIG.screens.lowScreen
+
+  return (
+    middleDeltaCurrent * middleDeltaPrev < 0 ||
+    lowDeltaCurrent * lowDeltaPrev < 0
+  )
 }

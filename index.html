@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/favicon.svg" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.svg" type="image/x-icon" />
     <title>MyLabs</title>
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/reset_override.css" />
@@ -56,8 +56,8 @@
 
         <nav>
           <ul class="links font-medium">
-            <li data-scrollTo="home" class="link"><span>home page</span></li>
-            <li data-scrollTo="about_us" class="link"><span>about us</span></li>
+            <li data-scrollTo="home_wrapper" class="link"><span>home page</span></li>
+            <li data-scrollTo="about-us" class="link"><span>about us</span></li>
             <li data-scrollTo="our_skills" class="link">
               <span>our skills</span>
             </li>
@@ -96,7 +96,7 @@
     </header>
 
     <main>
-      <div data-move="home" class="home_wrapper relative">
+      <div class="home_wrapper relative">
         <div class="home_background">
           <!--                      <svg width="1426" height="793" viewBox="0 0 1426 793" fill="none" xmlns="http://www.w3.org/2000/svg">-->
           <svg
@@ -1663,7 +1663,7 @@
           </div>
         </section>
       </div>
-      <div data-move="about_us" class="about-us relative overflow_hidden">
+      <div class="about-us relative overflow_hidden">
         <!-- <img class="background" src="./assets/hexagon.svg" alt="" />-->
         <div class="bg overflow_hidden">
           <svg
@@ -1987,7 +1987,7 @@
         </section>
       </div>
 
-      <div data-move="review" class="lastworks relative overflow_hidden">
+      <div class="review lastworks relative overflow_hidden">
         <img class="background" src="./assets/lastworks.svg" alt="" srcset="" />
 
         <section class="content structure">
@@ -2161,10 +2161,7 @@
         </section>
       </div>
 
-      <div
-        data-move="contact_us"
-        class="contact-section relative overflow_hidden"
-      >
+      <div class="contact_us contact-section relative overflow_hidden">
         <img
           class="background"
           src="./assets/contactus-background.svg"
@@ -2191,7 +2188,6 @@
     </main>
 
     <footer class="footer relative overflow_hidden">
-      <img class="background" src="./assets/footerbg.svg" alt="" />
       <section class="content structure">
         <div class="title font-semibold fs_28px">
           «MyLabs» — secure online service with trusted experts for your labs.

@@ -13,7 +13,6 @@ const TARGET_ELEMENTS = {}
 const LINKS_DICT = {}
 //Автовызывающаяся функция init()
 ;(function init() {
-  getTargetElements()
   addActive(links[0])
   initLinks()
 
@@ -22,34 +21,6 @@ const LINKS_DICT = {}
     checkScroll()
   })
 })()
-
-function getTargetElements() {
-  const blocksDiv = document.querySelector('main').children
-
-  for (let block of blocksDiv) {
-    if (!block.dataset) {
-      console.log(
-        `Warn! Block ${block.localName}.${block.className.replaceAll(
-          ' ',
-          '.',
-        )} does not have 'data-' attributes!`,
-      )
-      continue
-    }
-    if (!block.dataset.move) {
-      console.log(
-        `Warn! Block ${block.localName}.${block.className.replaceAll(
-          ' ',
-          '.',
-        )} does not have 'data-move' attribute!`,
-      )
-      continue
-    }
-
-    const moveAttr = block.dataset.move
-    TARGET_ELEMENTS[moveAttr] = block
-  }
-}
 
 /**
  * Активирует элемент el
@@ -78,16 +49,14 @@ function removeActive(el) {
 function initLinks() {
   for (let link of links) {
     LINKS_DICT[link.dataset.scrollto] = link
+    TARGET_ELEMENTS[link.dataset.scrollto] = document.querySelector(
+      '.' + link.dataset.scrollto,
+    )
     link.addEventListener('click', () => {
       if (HEADER_STATE.last_active) removeActive(HEADER_STATE.last_active)
       addActive(link)
-      let targetAttr = link.dataset.scrollto
-
-      let targetEl = TARGET_ELEMENTS[targetAttr]
-      if (!targetEl) {
-        console.warn(`Can not go to ${targetAttr} block!`)
-        return
-      }
+      let targetEl = TARGET_ELEMENTS[link.dataset.scrollto]
+      if (!targetEl) return
 
       let topValue = targetEl.offsetTop
       animateScroll(topValue)
@@ -130,6 +99,7 @@ function animateScroll(value) {
 function checkScroll() {
   let target = null
   for (let block in TARGET_ELEMENTS) {
+    if (!block || !TARGET_ELEMENTS[block]) continue
     let visibility = isVisible(TARGET_ELEMENTS[block])
     if (!visibility) continue
     target = block

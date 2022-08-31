@@ -201,6 +201,9 @@
 /*media*/
 
 @media (max-width: 1024px) {
+  .header {
+    height: 70px;
+  }
   .header ul {
     padding: 20px 20px;
   }
@@ -233,14 +236,13 @@
     display: flex;
     box-sizing: border-box;
 
-
     position: fixed;
     right: 0px;
-    top: 90px;
+    top: 70px;
     transform: translateX(101%);
 
     width: 300px;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 70px);
 
     flex-wrap: wrap;
     flex-direction: column;
@@ -275,22 +277,43 @@
 
   .header .icons {
     left: calc(
-      100% - (40px + 20px)
+      100% - (40px + 10px)
     ); /*40px == --hamburger-size; 20px -> some margin*/
     transform: translateX(-100%);
+    height: 50%;
+  }
+  .header .icons .icon{
+    margin-right: 15px;
   }
 }
 
-@media (max-width: 400px) {
-  .header .links {
-    width: 70%;
-  }
-}
 @media (max-width: 700px) {
+  .header .hamburger-menu {
+    --hamburger-size: 35px;
+  }
 
   .header .link.active:after {
     opacity: 0.5;
     left: 0;
     right: 0;
+  }
+}
+@media (max-width: 500px) {
+  .header {
+    height: 50px;
+  }
+  .header .links {
+    width: 70%;
+    top: 50px;
+    height: calc(100vh - 50px);
+  }
+  .header .icons {
+    left: calc( 100% - (40px) );
+  }
+  .header .icons .icon{
+    margin-right: 10px;
+  }
+  .header .hamburger-menu {
+    --hamburger-size: 30px;
   }
 }

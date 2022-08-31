@@ -205,7 +205,7 @@
   /*top: -42px;*/
   /*z-index: -1;*/
   margin: -2px 9px -15px;
-  height: 138px;
+  height: 133px;
   position: relative;
   overflow: hidden;
 }
@@ -306,6 +306,9 @@
 }
 
 @media (max-width: 1025px) {
+  .how_it_works .step .step_circle {
+    width: 20px;
+  }
   .about-us .structure {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -339,6 +342,10 @@
     align-items: center;
   }
 
+  .about-us .how_it_works .step_line{
+    height: 100px;
+  }
+
   .about-us .info .how_it_works {
     width: 80%;
 
@@ -348,8 +355,12 @@
     box-shadow: none;
   }
 
+  .about-us .info .how_it_works .steps{
+    width: 60%;
+  }
+
   .about-us .how_it_works .step_line {
-    margin: -2px 4px -15px;
+    margin: -6px 4px -15px;
   }
   .about-us .how_it_works .step_line .large-screen {
     display: none;
@@ -369,6 +380,10 @@
     position: relative;
   }
 
+  .about-us .info .FAQ .block .question{
+    cursor: pointer;
+  }
+
   .about-us .info .FAQ .block::after {
     content: '';
     height: 1px;
@@ -382,7 +397,7 @@
   }
   .about-us .info .FAQ .block[hasactive='true']::after {
     height: 80px;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
   }
 
   .about-us .info .FAQ .block .answer {
@@ -408,17 +423,28 @@
   .about-us .info .FAQ {
     padding: 10px 15px;
   }
+  
+  
 }
 
 @media (max-width: 500px) {
+  .about-us .info .how_it_works .steps{
+    width: 90%;
+  }
+  .about-us .how_it_works .step_line {
+    height: 80px;
+    margin: -6px 5.5px -15px;
+  }
+  .how_it_works .step .step_circle {
+    width: 20px;
+  }
   .about-us .how_it_works .steps .step_line svg {
     transform: translateY(-50%) scaleY(1.5);
   }
   .about-us .info .FAQ {
     padding: 10px;
   }
-  .about-us .info .FAQ .block span{
+  .about-us .info .FAQ .block span {
     font-size: 16px !important;
   }
-
 }

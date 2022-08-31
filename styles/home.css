@@ -57,64 +57,76 @@
 */
 .home .image {
   width: 500px;
-
 }
 
 .home .image img {
   width: 100%;
 }
 
-
 /*ADAPTATION*/
 
-@media (max-width: 1600px){
-  .home_background svg{
+@media (max-width: 1600px) {
+  .home_background svg {
     height: 100%;
   }
 }
-@media (min-width: 1600px){
-  .home_background svg{
+@media (min-width: 1600px) {
+  .home_background svg {
     width: 100%;
   }
 }
 
 @media (max-width: 1400px) {
-  .home{
+  .home .image {
+    width: 400px;
+  }
+  .home p {
+    font-size: 24px !important;
+  }
+  .home a {
+    font-size: 24px !important;
+  }
+  .home span {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .home .image {
+    width: 350px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .home {
     margin-top: 150px;
     margin-bottom: 150px;
   }
-  .home .text{
+  .home .text {
     display: block;
     margin: 0 auto;
 
-    width: 100%;
-  
+    width: 80%;
+
     text-align: center;
   }
-  .home .text .button{
+  .home .text .button {
     margin: 0 auto;
   }
 
-
-  .home .image{
+  .home .image {
     display: block;
     float: none;
 
-    width: 60%;
+    width: 50%;
 
     margin: 0 auto;
     margin-top: 50px;
   }
 }
 
-@media (max-width: 1025px) {
-  .home .text{
-    width: 80%;
-  }
-}
-
 @media (max-width: 700px) {
-  .home .text{
-    width: 90%
+  .home .text {
+    width: 90%;
   }
 }
