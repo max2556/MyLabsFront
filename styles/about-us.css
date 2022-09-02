@@ -25,6 +25,80 @@
   height: 100%;
 }
 
+.about-us .bg .hexagons g path {
+  animation: hexagons_paths 2.5s infinite ease-in-out;
+}
+
+.about-us .bg .hexagons g:nth-child(2n-1) path {
+  animation-direction: alternate-reverse;
+}
+.about-us .bg .hexagons g:nth-child(2n) path {
+  animation-direction: alternate;
+}
+
+@keyframes hexagons_paths {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.about-us .bg .hexagons g circle {
+  animation: hexagons_circles 2.5s infinite ease-in-out;
+}
+
+.about-us .bg .hexagons g:nth-child(2n-1) circle {
+  animation-direction: alternate-reverse;
+}
+.about-us .bg .hexagons g:nth-child(2n) circle {
+  animation-direction: alternate;
+}
+
+@keyframes hexagons_circles {
+  0% {
+    r: 5;
+    opacity: 0;
+  }
+
+  60% {
+    r: 14;
+    opacity: 0.17;
+  }
+
+  100% {
+    r: 14;
+    opacity: 0.17;
+  }
+}
+
+.about-us .bg svg .blue_hexagons {
+  animation: blue_hexagons 5s ease-in-out alternate infinite;
+}
+
+
+@keyframes blue_hexagons {
+  0% {
+    transform: translateY(0);
+    stroke-opacity: 0.17;
+  }
+
+  50% {
+    stroke-opacity: 0.26;
+  }
+
+  100% {
+    transform: translateY(-50px);
+    stroke-opacity: 0.2;
+  }
+}
+
 .about-us .bg_mask {
   position: absolute;
   z-index: -1;
