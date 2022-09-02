@@ -12,7 +12,7 @@
   background-color: #060137;
 }
 
-.separator .background{
+.separator .background {
   z-index: 0;
 }
 
@@ -43,4 +43,10 @@
 .separator .block p {
   text-align: center;
   line-height: 1;
+}
+
+@media (max-width: 1025px) {
+  .separator .content {
+    width: auto;
+  }
 }
