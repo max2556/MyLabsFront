@@ -10,7 +10,7 @@ const CONFIG = {
   autoscrollInterval: 5000,
 }
 
-const CURRENT_TYPE = TYPES.skip
+const CURRENT_TYPE = TYPES.step
 
 const STATE = {
   last_clicked: null,
@@ -25,6 +25,13 @@ const STATE = {
 const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
 const slider = document.querySelector('.scroll-plate .blocks')
 
+function one_slide(num) {
+  const deltaX = -100 / STATE.once_count
+  const movement = `translate(${num * deltaX}%,0)`
+  slider.style.transform = movement
+  slider.setAttribute('transform', movement)
+}
+
 function skip(num) {
   const deltaX = -100
   const movement = `translate(${num * deltaX}%,0)`
@@ -34,30 +41,32 @@ function skip(num) {
 
 buildSlider()
 function buildSlider() {
-  switch (CURRENT_TYPE) {
-    case TYPES.skip:
-      prepareSkip()
-      break
-    case TYPES.step:
-    default:
-      //controlFunc = step
-      break
-  }
-
+  buildMainButtons()
   prepareArrowButtons()
   let autoscrollID = setInterval(autoscroll, CONFIG.autoscrollInterval)
   STATE.autoscrollID = autoscrollID
 
   window.addEventListener('resize', resizeEvent)
 }
+function buildMainButtons() {
+  let slides
+  switch (CURRENT_TYPE) {
+    case TYPES.skip:
+      slides = Math.ceil(blocks.length / STATE.once_count)
+      prepare(skip, slides)
+      break
+    case TYPES.step:
+    default:
+      slides = blocks.length - (STATE.once_count - 1)
+      prepare(one_slide, slides)
+      break
+  }
+}
 
 /**
  * Подготавливает слайдер в режиме переключения фиксированного количества блоков(пропускает 2 и более)
  */
-function prepareSkip() {
-  const callback = skip
-
-  const slides = Math.ceil(blocks.length / STATE.once_count)
+function prepare(callback, slides) {
   STATE.slides = slides
 
   const buttons = generateButtons(blocks.length)
@@ -173,8 +182,10 @@ function resizeEvent() {
   if (!isChangeScreen()) return
   pauseAutoscroll()
   STATE.once_count = getOnceCount()
-  prepareSkip()
+  buildMainButtons()
 
+
+  STATE.buttons[0].click();
   STATE.prevScreen = window.innerWidth
 }
 
