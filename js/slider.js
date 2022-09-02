@@ -9,16 +9,16 @@ const CONFIG = {
   },
   autoscrollInterval: 5000,
 }
-
 const CURRENT_TYPE = TYPES.step
-
 const STATE = {
   last_clicked: null,
   buttons: null,
+  arrows: null,
   autoscrollID: null,
   slides: 0,
   prevScreen: 0,
   once_count: getOnceCount(),
+  prevTouch: 0,
 }
 
 //const controlButtons = document.querySelectorAll('.scroll-interface .move')
@@ -47,6 +47,9 @@ function buildSlider() {
   STATE.autoscrollID = autoscrollID
 
   window.addEventListener('resize', resizeEvent)
+  window.addEventListener('touchstart', touchEventStart)
+  window.addEventListener('touchend', touchEventEnd)
+  window.addEventListener('touchmove', touchEventMove)
 }
 function buildMainButtons() {
   let slides
@@ -151,6 +154,8 @@ function prepareArrowButtons() {
 
     pauseAutoscroll()
   })
+
+  STATE.arrows = { left: leftButton, right: rightButton }
 }
 
 /**
@@ -184,8 +189,7 @@ function resizeEvent() {
   STATE.once_count = getOnceCount()
   buildMainButtons()
 
-
-  STATE.buttons[0].click();
+  STATE.buttons[0].click()
   STATE.prevScreen = window.innerWidth
 }
 
@@ -209,4 +213,24 @@ function isChangeScreen() {
     middleDeltaCurrent * middleDeltaPrev < 0 ||
     lowDeltaCurrent * lowDeltaPrev < 0
   )
+}
+
+function touchEventStart(e) {
+  pauseAutoscroll()
+
+  STATE.prevTouch = { x: e.touches[0].clientX, y: e.touches[0].clientY }
+}
+
+function touchEventMove() {
+  //pauseAutoscroll()
+}
+
+function touchEventEnd(e) {
+  const deltaX = STATE.prevTouch.x - e.changedTouches[0].clientX
+  const isRight = deltaX > 0
+  const offset = 20 //px
+
+  if (Math.abs(deltaX) < offset) return
+  if (isRight) STATE.arrows.right.click()
+  else STATE.arrows.left.click()
 }
