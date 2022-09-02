@@ -78,6 +78,26 @@
   }
 }
 
+.about-us .bg svg .blue_hexagons {
+  animation: blue_hexagons 5s ease-in-out alternate infinite;
+}
+
+
+@keyframes blue_hexagons {
+  0% {
+    transform: translateY(0);
+    stroke-opacity: 0.17;
+  }
+
+  50% {
+    stroke-opacity: 0.26;
+  }
+
+  100% {
+    transform: translateY(-50px);
+    stroke-opacity: 0.2;
+  }
+}
 
 .about-us .bg_mask {
   position: absolute;
