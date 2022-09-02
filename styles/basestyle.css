@@ -21,6 +21,8 @@ body {
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
+
+  color: #060137;
 }
 
 /*
@@ -34,7 +36,7 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   margin: 150px auto;
 }
 
-.flex-row{
+.flex-row {
   display: flex;
   flex-direction: row;
 }
@@ -65,21 +67,42 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 
   white-space: nowrap;
   width: min-content;
-  height: max-content;
 
   font-size: 40px;
 
   border-radius: 1rem;
 
+  outline: none;
   background-color: #2ba84a;
   text-decoration: none;
   text-align: center;
   color: #ffffff;
+
+  transition: all 0.15s;
+}
+
+.button:hover{
+  background-color: #ffffff !important;
+  color: #2ba84a;
+  outline: 5px solid #2ba84a;
+}
+.button:active{
+  background-color: #ffffff !important;
+  color: #2ba84a;
+  outline: 1px solid transparent  !important;
+  transition: outline 0.08s;
 }
 
 /*
 font styles
 */
+h1 {
+  font-size: 72px;
+}
+
+p {
+  font-size: 40px;
+}
 .font-semibold {
   font-weight: 600;
 }
@@ -125,17 +148,52 @@ font styles
   -o-transition: none !important;
 }
 
-
-
-.fs_64px{
+.fs_64px {
   font-size: 64px;
 }
-.fs_48px{
+.fs_48px {
   font-size: 48px;
 }
-.fs_32px{
+.fs_32px {
   font-size: 32px;
 }
-.fs_24px{
+
+.fs_28px{
+  font-size: 28px;
+}
+.fs_24px {
   font-size: 24px;
+}
+.fs_20px {
+  font-size: 20px;
+}
+
+.green{
+  color: #2ba84a;
+}
+
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+@media (min-width: 2000px) {
+  .structure {
+    width: 1300px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .structure {
+    width: auto;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+}
+
+.blured{
+  filter: blur(2px);
 }

@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.svg" type="image/x-icon" />
     <title>MyLabs</title>
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/reset_override.css" />
 
     <link rel="stylesheet" href="./styles/basestyle.css" />
+    <link rel="stylesheet" href="./styles/adaptation-base.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/home.css" />
     <link rel="stylesheet" href="./styles/contact-us.css" />
@@ -16,22 +18,79 @@
     <link rel="stylesheet" href="./styles/about-us.css" />
     <link rel="stylesheet" href="./styles/ourskills.css" />
     <link rel="stylesheet" href="./styles/next-element.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/lastworks.css" />
 
-    <script src="js/homeBackground.js" defer></script>
+    <script src="./js/homeBackground.js" defer></script>
+    <script src="./js/activable.js" defer></script>
+    <script src="./js/slider.js" defer></script>
+    <script src="./js/header-autoscroll.js" defer></script>
+    <script src="./js/adaptation.js" defer></script>
+    <script src="./js/separatorBackground.js" defer></script>
   </head>
 
   <body>
-    <header class="header">
-      <div class="flex-row structure content">
+    <header class="header clearfix">
+      <div class="flex-row structure content relative">
         <img class="logo" src="./assets/logo.svg" alt="Sorry :(" srcset="" />
-        <div class="links">
-          <ul class="font-medium">
-            <li class="link">home page</li>
-            <li class="link">contact us</li>
-            <li class="link">about us</li>
-            <li class="link">our skills</li>
-            <li class="link">review</li>
+        <div class="hamburger-menu mid-screen">
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.2188 4H0.78125C0.349766 4 0 4.4477 0 5C0 5.5523 0.349766 6 0.78125 6H19.2188C19.6502 6 20 5.5523 20 5C20 4.4477 19.6502 4 19.2188 4Z"
+              fill="#060137"
+            />
+            <path
+              d="M19.2188 9.03125H0.78125C0.349766 9.03125 0 9.47895 0 10.0312C0 10.5835 0.349766 11.0312 0.78125 11.0312H19.2188C19.6502 11.0312 20 10.5835 20 10.0312C20 9.47895 19.6502 9.03125 19.2188 9.03125Z"
+              fill="#060137"
+            />
+            <path
+              d="M19.2188 14.0312H0.78125C0.349766 14.0312 0 14.479 0 15.0312C0 15.5835 0.349766 16.0312 0.78125 16.0312H19.2188C19.6502 16.0312 20 15.5835 20 15.0312C20 14.479 19.6502 14.0312 19.2188 14.0312Z"
+              fill="#060137"
+            />
+          </svg>
+        </div>
+
+        <nav>
+          <ul class="links font-medium">
+            <li data-scrollTo="home_wrapper" class="link"><span>home page</span></li>
+            <li data-scrollTo="about-us" class="link"><span>about us</span></li>
+            <li data-scrollTo="our_skills" class="link">
+              <span>our skills</span>
+            </li>
+            <li data-scrollTo="review" class="link"><span>review</span></li>
+            <li data-scrollTo="contact_us" class="link">
+              <span>contact us</span>
+            </li>
           </ul>
+        </nav>
+
+        <div class="icons">
+          <a class="icon tg" href="#">
+            <svg
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M30 0C46.5685 0 60 13.4315 60 30C60 46.5685 46.5685 60 30 60C13.4315 60 0 46.5685 0 30C0 13.4315 13.4315 0 30 0ZM43.3246 18C42.1817 18.0203 40.4282 18.6222 31.9894 22.0875C29.0339 23.3012 23.1269 25.8131 14.2686 29.6234C12.8301 30.1882 12.0766 30.7407 12.008 31.2809C11.8763 32.318 13.3887 32.6409 15.2917 33.2516C16.8432 33.7495 18.9302 34.332 20.0152 34.3552C20.9994 34.3762 22.0978 33.9756 23.3105 33.1535C31.5872 27.6376 35.8596 24.8497 36.1278 24.7896C36.3171 24.7472 36.5793 24.6939 36.757 24.8498C36.9347 25.0057 36.9172 25.3009 36.8984 25.3802C36.7479 26.0135 28.9729 32.9954 28.5255 33.4542L28.3109 33.6699C26.6622 35.2983 24.9959 36.3615 27.871 38.232C30.467 39.921 31.9779 40.9984 34.6523 42.7292C36.3614 43.8353 37.7014 45.1469 39.466 44.9866C40.278 44.9128 41.1167 44.1591 41.5427 41.9109C42.5493 36.5979 44.528 25.0863 44.9853 20.3426C45.0254 19.927 44.975 19.3951 44.9345 19.1616C44.894 18.9281 44.8095 18.5955 44.5021 18.3492C44.138 18.0575 43.5759 17.996 43.3246 18Z"
+              />
+            </svg>
+          </a>
+          <a class="icon vk" href="#">
+            <svg
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M30 0C13.432 0 0 13.4314 0 30C0 46.5686 13.432 60 30 60C46.568 60 60 46.5686 60 30C60 13.4314 46.568 0 30 0ZM45.2176 33.2446C46.6159 34.6103 48.0951 35.8957 49.3504 37.4026C49.9065 38.0692 50.4307 38.7585 50.8297 39.5337C51.3993 40.6392 50.8849 41.8515 49.8954 41.9171L43.7494 41.9159C42.162 42.0473 40.8988 41.4071 39.8339 40.3218C38.9837 39.457 38.195 38.5332 37.3762 37.6389C37.0416 37.2718 36.6893 36.9262 36.2695 36.6543C35.4316 36.1093 34.7036 36.2762 34.2236 37.1515C33.7344 38.0421 33.6227 39.0292 33.5761 40.0205C33.5092 41.4697 33.0721 41.8484 31.618 41.9165C28.5109 42.062 25.5628 41.5906 22.8227 40.0241C20.4055 38.6425 18.5346 36.6924 16.9043 34.4845C13.7297 30.1805 11.2984 25.4566 9.11386 20.597C8.6222 19.5026 8.98189 18.917 10.1893 18.8943C12.1952 18.8557 14.2011 18.8606 16.2071 18.8925C17.0234 18.9054 17.5636 19.3725 17.8772 20.1428C18.9612 22.8098 20.2901 25.3473 21.9554 27.7007C22.3992 28.3274 22.8522 28.9522 23.4973 29.3948C24.2093 29.8834 24.7519 29.7219 25.0877 28.9271C25.3025 28.4219 25.3952 27.8817 25.4418 27.3404C25.6014 25.486 25.6205 23.6323 25.3442 21.7854C25.1724 20.6296 24.5224 19.8832 23.3702 19.6647C22.7834 19.5536 22.8694 19.3363 23.1548 19.0011C23.6501 18.4217 24.1142 18.0632 25.0416 18.0632L31.9857 18.062C33.0801 18.2768 33.3256 18.7679 33.4742 19.8703L33.4803 27.5871C33.4674 28.0137 33.6945 29.2782 34.4606 29.5574C35.0744 29.76 35.4795 29.2677 35.8465 28.8792C37.5118 27.112 38.6983 25.0263 39.7608 22.8675C40.2298 21.9155 40.6343 20.9303 41.0271 19.9433C41.3193 19.2135 41.7735 18.8544 42.5972 18.8667L49.2841 18.8747C49.4811 18.8747 49.6812 18.8765 49.8764 18.9103C51.0034 19.103 51.3121 19.5879 50.9635 20.6873C50.4147 22.4145 49.3485 23.8533 48.3063 25.2958C47.1892 26.8401 45.9977 28.3304 44.8917 29.8815C43.8752 31.2994 43.9556 32.0133 45.2176 33.2446Z"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </header>
@@ -1574,7 +1633,7 @@
 
         <section class="structure home content">
           <div class="text inline-block">
-            <h1 class="title font-medium">Lorem ipsum</h1>
+            <h1 class="title font-medium">MyLabs</h1>
             <div class="text-background">
               <p class="description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -1595,6 +1654,7 @@
       </div>
 
       <div class="separator relative overflow_hidden">
+        <canvas class="background"></canvas>
         <section class="content structure">
           <!-- Не буду пока убирать div.block, вдруг снова поменяется дизайн-->
           <!--            и не убирай, хер с ним-->
@@ -1605,34 +1665,889 @@
       </div>
 
       <div class="about-us relative overflow_hidden">
-        <img class="background" src="./assets/hexagon.svg" alt="" />
-        <section class="content structure">
-          <div class="text inline-block">
-            <h1 class="font-medium">About us</h1>
-            <p class="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              auctor quam quis sollicitudin egestas. Ut viverra mattis elit quis
-              iaculis. Aliquam tempor nunc suscipit, tincidunt odio ac, viverra
-              augue. Nunc iaculis dapibus commodo. Etiam in felis non tellus
-              ornare commodo in non massa. Donec porta arcu ut velit pharetra
-              fringilla. Nullam vitae nunc laoreet, gravida ipsum quis,
-              ultricies purus. Pellentesque habitant morbi tristique senectus et
-              netus et malesuada fames ac turpis egestas.
-            </p>
+        <!-- <img class="background" src="./assets/hexagon.svg" alt="" />-->
+        <div class="bg overflow_hidden">
+          <svg viewBox="0 0 1920 2160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g display="none" class="hexagons">
+                  <g>
+                      <path d="M136.67 401.59L23.22 336.09L-90.23 401.59V532.59L23.22 598.09L136.67 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M136.67 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="23.119999999999997" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="23.119999999999997" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M136.67 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M136.67 401.59L250.13 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M136.67 532.59L250.13 598.09L363.58 532.59V401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 401.59L250.13 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="136.57" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M136.67 794.59L23.22 729.09L-90.23 794.59V925.59L23.22 991.09L136.67 925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M136.67 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="23.119999999999997" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="23.119999999999997" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M136.67 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M136.67 794.59L250.13 729.09L363.58 794.59V925.59L250.13 991.09L136.67 925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="136.57" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M363.58 8.59L250.13 -56.91L136.67 8.59V139.59L250.13 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 8.59V139.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 139.59L250.13 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="363.48" cy="8.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M363.58 8.59V139.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 8.59L477.03 -56.91L590.48 8.59V139.59L477.03 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 139.59L477.03 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="363.48" cy="8.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="8.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M363.58 139.59L250.13 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 139.59L477.03 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M250.13 205.09V336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M477.03 205.09V336.09L363.58 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 401.59L250.13 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="363.48" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M590.48 532.59L477.03 598.09V729.09L590.48 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M590.48 532.59L703.94 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 598.09V729.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 729.09L590.48 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="590.38" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M590.48 532.59V401.59L703.94 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M590.48 532.59L703.94 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 598.09L817.39 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 401.59L703.94 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="590.38" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M703.94 729.09L590.48 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 729.09L817.39 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M590.48 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M590.48 925.59L703.94 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 991.09L817.39 925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="703.84" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M590.48 925.59L703.94 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M590.48 925.59L477.03 991.09V1122.09L590.48 1187.59L703.94 1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="590.38" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="1187.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M703.94 991.09V1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 991.09L817.39 925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 1122.09L817.39 1187.59L930.84 1122.09V991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 925.59L930.84 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="703.84" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="1187.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M930.84 336.09V205.09L817.39 139.59L703.94 205.09V336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M930.84 336.09L817.39 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 401.59L703.94 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="817.29" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M930.84 336.09L817.39 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M930.84 336.09L1044.29 401.59V532.59L930.84 598.09L817.39 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="817.29" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1044.19" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1044.19" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M817.39 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 794.59L930.84 729.09L1044.29 794.59V925.59L930.84 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 925.59L930.84 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="817.29" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1044.19" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1044.19" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1384.65 336.09V205.09L1271.2 139.59L1157.75 205.09V336.09L1271.2 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 336.09L1271.2 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1271.1" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1271.1" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1157.65" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1157.65" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1384.65 336.09L1271.2 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 336.09L1498.1 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1271.2 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1271.2 532.59L1384.65 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 598.09L1498.1 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1384.55" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1271.1" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1271.1" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1271.2 532.59L1157.75 598.09V729.09L1271.2 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1271.2 532.59L1384.65 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 598.09V729.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 729.09L1271.2 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1271.1" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1271.1" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1157.65" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1157.65" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1384.65 598.09V729.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 598.09L1498.1 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 729.09L1498.1 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 532.59L1611.56 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 598.09V729.09L1498.1 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1384.55" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1384.65 729.09L1271.2 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 729.09L1498.1 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1271.2 794.59V925.59L1384.65 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 925.59L1384.65 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1271.1" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1271.1" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1498.1 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 401.59L1611.56 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 532.59L1611.56 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 598.09L1725.01 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 401.59L1611.56 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1498" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1498.1 925.59L1384.65 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 925.59L1611.56 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 991.09V1122.09L1498.1 1187.59L1611.56 1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 991.09V1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1498" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="1187.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1611.56 991.09V1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 991.09L1725.01 925.59L1838.46 991.09V1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 1122.09L1725.01 1187.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1838.46 1122.09L1725.01 1187.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1611.46" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="1187.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1725.01 139.59V8.59L1611.56 -56.91L1498.1 8.59V139.59L1611.56 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 139.59L1611.56 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1498" cy="8.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="8.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1725.01 139.59L1611.56 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 139.59L1838.46 205.09V336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 205.09V336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1838.46 336.09L1725.01 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 401.59L1611.56 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1611.46" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1838.46 336.09L1725.01 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1838.46 336.09L1951.91 401.59V532.59L1838.46 598.09L1725.01 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1838.36" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1838.46 1122.09L1725.01 1187.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1838.46 1122.09L1951.91 1187.59V1318.59L1838.46 1384.09L1725.01 1318.59V1187.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1838.36" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="1187.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="1318.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="1384.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1498.1 1580.59V1711.59L1611.56 1777.09L1725.01 1711.59V1580.59L1611.56 1515.09L1498.1 1580.59Z" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1724.91" cy="1580.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="1777.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="1711.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="1515.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="1580.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="1711.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+              </g>
+
+              <g class="hexagons">
+                  <g>
+                      <path d="M136.67 401.59L23.22 336.09L-90.23 401.59V532.59L23.22 598.09L136.67 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M136.67 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="23.119999999999997" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="23.119999999999997" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M136.67 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M136.67 401.59L250.13 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M136.67 532.59L250.13 598.09L363.58 532.59V401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 401.59L250.13 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="250.03" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M136.67 794.59L23.22 729.09L-90.23 794.59V925.59L23.22 991.09L136.67 925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M136.67 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="23.119999999999997" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="23.119999999999997" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M136.67 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M136.67 794.59L250.13 729.09L363.58 794.59V925.59L250.13 991.09L136.67 925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="250.03" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M363.58 8.59L250.13 -56.91L136.67 8.59V139.59L250.13 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 8.59V139.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 139.59L250.13 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="136.57" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M363.58 8.59V139.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 8.59L477.03 -56.91L590.48 8.59V139.59L477.03 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 139.59L477.03 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="590.38" cy="8.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M363.58 139.59L250.13 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 139.59L477.03 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M250.13 205.09V336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M477.03 205.09V336.09L363.58 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M363.58 401.59L250.13 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="476.93" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M590.48 532.59L477.03 598.09V729.09L590.48 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M590.48 532.59L703.94 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 598.09V729.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 729.09L590.48 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="476.93" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M590.48 532.59V401.59L703.94 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M590.48 532.59L703.94 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 598.09L817.39 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 401.59L703.94 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="590.38" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M703.94 729.09L590.48 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 729.09L817.39 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M590.48 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M590.48 925.59L703.94 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 991.09L817.39 925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                  </g>
+                  <g>
+                      <path d="M590.48 925.59L703.94 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M590.48 925.59L477.03 991.09V1122.09L590.48 1187.59L703.94 1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="590.38" cy="1187.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M703.94 991.09V1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 991.09L817.39 925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M703.94 1122.09L817.39 1187.59L930.84 1122.09V991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 925.59L930.84 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="817.29" cy="1187.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M930.84 336.09V205.09L817.39 139.59L703.94 205.09V336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M930.84 336.09L817.39 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 401.59L703.94 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="817.29" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M930.84 336.09L817.39 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M930.84 336.09L1044.29 401.59V532.59L930.84 598.09L817.39 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1044.19" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1044.19" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M817.39 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 794.59L930.84 729.09L1044.29 794.59V925.59L930.84 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M817.39 925.59L930.84 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="930.74" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1044.19" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1044.19" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1384.65 336.09V205.09L1271.2 139.59L1157.75 205.09V336.09L1271.2 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 336.09L1271.2 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1271.1" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1157.65" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1157.65" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1384.65 336.09L1271.2 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 336.09L1498.1 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1271.2 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1271.2 532.59L1384.65 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 598.09L1498.1 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                  </g>
+                  <g>
+                      <path d="M1271.2 532.59L1157.75 598.09V729.09L1271.2 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1271.2 532.59L1384.65 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 598.09V729.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 729.09L1271.2 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1157.65" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1157.65" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1384.65 598.09V729.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 598.09L1498.1 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 729.09L1498.1 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 532.59L1611.56 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 598.09V729.09L1498.1 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1611.46" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1384.65 729.09L1271.2 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 729.09L1498.1 794.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1271.2 794.59V925.59L1384.65 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 794.59V925.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 925.59L1384.65 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1271.1" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1498.1 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 401.59L1611.56 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 532.59L1611.56 598.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 598.09L1725.01 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 401.59L1611.56 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                  </g>
+                  <g>
+                      <path d="M1498.1 925.59L1384.65 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1498.1 925.59L1611.56 991.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1384.65 991.09V1122.09L1498.1 1187.59L1611.56 1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 991.09V1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1384.55" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="1187.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1611.56 991.09V1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 991.09L1725.01 925.59L1838.46 991.09V1122.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 1122.09L1725.01 1187.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1838.46 1122.09L1725.01 1187.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1724.91" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1725.01 139.59V8.59L1611.56 -56.91L1498.1 8.59V139.59L1611.56 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 139.59L1611.56 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1498" cy="8.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="8.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1725.01 139.59L1611.56 205.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 139.59L1838.46 205.09V336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1611.56 205.09V336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1838.46 336.09L1725.01 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 401.59L1611.56 336.09" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1838.36" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1838.46 336.09L1725.01 401.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1838.46 336.09L1951.91 401.59V532.59L1838.46 598.09L1725.01 532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1725.01 401.59V532.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1838.36" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1838.46 1122.09L1725.01 1187.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <path d="M1838.46 1122.09L1951.91 1187.59V1318.59L1838.46 1384.09L1725.01 1318.59V1187.59" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1724.91" cy="1318.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="1384.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+                  <g>
+                      <path d="M1498.1 1580.59V1711.59L1611.56 1777.09L1725.01 1711.59V1580.59L1611.56 1515.09L1498.1 1580.59Z" stroke="#AADCB7" stroke-width="2" stroke-opacity="0.5"></path>
+                      <circle cx="1724.91" cy="1580.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="1777.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="1711.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="1515.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="1580.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="1711.59" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+              </g>
+
+<!--              <g class="cir"><circle cx="136.57" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="8.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1271.1" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1271.1" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1271.1" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="1187.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>-->
+              <g class="cir"><circle cx="136.57" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="136.57" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="8.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="476.93" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="363.48" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="250.03" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="590.38" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="817.29" cy="925.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="703.84" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="930.74" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1271.1" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1271.1" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="598.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1384.55" cy="729.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1498" cy="794.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="532.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="401.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="991.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="1122.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1611.46" cy="205.09" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1724.91" cy="139.59" r="14" fill="#2BA84A" opacity="0.17"></circle><circle cx="1838.36" cy="336.09" r="14" fill="#2BA84A" opacity="0.17"></circle></g>
+
+
+              <path class="blue_hexagons" d="M159.26 75.37L243.26 123.87M159.26 75.37L75.25 123.87V220.87M159.26 75.37V-21.63L243.26 -70.13L327.27 -21.63V75.37M243.26 123.87V220.87M243.26 123.87L327.27 75.37M243.26 220.87L159.26 269.37M243.26 220.87L327.27 269.37M159.26 269.37L75.25 220.87M159.26 269.37V366.37M75.25 220.87L-8.76001 269.37V366.37L75.25 414.87M159.26 366.37L75.25 414.87M159.26 366.37L243.26 414.87M75.25 414.87V511.87L159.26 560.37M243.26 414.87V511.87M243.26 414.87L327.27 366.37M243.26 511.87L159.26 560.37M243.26 511.87L327.27 560.37M159.26 560.37V657.37M159.26 657.37L243.26 705.87M159.26 657.37L75.25 705.87V802.87L159.26 851.37L243.26 802.87V705.87M243.26 705.87L327.27 657.37V560.37M327.27 75.37L411.28 123.87V220.87M411.28 220.87L327.27 269.37M411.28 220.87L495.28 269.37V366.37L411.28 414.87M327.27 269.37V366.37M327.27 366.37L411.28 414.87M411.28 414.87V511.87L327.27 560.37M579.29 705.87L495.28 657.37L411.28 705.87V802.87L495.28 851.37L579.29 802.87M579.29 705.87V802.87M579.29 705.87L663.3 657.37L747.3 705.87V802.87L663.3 851.37L579.29 802.87M1083.33 414.87L999.33 366.37L915.32 414.87V511.87M1083.33 414.87V511.87M1083.33 414.87L1167.34 366.37M1083.33 511.87L999.33 560.37M1083.33 511.87L1167.34 560.37L1251.35 511.87V414.87M999.33 560.37L915.32 511.87M999.33 560.37V657.37L915.32 705.87L831.31 657.37V560.37L915.32 511.87M1167.34 -21.63L1083.33 -70.13L999.33 -21.63V75.37L1083.33 123.87L1167.34 75.37M1167.34 -21.63V75.37M1167.34 -21.63L1251.35 -70.13L1335.35 -21.63V75.37L1251.35 123.87L1167.34 75.37M1167.34 366.37L1251.35 414.87M1167.34 366.37V269.37L1251.35 220.87L1335.35 269.37V366.37L1251.35 414.87M915.32 2063.87L831.31 2015.37V1918.37L915.32 1869.87L999.32 1918.37V2015.37M915.32 2063.87L999.32 2015.37M915.32 2063.87V2112.37V2160.87L999.32 2209.37L1083.33 2160.87V2063.87L999.32 2015.37M1419.36 996.87L1335.35 948.37L1251.35 996.87V1093.87L1335.35 1142.37M1419.36 996.87V1093.87M1419.36 996.87L1503.37 948.37L1587.37 996.87V1093.87L1503.37 1142.37M1419.36 1093.87L1335.35 1142.37M1419.36 1093.87L1503.37 1142.37M1335.35 1142.37V1239.37L1419.36 1287.87L1503.37 1239.37V1142.37M1335.35 1433.37L1251.35 1384.87L1167.34 1433.37V1530.37L1251.35 1578.87L1335.35 1530.37M1335.35 1433.37V1530.37M1335.35 1433.37L1419.36 1384.87L1503.37 1433.37V1530.37L1419.36 1578.87L1335.35 1530.37M1503.37 366.37L1587.37 414.87M1503.37 366.37L1419.36 414.87V511.87M1503.37 366.37V269.37L1587.37 220.87M1587.37 414.87V511.87M1587.37 414.87L1671.38 366.37M1587.37 511.87L1503.37 560.37M1587.37 511.87L1671.38 560.37M1503.37 560.37L1419.36 511.87M1503.37 560.37V657.37M1419.36 511.87L1335.35 560.37V657.37L1419.36 705.87M1503.37 657.37L1419.36 705.87M1503.37 657.37L1587.37 705.87M1419.36 705.87V802.87L1503.37 851.37L1587.37 802.87M1587.37 705.87V802.87M1587.37 705.87L1671.38 657.37M1587.37 802.87L1671.38 851.37L1755.39 802.87V705.87M1671.38 75.37L1755.39 123.87M1671.38 75.37L1587.37 123.87V220.87M1671.38 75.37V-21.63L1755.39 -70.13L1839.39 -21.63M1755.39 123.87V220.87L1671.38 269.37M1755.39 123.87L1839.39 75.37M1671.38 269.37L1587.37 220.87M1671.38 269.37V366.37M1671.38 366.37L1755.39 414.87V511.87M1755.39 511.87L1671.38 560.37M1755.39 511.87L1839.39 560.37V657.37L1755.39 705.87M1671.38 560.37V657.37M1671.38 657.37L1755.39 705.87M1839.39 -21.63V75.37M1839.39 -21.63L1923.4 -70.13L2007.41 -21.63V75.37L1923.4 123.87L1839.39 75.37M159.26 1821.37L243.26 1869.87V1966.87L159.26 2015.37L75.25 1966.87V1869.87L159.26 1821.37ZM327.27 948.37L411.28 996.87V1093.87L327.27 1142.37L243.26 1093.87V996.87L327.27 948.37ZM159.25 1239.37L243.26 1287.87V1384.87L159.25 1433.37L75.25 1384.87V1287.87L159.25 1239.37ZM495.28 1724.37L411.28 1675.87L327.27 1724.37V1821.37L411.28 1869.87L495.28 1821.37V1724.37ZM663.3 75.37L747.3 123.87V220.87L663.3 269.37L579.29 220.87V123.87L663.3 75.37ZM663.3 1384.87L747.3 1433.37V1530.37L663.3 1578.87L579.29 1530.37V1433.37L663.3 1384.87ZM999.33 948.37L1083.33 996.87V1093.87L999.33 1142.37L915.32 1093.87V996.87L999.33 948.37ZM1755.39 1675.87L1839.39 1724.37V1821.37L1755.39 1869.87L1671.38 1821.37V1724.37L1755.39 1675.87ZM1923.4 220.87L2007.41 269.37V366.37L1923.4 414.87L1839.39 366.37V269.37L1923.4 220.87ZM1923.4 1384.87L2007.41 1433.37V1530.37L1923.4 1578.87L1839.39 1530.37V1433.37L1923.4 1384.87Z" stroke="#0EC1D9" stroke-opacity="0.16" stroke-width="2"></path>
+
+          </svg>
+        </div>
+
+        <section class="content structure video_holder">
+          <!-- <img class="video_around" src="./assets/aboutUsVideo.svg" alt=""> -->
+          <div class="video">
+            <video
+              onloadstart="this.volume=0.2"
+              controls
+              class="video_player"
+              src="./assets/videos/videoplayback.mp4"
+            ></video>
+            <div class="camera"></div>
+            <div class="sound"></div>
+            <div class="buttons">
+              <div class="power"></div>
+              <div class="volumeup"></div>
+              <div class="volumedown"></div>
+            </div>
+          </div>
+        </section>
+        <section class="content structure info">
+          <div class="how_it_works shadow bg_white">
+            <h3 class="font-medium">How it works?</h3>
+            <ul class="steps">
+              <li class="step">
+                <span>Step 1</span>
+                <svg
+                  class="step_circle"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59647 25 3.28172e-05 19.4036 3.28172e-05 12.5C3.28172e-05 5.59648 5.59647 3.74374e-05 12.5 3.74374e-05C19.4036 3.74374e-05 25 5.59648 25 12.5Z"
+                    fill="#AADCB7"
+                  />
+                </svg>
+              </li>
+              <div class="step_line">
+                <svg
+                  viewBox="0 0 180 168"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="large-screen"
+                >
+                  <path
+                    d="M3 3V50L177 107V166"
+                    stroke="#AADCB7"
+                    stroke-width="5"
+                    stroke-linecap="square"
+                  />
+                </svg>
+
+                <svg
+                  viewBox="0 0 180 168"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="middle-screen"
+                >
+                  <path
+                    d="M3 3V75L177 85V170"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                  />
+                </svg>
+              </div>
+              <li class="step">
+                <span>Step 2</span>
+                <svg
+                  class="step_circle"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59647 25 3.28172e-05 19.4036 3.28172e-05 12.5C3.28172e-05 5.59648 5.59647 3.74374e-05 12.5 3.74374e-05C19.4036 3.74374e-05 25 5.59648 25 12.5Z"
+                    fill="#AADCB7"
+                  />
+                </svg>
+              </li>
+              <div class="step_line">
+                <svg
+                  viewBox="0 0 180 168"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="large-screen"
+                >
+                  <path
+                    d="M3 3V50L177 107V166"
+                    stroke="#AADCB7"
+                    stroke-width="5"
+                    stroke-linecap="square"
+                  />
+                </svg>
+
+                <svg
+                  viewBox="0 0 180 168"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="middle-screen"
+                >
+                  <path
+                    d="M3 3V75L177 85V170"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                  />
+                </svg>
+              </div>
+              <li class="step">
+                <span>Step 3</span>
+                <svg
+                  class="step_circle"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59647 25 3.28172e-05 19.4036 3.28172e-05 12.5C3.28172e-05 5.59648 5.59647 3.74374e-05 12.5 3.74374e-05C19.4036 3.74374e-05 25 5.59648 25 12.5Z"
+                    fill="#AADCB7"
+                  />
+                </svg>
+              </li>
+              <div class="step_line">
+                <svg
+                  viewBox="0 0 180 168"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="large-screen"
+                >
+                  <path
+                    d="M3 3V50L177 107V166"
+                    stroke="#AADCB7"
+                    stroke-width="5"
+                    stroke-linecap="square"
+                  />
+                </svg>
+
+                <svg
+                  viewBox="0 0 180 168"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="middle-screen"
+                >
+                  <path
+                    d="M3 3V75L177 85V170"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                  />
+                </svg>
+              </div>
+              <li class="step">
+                <span>Step 3</span>
+                <svg
+                  class="step_circle"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59647 25 3.28172e-05 19.4036 3.28172e-05 12.5C3.28172e-05 5.59648 5.59647 3.74374e-05 12.5 3.74374e-05C19.4036 3.74374e-05 25 5.59648 25 12.5Z"
+                    fill="#AADCB7"
+                  />
+                </svg>
+              </li>
+              <div class="step_line">
+                <svg
+                  viewBox="0 0 180 168"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="large-screen"
+                >
+                  <path
+                    d="M3 3V50L177 107V166"
+                    stroke="#AADCB7"
+                    stroke-width="5"
+                    stroke-linecap="square"
+                  />
+                </svg>
+
+                <svg
+                  viewBox="0 0 180 168"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="middle-screen"
+                >
+                  <path
+                    d="M3 3V75L177 85V170"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                  />
+                </svg>
+              </div>
+              <li class="step">
+                <span>Step 3</span>
+                <svg
+                  class="step_circle"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59647 25 3.28172e-05 19.4036 3.28172e-05 12.5C3.28172e-05 5.59648 5.59647 3.74374e-05 12.5 3.74374e-05C19.4036 3.74374e-05 25 5.59648 25 12.5Z"
+                    fill="#AADCB7"
+                  />
+                </svg>
+              </li>
+            </ul>
           </div>
 
-          <div class="image inline-block float-right">
-            <img src="./assets/computer.svg" alt="" srcset="" />
+          <div class="FAQ shadow bg_white">
+            <h3 class="font-medium">FAQ</h3>
+            <ul>
+              <li class="block">
+                <div class="question line activable-click">
+                  <i></i>
+                  <span>
+                    I need a Nintendo Account to use Nintendo Switch Online?
+                  </span>
+                </div>
+                <div class="answer line">
+                  <i></i>
+                  <span>
+                    To use online services, you must create a Nintendo Account
+                    and agree to the associated agreement.
+                  </span>
+                </div>
+              </li>
+
+              <hr />
+
+              <li class="block">
+                <div class="question line activable-click">
+                  <i></i>
+                  <span>
+                    I need a Nintendo Account to use Nintendo Switch Online?
+                  </span>
+                </div>
+                <div class="answer line">
+                  <i></i>
+                  <span>
+                    To use online services, you must create a Nintendo Account
+                    and agree to the associated agreement.
+                  </span>
+                </div>
+              </li>
+
+              <hr />
+
+              <li class="block">
+                <div class="question line activable-click">
+                  <i></i>
+                  <span>
+                    I need a Nintendo Account to use Nintendo Switch Online?
+                  </span>
+                </div>
+                <div class="answer line">
+                  <i></i>
+                  <span>
+                    To use online services, you must create a Nintendo Account
+                    and agree to the associated agreement.
+                  </span>
+                </div>
+              </li>
+
+              <hr />
+
+              <li class="block">
+                <div class="question line activable-click">
+                  <i></i>
+                  <span>
+                    I need a Nintendo Account to use Nintendo Switch Online?
+                  </span>
+                </div>
+                <div class="answer line">
+                  <i></i>
+                  <span>
+                    To use online services, you must create a Nintendo Account
+                    and agree to the associated agreement.
+                  </span>
+                </div>
+              </li>
+            </ul>
           </div>
         </section>
       </div>
 
-      <div class="contact-section relative overflow_hidden">
-        <img
-          class="background"
-          src="./assets/contactus-background.svg"
-          alt=""
-        />
+      <div class="ourskills overflow_hidden">
+        <section class="content structure">
+          <h1 class="title font-medium fs_64px">Our skills</h1>
+          <ul class="skills">
+            <li class="skill">
+              <img src="./assets/ourSkillsIcons/clang.svg" alt="" srcset="">
+
+              <div class="description">
+                <h3 class="name fs_32px font-medium">C</h3>
+                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
+              </div>
+
+              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
+              </svg>
+            </li>
+
+            <li class="skill">
+              <img src="./assets/ourSkillsIcons/cpp.svg" alt="" srcset="">
+
+              <div class="description">
+                <h3 class="name fs_32px font-medium">C++</h3>
+                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
+              </div>
+
+              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
+              </svg>
+            </li>
+
+            <li class="skill">
+              <img src="./assets/ourSkillsIcons/python.svg" alt="" srcset="">
+
+              <div class="description">
+                <h3 class="name fs_32px font-medium">Python</h3>
+                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
+              </div>
+
+              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
+              </svg>
+            </li>
+
+            <li class="skill">
+              <img src="./assets/ourSkillsIcons/excel.svg" alt="" srcset="">
+
+              <div class="description">
+                <h3 class="name fs_32px font-medium">Excel</h3>
+                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
+              </div>
+
+              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
+              </svg>
+            </li>
+
+            <li class="skill">
+              <img src="./assets/ourSkillsIcons/word.svg" alt="" srcset="">
+
+              <div class="description">
+                <h3 class="name fs_32px font-medium">Word</h3>
+                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
+              </div>
+
+              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
+              </svg>
+            </li>
+
+            <li class="skill">
+              <img src="./assets/ourSkillsIcons/java.svg" alt="" srcset="">
+
+              <div class="description">
+                <h3 class="name fs_32px font-medium">Java</h3>
+                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
+              </div>
+
+              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
+              </svg>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="review lastworks relative overflow_hidden">
+        <img class="background" src="./assets/lastworks.svg" alt="" srcset="" />
+
+        <section class="content structure">
+          <h1 class="font-semibold fs_64px title">Last works</h1>
+
+          <div class="scroll-plate overflow_hidden">
+            <div class="blocks">
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree tree tree</h3>
+
+                <div class="info">
+                  <p class="time green line">
+                    <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
+                    <span>
+                      1 week
+                    </span>
+                  </p>
+                  <p class="price line">
+                    <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
+                    <span>
+                      300
+                    </span>
+                  </p>
+                  <p class="date line">
+                    <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
+                    <span>
+                      24 july 2003
+                    </span>
+                  </p>
+
+                  <img
+                    class="icon"
+                    src="./assets/ourSkillsIcons/cpp.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
+
+                <div class="info">
+                  <p class="time green line">
+                    <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
+                    <span>
+                      1 week
+                    </span>
+                  </p>
+                  <p class="price line">
+                    <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
+                    <span>
+                      300
+                    </span>
+                  </p>
+                  <p class="date line">
+                    <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
+                    <span>
+                      24 july 2003
+                    </span>
+                  </p>
+
+                  <img
+                    class="icon"
+                    src="./assets/ourSkillsIcons/cpp.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
+
+                <div class="info">
+                  <p class="time green line">
+                    <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
+                    <span>
+                      1 week
+                    </span>
+                  </p>
+                  <p class="price line">
+                    <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
+                    <span>
+                      300
+                    </span>
+                  </p>
+                  <p class="date line">
+                    <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
+                    <span>
+                      24 july 2003
+                    </span>
+                  </p>
+
+                  <img
+                    class="icon"
+                    src="./assets/ourSkillsIcons/cpp.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
+
+                <div class="info">
+                  <p class="time green line">
+                    <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
+                    <span>
+                      1 week
+                    </span>
+                  </p>
+                  <p class="price line">
+                    <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
+                    <span>
+                      300
+                    </span>
+                  </p>
+                  <p class="date line">
+                    <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
+                    <span>
+                      24 july 2003
+                    </span>
+                  </p>
+
+                  <img
+                    class="icon"
+                    src="./assets/ourSkillsIcons/cpp.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="block">
+                <h3 class="title fs_48px font-medium">Binary tree</h3>
+
+                <div class="info">
+                  <p class="time green line">
+                    <img src="./assets/LastWorks/Time.svg" alt="" srcset="" />
+                    <span>
+                      1 week
+                    </span>
+                  </p>
+                  <p class="price line">
+                    <img src="./assets/LastWorks/Price.svg" alt="" srcset="" />
+                    <span>
+                      300
+                    </span>
+                  </p>
+                  <p class="date line">
+                    <img src="./assets/LastWorks/Date.svg" alt="" srcset="" />
+                    <span>
+                      24 july 2003
+                    </span>
+                  </p>
+
+                  <img
+                    class="icon"
+                    src="./assets/ourSkillsIcons/cpp.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-control">
+            <button class="move move-arrow left"></button>
+            <div class="buttons">
+              <!--Must be empty!!!-->
+            </div>
+            <button class="move move-arrow right"></button>
+          </div>
+        </section>
+      </div>
+
+      <div data-move="contact_us" class="contact-section relative overflow_hidden">
+<!--        <img-->
+<!--          class="background"-->
+<!--          src="./assets/contactus-background.svg"-->
+<!--          alt=""-->
+<!--        />-->
 
         <section class="content flex-column structure">
           <div class="title font-semibold">
@@ -1650,97 +2565,54 @@
             </div>
           </div>
         </section>
-
-        <div class="next">
-          <p class="">Learn about us</p>
-          <img src="assets/arrow-down.svg" alt="" srcset="" />
-        </div>
-      </div>
-
-      <div class="ourskills overflow_hidden">
-        <section class="content structure">
-          <h1 class="title font-medium fs_64px">Our skills</h1>
-          <ul class="skills">
-            <li class="skill">
-              <img src="./assets/ourSkillsIcons/clang.svg" alt="" srcset=""> 
-              
-              <div class="description">
-                <h3 class="name fs_32px font-medium">C</h3>
-                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
-              </div>
-
-              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
-              </svg>
-            </li>
-
-            <li class="skill">
-              <img src="./assets/ourSkillsIcons/cpp.svg" alt="" srcset="">
-              
-              <div class="description">
-                <h3 class="name fs_32px font-medium">C++</h3>
-                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
-              </div>
-              
-              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
-              </svg>
-            </li>
-
-            <li class="skill">
-              <img src="./assets/ourSkillsIcons/python.svg" alt="" srcset="">
-              
-              <div class="description">
-                <h3 class="name fs_32px font-medium">Python</h3>
-                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
-              </div>
-
-              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
-              </svg>
-            </li>
-
-            <li class="skill">
-              <img src="./assets/ourSkillsIcons/excel.svg" alt="" srcset="">
-              
-              <div class="description">
-                <h3 class="name fs_32px font-medium">Excel</h3>
-                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
-              </div>
-              
-              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
-              </svg>
-            </li>
-
-            <li class="skill">
-              <img src="./assets/ourSkillsIcons/word.svg" alt="" srcset="">
-              
-              <div class="description">
-                <h3 class="name fs_32px font-medium">Word</h3>
-                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
-              </div>
-              
-              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
-              </svg>
-            </li>
-        
-            <li class="skill">
-              <img src="./assets/ourSkillsIcons/java.svg" alt="" srcset="">
-              
-              <div class="description">
-                <h3 class="name fs_32px font-medium">Java</h3>
-                <p class="about fs_24px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tristique ligula. Lalalalalalala</p>
-              </div>
-              
-              <svg viewBox="0 0 274 166" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M269 3.5L158 161H0" stroke="#2BA84A" stroke-opacity="0.4" stroke-width="10"/>
-              </svg>
-            </li>
-          </ul>
-        </section>
       </div>
     </main>
+
+    <footer class="footer relative overflow_hidden">
+      <section class="content structure">
+        <div class="title font-semibold fs_28px">
+          «MyLabs» — secure online service with trusted experts for your labs.
+        </div>
+
+        <div class="blocks">
+          <div class="block eula">
+            <p>
+              By using "MyLabs", you accept the
+              <a href="#">user agreement</a>
+              and
+              <a href="#">data processing policy</a>
+            </p>
+            <p>The site works on Moscow time: August 17, 2022 12:55</p>
+          </div>
+
+          <div class="block contact">
+            <h3 class="title font-semibold">Contact us</h3>
+
+            <p class="line"><a href="#">Telegram</a></p>
+            <p class="line"><a href="#">VK</a></p>
+            <p class="line"><a href="#">Email</a></p>
+          </div>
+
+          <div class="block information">
+            <h3 class="title font-semibold">Information</h3>
+
+            <p class="line"><a href="#">Price</a></p>
+            <p class="line"><a href="#">Time</a></p>
+            <p class="line"><a href="#">Types</a></p>
+          </div>
+
+          <div class="block about">
+            <h3 class="title font-semibold">About us</h3>
+
+            <p class="line"><a href="#">Students</a></p>
+            <p class="line"><a href="#">Last works</a></p>
+            <p class="line"><a href="#">Our skills</a></p>
+            <p class="line"><a href="#">Reviews</a></p>
+          </div>
+        </div>
+
+        <p class="copyright fs_20px">© 2022—2022 MyLabs</p>
+      </section>
+    </footer>
   </body>
 </html>
