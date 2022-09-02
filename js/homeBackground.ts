@@ -15,7 +15,7 @@ function homeBackgroundAppearance(): void {
 }
 
 function moveLines(svg: Element): void {
-    let linesToMove: number = 7;
+    let linesToMove: number = 10;
     let lines: NodeListOf<SVGPathElement> = svg.querySelectorAll("g.lines path");
 
     for (let i = 0; i < linesToMove; i++) {
