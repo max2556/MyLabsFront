@@ -81,15 +81,15 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   transition: all 0.15s;
 }
 
-.button:hover{
+.button:hover {
   background-color: #ffffff !important;
   color: #2ba84a;
   outline: 5px solid #2ba84a;
 }
-.button:active{
+.button:active {
   background-color: #ffffff !important;
   color: #2ba84a;
-  outline: 1px solid transparent  !important;
+  outline: 1px solid transparent !important;
   transition: outline 0.08s;
 }
 
@@ -97,7 +97,12 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 font styles
 */
 h1 {
+  --base-size: 72px;
   font-size: 72px;
+}
+h2 {
+  --base-size: 64px;
+  font-size: 64px;
 }
 
 p {
@@ -157,7 +162,7 @@ p {
 .fs_32px {
   font-size: 32px;
 }
-.fs_28px{
+.fs_28px {
   font-size: 28px;
 }
 .fs_24px {
@@ -167,17 +172,15 @@ p {
   font-size: 20px;
 }
 
-.green{
+.green {
   color: #2ba84a;
 }
-
 
 .clearfix:after {
   content: '';
   display: block;
   clear: both;
 }
-
 
 @media (min-width: 2000px) {
   .structure {
@@ -193,6 +196,6 @@ p {
   }
 }
 
-.blured{
+.blured {
   filter: blur(2px);
 }

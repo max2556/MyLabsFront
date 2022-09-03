@@ -69,11 +69,24 @@
   .home_background svg {
     height: 100%;
   }
+
+  .home p {
+    font-size: 32px;
+  }
+  .home a {
+    font-size: 32px ;
+  }
+  .home span {
+    font-size: 32px;
+  }
 }
+
 @media (min-width: 1600px) {
   .home_background svg {
     width: 100%;
   }
+
+  
 }
 
 @media (max-width: 1400px) {
@@ -81,13 +94,13 @@
     width: 400px;
   }
   .home p {
-    font-size: 24px !important;
+    font-size: 24px;
   }
   .home a {
-    font-size: 24px !important;
+    font-size: 24px ;
   }
   .home span {
-    font-size: 24px !important;
+    font-size: 24px;
   }
 }
 
@@ -122,6 +135,17 @@
 
     margin: 0 auto;
     margin-top: 50px;
+  }
+
+
+  .home p {
+    font-size: 20px;
+  }
+  .home a {
+    font-size: 20px ;
+  }
+  .home span {
+    font-size: 20px;
   }
 }
 
