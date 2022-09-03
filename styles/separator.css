@@ -45,8 +45,24 @@
   line-height: 1;
 }
 
+@media (max-width: 1400px) {
+  p {
+    font-size: 48px;
+  }
+}
+
 @media (max-width: 1025px) {
   .separator .content {
     width: auto;
+  }
+
+  p {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 700px) {
+  p {
+    font-size: 24px;
   }
 }

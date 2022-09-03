@@ -1,5 +1,5 @@
 .contact-section {
-  background: url("../assets/contactus-background.svg") no-repeat center;
+  background: url('../assets/contactus-background.svg') no-repeat center;
   background-size: cover;
 }
 
@@ -51,6 +51,61 @@
   margin-bottom: 0;
 }
 
-.contact-section .link p{
+.contact-section .link p {
   margin-bottom: 25px;
 }
+
+@media (max-width: 1400px) {
+  .contact-section .link * {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .contact-section{
+    background-image: url('../assets/contactus-small.svg');
+    background-position-x: left;
+  }
+
+  .contact-section .structure {
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
+
+  .contact-section h2{
+    font-size: 32px;
+  }
+
+  .contact-section .title{
+    margin-bottom: 50px;
+  }
+
+  .contact-section .link * {
+    font-size: 24px;
+  }
+
+  .contact-section .link p{
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  /*.contact-section .link * {
+    font-size: 20px;
+  }*/
+
+  .contact-section .button{
+    width: 70%;
+    
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+/*
+@media (max-width: 500px) {
+  .contact-section .link * {
+    font-size: 16px;
+  }
+}
+*/

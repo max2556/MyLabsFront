@@ -66,14 +66,21 @@
 }
 
 @media (max-width: 1025px) {
+  .footer {
+    background-image: url('../assets/footerbg_small.svg');
+  }
+
   .footer .content {
     position: relative;
     z-index: 1;
 
-    margin: 110px 25px;
+    margin: 110px 35px;
   }
 }
 @media (max-width: 600px) {
+  .footer {
+    background-image: url('../assets/footerbg_smaller.svg');
+  }
   .footer .blocks .block * {
     font-size: 16px !important;
   }
@@ -93,10 +100,10 @@
   }
 }
 @media (max-width: 330px) {
-  .footer .blocks .block *{
+  .footer .blocks .block * {
     font-size: 12px !important;
   }
-  .footer .blocks .block.eula *{
+  .footer .blocks .block.eula * {
     font-size: 16px !important;
   }
 }

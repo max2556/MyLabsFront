@@ -53,6 +53,8 @@
 }
 
 .header .icons .icon {
+  font-size: 0;
+
   display: inline-block;
   margin-right: 20px;
   height: 100%;
@@ -60,6 +62,7 @@
 
   transition: all 0.15s;
 }
+
 .header .icons svg {
   height: 100%;
 }

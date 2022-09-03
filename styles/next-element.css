@@ -24,6 +24,9 @@
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+
+  width: 25%;
+  min-width: 30px;
 }
 
 @keyframes arrow {

@@ -171,7 +171,6 @@
 .about-us .info .how_it_works .steps {
   text-align: center;
   width: 177px;
-  width: 90%;
   margin: 0 auto;
 }
 .how_it_works .step {
@@ -313,9 +312,11 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
+/*
   .about-us .FAQ .block {
     font-size: 16px;
   }
+*/
   .about-us .info .FAQ {
     padding: 20px 25px;
   }
@@ -355,10 +356,6 @@
     box-shadow: none;
   }
 
-  .about-us .info .how_it_works .steps{
-    width: 60%;
-  }
-
   .about-us .how_it_works .step_line {
     margin: -6px 4px -15px;
   }
@@ -378,6 +375,8 @@
   .about-us .info .FAQ .block {
     margin-bottom: 2px;
     position: relative;
+
+    /*font-size: 20px*/
   }
 
   .about-us .info .FAQ .block .question{
@@ -413,10 +412,6 @@
     margin-bottom: 0;
   }
 
-  .about-us .FAQ .block {
-    font-size: 14px;
-  }
-
   .about-us .FAQ hr {
     display: none;
   }
@@ -428,9 +423,6 @@
 }
 
 @media (max-width: 500px) {
-  .about-us .info .how_it_works .steps{
-    width: 90%;
-  }
   .about-us .how_it_works .step_line {
     height: 80px;
     margin: -6px 5.5px -15px;
@@ -444,10 +436,9 @@
   .about-us .info .FAQ {
     padding: 10px;
   }
-  .about-us .info .FAQ .block span {
-    font-size: 16px !important;
+  .about-us .info .FAQ .block{
+    font-size: 16px;
   }
-
 
   .about-us .video {
     padding: 8px 10px;
@@ -469,5 +460,10 @@
 
     border: 0.5px solid #585858;
     box-shadow: 0px 0px 0px 1px black;
+  }
+}
+@media (max-width: 400px) {
+  .about-us .info .FAQ .block{
+    font-size: 14px;
   }
 }

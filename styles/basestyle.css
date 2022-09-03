@@ -104,7 +104,6 @@ h2 {
   --base-size: 64px;
   font-size: 64px;
 }
-
 p {
   font-size: 40px;
 }
@@ -117,19 +116,15 @@ p {
 .font-regular {
   font-weight: 400;
 }
-
 .inline-block {
   display: inline-block;
 }
-
 .float-right {
   float: right;
 }
-
 .relative {
   position: relative;
 }
-
 .overflow_hidden {
   overflow: hidden;
 }
@@ -191,8 +186,8 @@ p {
 @media (max-width: 1025px) {
   .structure {
     width: auto;
-    margin-right: 25px;
     margin-left: 25px;
+    margin-right: 25px;
   }
 }
 

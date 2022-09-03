@@ -112,7 +112,7 @@
 
 @media (max-width: 1025px) {
   .home {
-    margin-top: 150px;
+    margin-top: 115px;
     margin-bottom: 150px;
   }
   .home .text {
@@ -152,5 +152,15 @@
 @media (max-width: 700px) {
   .home .text {
     width: 90%;
+  }
+  .home .image{
+    width: 60%;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .home .image{
+    width: 70%;
   }
 }
