@@ -12,7 +12,7 @@ function homeBackgroundAppearance() {
     svg.classList.add("full");
 }
 function moveLines(svg) {
-    let linesToMove = 7;
+    let linesToMove = 10;
     let lines = svg.querySelectorAll("g.lines path");
     for (let i = 0; i < linesToMove; i++) {
         let el = lines[Math.floor(Math.random() * lines.length)];
