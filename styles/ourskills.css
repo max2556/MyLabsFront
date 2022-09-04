@@ -177,4 +177,27 @@
 }
 
 
+.our_skills .skill.active_skill {
+    animation: skill_block 0.5s ease-out;
+}
+
+.our_skills .skill_line path {
+    transition: stroke-dashoffset 1s linear;
+    stroke-dashoffset: 0 !important;
+}
+
+@keyframes skill_block {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.07);
+    }
+    60% {
+        transform: scale(1.07);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
