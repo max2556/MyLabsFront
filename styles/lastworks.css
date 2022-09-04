@@ -6,6 +6,10 @@
   margin-bottom: 50px;
 }
 
+.lastworks h2.title{
+  margin-left: 15px;
+}
+
 /*Прокручивающийся штук*/
 .lastworks .scroll-plate {
   padding: 0;
@@ -186,11 +190,22 @@
 }
 
 @media (max-width: 800px) {
+  .lastworks .structure{
+    width: 60%;
+    margin: 50px auto;
+  }
   .lastworks .block {
     width: calc(100% - 30px);
   }
   .lastworks .blocks {
     height: 300px;
+  }
+}
+
+@media (max-width: 620px) {
+  .lastworks .structure{
+    width: auto;
+    margin: 50px 25px;
   }
 }
 
