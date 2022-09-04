@@ -1,7 +1,8 @@
+let ourskills = document.querySelector(".our_skills");
 let lines = document.querySelectorAll(".our_skills .skill_wrapper:not(:last-of-type) .skill_line path");
 let skills = document.querySelectorAll(".our_skills .skill");
 let transitionDur = 500;
-let transitionInterval = 1000;
+let transitionInterval = 1500;
 let iterationInterval = 1000;
 for (let i = 0; i < skills.length; i++) {
     skills[i].style.animationDelay = i * transitionInterval + "ms";

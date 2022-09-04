@@ -1,7 +1,8 @@
+let ourskills: HTMLDivElement = document.querySelector(".our_skills")
 let lines: NodeListOf<SVGPathElement> = document.querySelectorAll(".our_skills .skill_wrapper:not(:last-of-type) .skill_line path")
 let skills: NodeListOf<HTMLDivElement> = document.querySelectorAll(".our_skills .skill")
 let transitionDur: number = 500;
-let transitionInterval: number = 1000;
+let transitionInterval: number = 1500;
 let iterationInterval: number = 1000;
 
 for (let i = 0; i < skills.length; i++) {

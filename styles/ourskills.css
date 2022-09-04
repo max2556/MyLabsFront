@@ -182,7 +182,7 @@
 }
 
 .our_skills .skill_line path {
-    transition: stroke-dashoffset 1s linear;
+    transition: stroke-dashoffset 1.5s cubic-bezier(1, 1.4, 0.06, -0.33);
     stroke-dashoffset: 0 !important;
 }
 
