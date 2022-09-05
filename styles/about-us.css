@@ -78,12 +78,16 @@
   }
 }
 
+
+.about-us .bg svg .blue_hexagons_wrapper {
+  animation: blue_hexagonsX 8s ease-in-out infinite;
+}
 .about-us .bg svg .blue_hexagons {
-  animation: blue_hexagons 5s ease-in-out alternate infinite;
+  animation: blue_hexagonsY 5s ease-in-out alternate infinite;
 }
 
 
-@keyframes blue_hexagons {
+@keyframes blue_hexagonsY {
   0% {
     transform: translateY(0);
     stroke-opacity: 0.17;
@@ -96,6 +100,26 @@
   100% {
     transform: translateY(-50px);
     stroke-opacity: 0.2;
+  }
+}
+@keyframes blue_hexagonsX {
+  0% {
+    transform: translateX(0px);
+  }
+  16% {
+    transform: translateX(2px);
+  }
+  32% {
+    transform: translateX(-1px);
+  }
+  48% {
+    transform: translateX(3px);
+  }
+  80% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
 
