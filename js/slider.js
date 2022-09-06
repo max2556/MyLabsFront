@@ -21,11 +21,11 @@ const STATE = {
   prevTouch: 0,
 }
 
-//const controlButtons = document.querySelectorAll('.scroll-interface .move')
-const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
-const slider = document.querySelector('.scroll-plate .blocks')
+
+
 
 function one_slide(num) {
+  const slider = document.querySelector('.scroll-plate .blocks')
   const deltaX = -100 / STATE.once_count
   const movement = `translate(${num * deltaX}%,0)`
   slider.style.transform = movement
@@ -33,6 +33,7 @@ function one_slide(num) {
 }
 
 function skip(num) {
+  const slider = document.querySelector('.scroll-plate .blocks')
   const deltaX = -100
   const movement = `translate(${num * deltaX}%,0)`
   slider.style.transform = movement
@@ -52,6 +53,8 @@ function buildSlider() {
   window.addEventListener('touchmove', touchEventMove)
 }
 function buildMainButtons() {
+  const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
+
   let slides
   switch (CURRENT_TYPE) {
     case TYPES.skip:
@@ -70,6 +73,8 @@ function buildMainButtons() {
  * Подготавливает слайдер в режиме переключения фиксированного количества блоков(пропускает 2 и более)
  */
 function prepare(callback, slides) {
+  const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
+
   STATE.slides = slides
 
   const buttons = generateButtons(blocks.length)
