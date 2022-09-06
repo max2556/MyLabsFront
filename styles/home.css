@@ -12,9 +12,10 @@
   z-index: -1;
 }
 
+
 .home_background svg.full g.lines path {
-  transition: stroke-dashoffset 3s ease-out;
   stroke-dashoffset: 0 !important;
+  transition: stroke-dashoffset 3s ease-out;
 }
 
 .home {
@@ -65,16 +66,36 @@
 
 /*ADAPTATION*/
 
+.home_background svg {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .home_background .home_bg_mobile {
+    display: block;
+  }
+  .home_background .home_bg_desktop {
+    display: none;
+  }
+}
+
 @media (max-width: 1600px) {
   .home_background svg {
     height: 100%;
   }
+  .home_background .home_bg_desktop {
+    display: block;
+  }
+
 }
 @media (min-width: 1600px) {
   .home_background svg {
     width: 100%;
   }
+
 }
+
+
 
 @media (max-width: 1400px) {
   .home .image {
