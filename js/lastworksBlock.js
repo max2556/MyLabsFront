@@ -1,48 +1,60 @@
-/*
-Пытаюсь не создать кринж
-Не получается
-
-Из идей - бить один h3 на много
-
-Сравнивать ширину h3 с шириной блока, если больше - то создавать новый.
-
-То что есть - ебланство
-*/
-
 ;(function () {
+  function first() {
+    const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
+    for (let block of blocks) {
+      const textarea = block.querySelector('textarea')
+      textarea.alt = textarea.textContent
+      textarea.title = textarea.textContent
+    }
+  }
   function text_fix() {
     const MAX_LINES = 2
-
     const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
 
     for (let block of blocks) {
-      const h3Elem = block.querySelector('h3')
-      const styles = getComputedStyle(h3Elem)
-      const letterRowCount = Math.ceil(
-        h3Elem.clientWidth / parseInt(styles.fontSize),
-      )
+      const textarea = block.querySelector('textarea')
 
-      let lines = h3Elem.clientHeight / parseInt(styles.lineHeight)
-      if(lines <= MAX_LINES) return
-      while (lines > MAX_LINES) {
-        h3Elem.textContent = h3Elem.textContent.substring(
-          0,
-          h3Elem.textContent.length - 5,
-        )
-        lines = h3Elem.clientHeight / parseInt(styles.lineHeight)
-      }
-
-      h3Elem.textContent =
-        h3Elem.textContent.substring(0, h3Elem.textContent.length - 3) + '...'
+      text_adapt(textarea)
     }
   }
 
-  function resize() {
-    if (!isChangeScreen) return
-
-    text_fix()
+  function text_adapt(textarea) {
+    const delta = textarea.clientHeight / textarea.scrollHeight
+    
+    if (delta < 1) {
+      textarea.textContent =
+      textarea.title.substring(0, textarea.title.length * delta - 3) + '...'
+    }
+    textarea.style.lineHeight =
+    parseInt(parseInt(getComputedStyle(textarea).fontSize) * 1.05) + 'px'
+    
+    set_datadelta(textarea, textarea.clientHeight / textarea.scrollHeight)
   }
 
+  function is_changed_delta(textarea) {
+    const EPS = 0.05
+    const delta = textarea.clientHeight / textarea.scrollHeight
+
+    return Math.abs(delta - parseFloat(get_datadelta(textarea))) >= EPS
+  }
+
+  function set_datadelta(el, delta) {
+    el.setAttribute('delta', delta)
+  }
+  function get_datadelta(el) {
+    return el.getAttribute('delta')
+  }
+
+  function resize() {
+    const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
+    for (let block of blocks) {
+      const textarea = block.querySelector('textarea')
+
+      if (is_changed_delta(textarea)) text_adapt(textarea)
+    }
+  }
+
+  first()
   text_fix()
   window.addEventListener('resize', resize)
 })()
