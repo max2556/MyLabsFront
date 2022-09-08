@@ -304,6 +304,13 @@
   background-color: #ffffff;
 }
 
+
+
+@media (max-width: 1400px) {
+  .about-us .video{
+    width: 100%;
+  }
+}
 @media (max-width: 1025px) {
   .how_it_works .step .step_circle {
     width: 20px;
@@ -319,6 +326,9 @@
 */
   .about-us .info .FAQ {
     padding: 20px 25px;
+  }
+  .about-us .video{
+    width: 85%;
   }
 }
 @media (max-width: 900px) {
