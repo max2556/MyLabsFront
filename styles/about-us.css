@@ -435,6 +435,12 @@
 }
 
 @media (max-width: 500px) {
+  .about-us .info .how_it_works {
+    padding: 0;
+  }
+  
+
+
   .about-us .how_it_works .step_line {
     height: 80px;
     margin: -6px 5.5px -15px;

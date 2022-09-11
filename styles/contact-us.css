@@ -63,7 +63,7 @@
 
 @media (max-width: 1025px) {
   .contact-section{
-    background-image: url('../assets/contactus-small.svg');
+    background-image: url('../assets/contact-us-middle.svg');
     background-position-x: left;
   }
 
@@ -94,6 +94,9 @@
     font-size: 20px;
   }*/
 
+  .contact-section{
+    background-image: url('../assets/contact-us-low.svg');
+  }
   .contact-section .button{
     width: 70%;
     

@@ -20,15 +20,14 @@
 
   function text_adapt(textarea) {
     const delta = textarea.clientHeight / textarea.scrollHeight
-    
-    if (delta < 1) {
+
+    if (delta < 0.9) {
       textarea.textContent =
-      textarea.title.substring(0, textarea.title.length * delta - 3) + '...'
+        textarea.title.substring(0, textarea.title.length * delta - 3) + '...'
+      set_datadelta(textarea, textarea.clientHeight / textarea.scrollHeight)
     }
     textarea.style.lineHeight =
-    parseInt(parseInt(getComputedStyle(textarea).fontSize) * 1.05) + 'px'
-    
-    set_datadelta(textarea, textarea.clientHeight / textarea.scrollHeight)
+      parseInt(parseInt(getComputedStyle(textarea).fontSize) * 1.05) + 'px'
   }
 
   function is_changed_delta(textarea) {
@@ -50,7 +49,8 @@
     for (let block of blocks) {
       const textarea = block.querySelector('textarea')
 
-      if (is_changed_delta(textarea)) text_adapt(textarea)
+      //if (is_changed_delta(textarea))
+      text_adapt(textarea)
     }
   }
 

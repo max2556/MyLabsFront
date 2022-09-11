@@ -6,7 +6,7 @@
   margin-bottom: 50px;
 }
 
-.lastworks h2.title{
+.lastworks h2.title {
   margin-left: 15px;
 }
 
@@ -172,7 +172,7 @@
   .lastworks .block {
     width: calc(50% - 30px);
   }
-  .lastworks .structure{
+  .lastworks .structure {
     width: 85%;
   }
 }
@@ -187,24 +187,24 @@
   .lastworks .block .title {
     font-size: 32px;
   }
-  .lastworks .slider-control{
+  .lastworks .slider-control {
     padding: 5px 10px;
   }
-  .lastworks .structure{
+  .lastworks .structure {
     width: auto;
     margin: 50px 25px;
   }
-  .lastworks .slider-control .buttons .move{
+  .lastworks .slider-control .buttons .move {
     margin-left: 20px;
   }
-  .lastworks .slider-control .buttons .move:first-child{
+  .lastworks .slider-control .buttons .move:first-child {
     margin: 0;
   }
 
   .lastworks .block .line {
     font-size: 24px;
   }
-  .lastworks .block .line img{
+  .lastworks .block .line img {
     width: 30px;
     height: 30px;
   }
@@ -220,7 +220,7 @@
 }
 
 @media (max-width: 800px) {
-  .lastworks .structure{
+  .lastworks .structure {
     width: 60%;
     margin: 50px auto;
   }
@@ -233,28 +233,42 @@
 }
 
 @media (max-width: 580px) {
-  .lastworks .structure{
+  .lastworks .structure {
     width: auto;
     margin: 50px 25px;
   }
 }
 
 @media (max-width: 500px) {
-  .lastworks .structure{
+  .lastworks .structure {
     margin: 50px 15px;
   }
-  .lastworks .slider-control{
+  .lastworks .slider-control {
     padding: 0;
   }
-  .lastworks .slider-control .buttons{
+  .lastworks .slider-control .buttons {
     margin-left: 0px;
     margin-right: 0px;
+
+    margin-top: calc((30px - 18px) / 2);
+    margin-bottom: calc((30px - 18px) / 2);
   }
-  .lastworks .slider-control .buttons .move{
+  .lastworks .slider-control .buttons .move {
     margin-left: 10px;
+    width: 18px;
+    height: 18px;
   }
-  .lastworks .slider-control .buttons .move:first-child{
+  .lastworks .slider-control .move.active {
+    width: 60px;
+  }
+
+  .lastworks .slider-control .buttons .move:first-child {
     margin: 0;
+  }
+
+  .lastworks .slider-control .move-arrow {
+    width: 30px;
+    height: 30px;
   }
 
   .lastworks .block {
@@ -263,4 +277,14 @@
   .lastworks .block .info {
     width: calc(100% - 30px);
   }
+
+  .lastworks .blocks {
+    height: 275px;
+  }
+
+  .lastworks .block .icon {
+    bottom: 5px;
+    width: 40px;
+  }
+
 }
