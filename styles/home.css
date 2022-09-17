@@ -13,8 +13,8 @@
 }
 
 .home_background svg.full g.lines path {
-  transition: stroke-dashoffset 3s ease-out;
   stroke-dashoffset: 0 !important;
+  transition: stroke-dashoffset 3s ease-out;
 }
 
 .home {
@@ -65,6 +65,25 @@
 
 /*ADAPTATION*/
 
+.home_background svg {
+  display: none;
+}
+
+.home_background .home_bg_desktop {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .home_background .home_bg_mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .home_background .home_bg_desktop {
+    display: none;
+  }
+}
+
 @media (max-width: 1600px) {
   .home_background svg {
     height: 100%;
@@ -85,8 +104,6 @@
   .home_background svg {
     width: 100%;
   }
-
-  
 }
 
 @media (max-width: 1400px) {
@@ -112,7 +129,7 @@
 
 @media (max-width: 1025px) {
   .home {
-    margin-top: 115px;
+    margin-top: 150px;
     margin-bottom: 150px;
   }
   .home .text {
@@ -150,6 +167,10 @@
 }
 
 @media (max-width: 700px) {
+  .home_background .home_bg_mobile {
+    width: auto;
+    height: 100%;
+  }
   .home .text {
     width: 90%;
   }

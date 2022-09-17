@@ -1,8 +1,17 @@
-function homeBackgroundAppearance(): void {
-    let svg: SVGElement = document.querySelector(".home_background svg");
-    svg.classList.add("transition_disabled");
+function findActiveBg(parent: Element): SVGElement {
+    let svg: NodeListOf<SVGElement> = parent.querySelectorAll("svg");
+    for (let i = 0; i < svg.length; i++) {
+        if (getComputedStyle(svg[i]).display != "none") {
+            return svg[i];
+        }
+    }
+}
 
-    let path: NodeListOf<SVGPathElement> = svg.querySelectorAll("g.lines path");
+function computeLinesProps(): void {
+    let home: SVGElement = document.querySelector(".home_background");
+    home.classList.add("transition_disabled");
+
+    let path: NodeListOf<SVGPathElement> = document.querySelector(".home_background").querySelectorAll("g.lines path");
     path.forEach((el: SVGPathElement) => {
         let length: number = el.getTotalLength();
         el.style.strokeDasharray = length + "px";
@@ -10,12 +19,26 @@ function homeBackgroundAppearance(): void {
         el.style.transitionDuration = (length / 800 * 6) + "s";
     });
 
-    svg.classList.remove("transition_disabled");
+    home.classList.remove("transition_disabled");
+    // home.getBoundingClientRect();
+}
+function homeBackgroundAppearance(): void {
+    let svg: SVGElement = findActiveBg(document.querySelector(".home_background"));
+    // svg.getBoundingClientRect();
+    // let triggerLayout = svg.scrollHeight;
     svg.classList.add("full")
+}
+function addTransitionToSvg() {
+    let svgs: NodeListOf<SVGElement> = document.querySelectorAll(".home_background svg");
+    setTimeout(function () {
+        for (let i = 0; i < svgs.length; i++) {
+            svgs[i].classList.add("full");
+        }
+    }, 3000)
 }
 
 function moveLines(svg: Element): void {
-    let linesToMove: number = 7;
+    let linesToMove: number = 10;
     let lines: NodeListOf<SVGPathElement> = svg.querySelectorAll("g.lines path");
 
     for (let i = 0; i < linesToMove; i++) {
@@ -25,10 +48,12 @@ function moveLines(svg: Element): void {
         }
         el.setAttribute("busy", "1");
 
-        let sdo: number = Number(el.style.strokeDashoffset.slice(0, -2));
-        let td: number = Number(el.style.transitionDuration.slice(0, -1));
+        let length: number = el.getTotalLength();
+        let sdo: number = Math.floor(length * 100) / 100;
+        let td: number = Math.floor((length / 800 * 6) * 100) / 100;
 
         el.style.transitionDuration = td * 2 + "s";
+        el.style.setProperty("transition-duration", td * 2 + "s")
         el.style.setProperty("stroke-dashoffset", sdo * 2 + "px", "important")
 
         setTimeout(function (): void {
@@ -56,15 +81,17 @@ function isVisible(el: Element): boolean {
 }
 
 function homeBackgroundMovements(): void {
-    let svg: Element = document.querySelector(".home_background svg");
     let home: Element = document.querySelector(".home_background");
 
     let intervalId = setInterval(function () {
         if (isVisible(home)) {
-            moveLines(svg)
+            moveLines(findActiveBg(home));
         }
     }, 2000)
 }
 
+
+computeLinesProps();
 homeBackgroundAppearance();
+addTransitionToSvg();
 homeBackgroundMovements();
