@@ -316,6 +316,9 @@
   .about-us .info h3 {
     font-size: 28px;
   }
+  .about-us .info .how_it_works .steps{
+    width: 160px;
+  }
 }
 
 @media (max-width: 1025px) {
@@ -378,7 +381,7 @@
   }
 
   .about-us .how_it_works .step_line {
-    margin: -6px 6px -15px;
+    margin: -6px 7px -15px;
   }
   .about-us .how_it_works .step_line .large-screen {
     display: none;
@@ -445,7 +448,7 @@
 
   .about-us .how_it_works .step_line {
     height: 90px;
-    margin: -7px 5.5px -6px;
+    margin: -7px 7px -6px;
   }
   .how_it_works .step .step_circle {
     width: 20px;
