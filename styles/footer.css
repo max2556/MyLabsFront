@@ -1,6 +1,8 @@
 .footer {
   color: #ffffff;
 
+  transition: 0.4s filter;
+
   background-color: #060137;
   background-image: url('../assets/footerbg.svg');
   background-repeat: no-repeat;

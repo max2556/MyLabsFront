@@ -191,6 +191,9 @@ p {
   }
 }
 
+.main{
+  transition: 0.4s filter;
+}
 .blured {
   filter: blur(2px);
 }
