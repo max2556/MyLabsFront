@@ -412,6 +412,10 @@
     flex-direction: column;
     align-items: center;
   }
+  
+  .about-us .info .how_it_works h3 {
+    text-align: center;
+  }
 
   .about-us .how_it_works .step_line {
     height: 100px;
