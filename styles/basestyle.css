@@ -190,6 +190,12 @@ p {
     margin-right: 25px;
   }
 }
+@media (max-width: 700px) {
+  .button:hover {
+    outline: 3px solid #2ba84a;
+  }
+}
+
 
 .main{
   transition: 0.4s filter;

@@ -154,12 +154,19 @@
 
 .our_skills .skill_wrapper .skill_text {
   position: absolute;
-  padding: 5px;
-  box-sizing: border-box;
-  overflow: hidden;
-  height: 100%;
-  left: var(--ourskills-icon-size);
   top: 0;
+  left: var(--ourskills-icon-size);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  height: 100%;
+  
+  box-sizing: border-box;
+  padding: 10px;
+  
+  overflow: hidden;
 }
 
 .our_skills .skill_wrapper .skill_text h3 {
@@ -241,14 +248,13 @@
     margin-left: calc(-5px - var(--ourskills-icon-size) / 2);
   }
   .our_skills .skills .skill_wrapper:last-of-type .skill:hover {
-    margin-left: calc(25px - var(--ourskills-icon-size) * 2);
+    margin-left: calc(-100% - var(--ourskills-icon-size) * 2);
   }
 }
 
 @media (max-width: 500px) {
   .our_skills {
     position: relative;
-    background-color: #ffffff;
   }
   .our_skills .bg {
     display: block;
@@ -295,10 +301,15 @@
     grid-row-end: span 1;
   }
   .our_skills .skills .skill_wrapper {
-    margin-bottom: 35px;
     --ourskills-icon-size: 70px;
+    --text-height: 80px;
+
+    margin-bottom: 35px;
+    height: calc(var(--text-height));
   }
   .our_skills .skills .skill_wrapper .skill {
+    margin-top: 0;
+
     left: calc(
       (100% - var(--text-width) - var(--ourskills-icon-size) - var(--margin)) /
         2
@@ -306,12 +317,12 @@
     overflow: visible;
 
     border: 1.5px solid #f0f0f0;
-    --text-height: 80px;
   }
   .our_skills .skills .skill_wrapper .skill:hover {
     width: var(--ourskills-icon-size);
     z-index: 3;
     margin-left: 0;
+    box-shadow: none;
   }
   .our_skills .skills .skill_wrapper:last-of-type .skill:hover {
     width: var(--ourskills-icon-size);
@@ -344,6 +355,7 @@
 
     width: var(--text-width);
     height: var(--text-height);
+    padding: 10px 20px;
 
     background: white;
     border-radius: 19px;

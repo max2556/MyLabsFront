@@ -326,6 +326,7 @@
 .about-us .info .answer i::before {
   content: 'A.';
   color: #b6b6b7;
+  margin: 0px 14px 5px 12px !important;
 }
 .about-us .info .question::before {
   content: ''; /*Must be empty*/
@@ -412,7 +413,7 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .about-us .info .how_it_works h3 {
     text-align: center;
   }
@@ -425,7 +426,7 @@
     width: 80%;
 
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 
     box-shadow: none;
   }
@@ -472,6 +473,9 @@
     height: 80px;
     margin-bottom: 18px;
   }
+  .about-us .info .line i::before {
+    font-size: 60px;
+  }
 
   .about-us .info .FAQ .block .answer {
     position: absolute;
@@ -511,6 +515,7 @@
   }
   .about-us .info .FAQ .block {
     font-size: 16px;
+    z-index: 1;
   }
 
   .about-us .video {
@@ -542,7 +547,7 @@
   }
 
   .about-us .info .line i::before {
-    font-size: 60px;
+    font-size: 54px;
     margin: 0px 10px 5px 12px;
   }
 
