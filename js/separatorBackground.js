@@ -16,7 +16,7 @@ const SEPARATOR_STATE = {
     if (window.innerWidth < 1100) return medium_screen
     return large_screen
   })(),
-  isRunning: false,
+  isRunning: true,
   prevWidth: 0,
 }
 
@@ -41,9 +41,11 @@ class Line {
       this.string = this.string.concat(newChar)
     }
 
-    let speedRange = 2
+    let speedRange = 5
     this.deltaBias = Math.round(Math.random() * speedRange) / 1000 + 0.001 //You can change speed by changing speedRange
     this.bias = 0
+
+    this._width = ctx.measureText(this.string).width * 2;
   }
 
   update() {
@@ -54,7 +56,7 @@ class Line {
 
   draw(ctx) {
     ctx.font = `${this.fs}px sans-serif`
-    let width = ctx.measureText(this.string).width * 2
+    let width = this._width;
 
     ctx.fillStyle = getGradient(width, this.fs, this.bias)
     ctx.fillText(this.string, this.Y, -this.X)
@@ -74,11 +76,9 @@ class Line {
   updateAllLines()
   drawAllLines()
 
-  window.addEventListener('scroll', () => {
-    if (isVisible(separator) && !SEPARATOR_STATE.isRunning) {
-      updateAllLines()
-      drawAllLines()
-    }
+  window.addEventListener('wheel', (e) => {
+    SEPARATOR_STATE.isRunning = isVisible(separator);
+    
   })
   window.addEventListener('resize', onresize)
 })()
@@ -95,15 +95,24 @@ function getGradient(w, h, bias) {
 }
 
 function updateAllLines() {
-  SEPARATOR_STATE.isRunning = true
+  if (!SEPARATOR_STATE.isRunning){
+    window.requestAnimationFrame(updateAllLines)
+    return;
+  }
+  
   for (let line of SEPARATOR_STATE.lines) {
     line.update()
   }
-  if (isVisible(separator)) window.requestAnimationFrame(updateAllLines)
-  else SEPARATOR_STATE.isRunning = false
+   
+  window.requestAnimationFrame(updateAllLines)
 }
 
 function drawAllLines() {
+  if (!SEPARATOR_STATE.isRunning){
+    window.requestAnimationFrame(drawAllLines)
+    return;
+  }
+
   clearCanvas()
 
   ctx.shadowColor = '#37feff'
@@ -112,7 +121,8 @@ function drawAllLines() {
   for (let line of SEPARATOR_STATE.lines) {
     line.draw(ctx)
   }
-  if (isVisible(separator)) window.requestAnimationFrame(drawAllLines)
+
+  window.requestAnimationFrame(drawAllLines)
 }
 
 function clearCanvas() {

@@ -88,7 +88,7 @@ function animateScroll(value) {
 
   const go = () => {
     current += deltaY
-    window.scrollTo(window.scrollX, current)
+    window.scrollTo(0, current)
     if (
       (direction === 'down' && current < value) ||
       (direction === 'up' && current > value)
@@ -112,14 +112,15 @@ function checkScroll() {
 }
 
 function isVisible(el) {
+  let boundingRect = el.getBoundingClientRect();
   let targetPosition = {
     bottom:
       Math.min(
-        el.getBoundingClientRect().bottom,
-        el.getBoundingClientRect().bottom,
+        boundingRect.bottom,
+        boundingRect.bottom,
       ) + pageYOffset,
     top:
-      Math.max(el.getBoundingClientRect().top, el.getBoundingClientRect().top) +
+      Math.max(boundingRect.top, boundingRect.top) +
       pageYOffset,
   }
   let windowPosition = {
