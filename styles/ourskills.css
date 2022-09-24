@@ -198,22 +198,37 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1025px) {
+  .our_skills .skills .skill_wrapper:last-of-type .skill:hover {
+    width: calc(150% + var(--ourskills-icon-size) * 2);
+    margin-left: calc(0px - var(--ourskills-icon-size) * 2 - 100%);
+  }
+}
+
+@media (max-width: 800px) {
   .our_skills h3 {
     font-size: 40px;
   }
   .our_skills .skills .skill_wrapper {
     --ourskills-icon-size: 70px;
+    --row-gap: 10px;
   }
 
-  .our_skills .skill_wrapper .skill_text{
+  .our_skills .skill_wrapper .skill_text {
     padding: 2px;
   }
-  .our_skills .skill_wrapper .skill_text h3{
+  .our_skills .skill_wrapper .skill_text h3 {
     font-size: 20px;
   }
-  .our_skills .skill_wrapper .skill_text p{
+  .our_skills .skill_wrapper .skill_text p {
     font-size: 16px;
+  }
+
+  .our_skills .skill_wrapper:nth-child(2n-1) .skill_line {
+    margin-top: var(--row-gap);
+  }
+  .our_skills .skill_wrapper:nth-child(2n) .skill {
+    margin-top: var(--row-gap);
   }
 
   .our_skills .skill_wrapper .skill:hover .skill_text {
@@ -224,6 +239,9 @@
   }
   .our_skills .skill_wrapper .skill:hover {
     margin-left: calc(-5px - var(--ourskills-icon-size) / 2);
+  }
+  .our_skills .skills .skill_wrapper:last-of-type .skill:hover {
+    margin-left: calc(25px - var(--ourskills-icon-size) * 2);
   }
 }
 
