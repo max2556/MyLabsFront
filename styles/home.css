@@ -13,8 +13,8 @@
 }
 
 .home_background svg.full g.lines path {
-  transition: stroke-dashoffset 3s ease-out;
   stroke-dashoffset: 0 !important;
+  transition: stroke-dashoffset 3s ease-out;
 }
 
 .home {
@@ -65,11 +65,41 @@
 
 /*ADAPTATION*/
 
+.home_background svg {
+  display: none;
+}
+
+.home_background .home_bg_desktop {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .home_background .home_bg_mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .home_background .home_bg_desktop {
+    display: none;
+  }
+}
+
 @media (max-width: 1600px) {
   .home_background svg {
     height: 100%;
   }
+
+  .home p {
+    font-size: 32px;
+  }
+  .home a {
+    font-size: 32px ;
+  }
+  .home span {
+    font-size: 32px;
+  }
 }
+
 @media (min-width: 1600px) {
   .home_background svg {
     width: 100%;
@@ -81,13 +111,13 @@
     width: 400px;
   }
   .home p {
-    font-size: 24px !important;
+    font-size: 24px;
   }
   .home a {
-    font-size: 24px !important;
+    font-size: 24px ;
   }
   .home span {
-    font-size: 24px !important;
+    font-size: 24px;
   }
 }
 
@@ -123,10 +153,38 @@
     margin: 0 auto;
     margin-top: 50px;
   }
+
+
+  .home p {
+    font-size: 20px;
+  }
+  .home a {
+    font-size: 20px ;
+  }
+  .home span {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 700px) {
+  .home_background .home_bg_mobile {
+    width: auto;
+    height: 100%;
+  }
   .home .text {
     width: 90%;
+  }
+  .home .image{
+    width: 60%;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .home .image{
+    width: 70%;
+  }
+  .home .button{
+    padding: 10px 30px;
   }
 }

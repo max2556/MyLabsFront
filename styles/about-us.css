@@ -3,21 +3,17 @@
 
   font-size: 2rem;
 }
-
 .about-us .video_holder {
   margin-bottom: 80px;
 }
-
 .about-us .info {
   margin-top: 0;
 }
-
 .about-us hr {
   border: none;
   background: black;
   height: 0.1px;
 }
-
 .about-us .bg {
   position: absolute;
   z-index: -2;
@@ -135,7 +131,6 @@
     rgba(255, 255, 255, 1) 100%
   );
 }
-
 .about-us .video_holder * {
   width: 100%;
   display: block;
@@ -156,7 +151,6 @@
   width: 75%;
   margin: 0 auto;
 }
-
 .about-us .camera {
   position: absolute;
   bottom: 10%;
@@ -168,7 +162,6 @@
   border: 3px solid #585858;
   box-shadow: 0px 0px 0px 3px black;
 }
-
 .about-us .sound {
   position: absolute;
   top: 50%;
@@ -181,7 +174,6 @@
   box-shadow: 0px 0px 0px 1px black;
   transform: translateY(-50%);
 }
-
 .about-us .buttons .power {
   position: absolute;
   top: -8px;
@@ -194,7 +186,6 @@
   border-bottom: 2px solid #525252;
   transform: rotateX(57deg);
 }
-
 .about-us .buttons .volumeup {
   position: absolute;
   top: -8px;
@@ -207,7 +198,6 @@
   border-bottom: 2px solid #525252;
   transform: rotateX(57deg);
 }
-
 .about-us .buttons .volumedown {
   position: absolute;
   top: -8px;
@@ -221,19 +211,16 @@
   transform: rotateX(57deg);
 }
 /*END OF SMARTPHONE IMAGE*/
-
 .about-us .video_player {
   box-sizing: border-box;
   border-color: #464655;
   border-style: solid;
   border-radius: 20px;
 }
-
 .about-us .computer_bottom {
   margin-top: -5px;
   width: 100%;
 }
-
 .about-us .image img {
   width: 500px;
 }
@@ -242,12 +229,10 @@
 .about-us .info .shadow {
   box-shadow: 2px 4px 6px 0px #06013766, -2px -2px 6px 2px #06013766;
 }
-
 .about-us .info h3 {
   margin-bottom: 35px;
   font-size: 32px;
 }
-
 .about-us .info {
   display: flex;
   flex-direction: row;
@@ -265,7 +250,6 @@
 
   margin-right: 20px;
 }
-
 .about-us .info .how_it_works .steps {
   text-align: center;
   width: 177px;
@@ -277,26 +261,21 @@
   position: relative;
   font-size: 28px;
 }
-
 .how_it_works .step .step_circle {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 25px;
 }
-
 .how_it_works .step:nth-of-type(2n) .step_circle {
   right: 0;
 }
-
 .how_it_works .step:nth-of-type(2n-1) .step_circle {
   left: 0;
 }
-
 .how_it_works .steps .step_line:nth-of-type(2n) {
   transform: scale(1, -1);
 }
-
 .about-us .how_it_works .step_line {
   /*left: 9px;*/
   /*right: 9px;*/
@@ -313,11 +292,9 @@
   top: 50%;
   transform: translateY(-50%);
 }
-
 .how_it_works .step_line .middle-screen {
   display: none;
 }
-
 .about-us .how_it_works .step:first-child .step_background {
   position: absolute;
   left: 0;
@@ -335,18 +312,18 @@
 
   overflow-y: scroll;
 }
-
 .about-us .info .block {
   margin-bottom: 20px;
   font-size: 20px;
 }
-
 .about-us .info .line {
   display: flex;
   flex-direction: row;
   align-items: center;
 
   position: relative;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .about-us .info .question {
@@ -358,49 +335,61 @@
 .about-us .info .answer {
   background: #ffffff;
 }
-
-.about-us .info .question i::before {
-  content: 'Q.';
+.about-us .info .line i::before {
+  content: ''; /*Place some letter*/
   font-size: 72px;
-  color: #2ba84a;
+  color: #FFFFFF;
   margin: 0px 20px 5px 12px;
   display: block;
   font-weight: 500;
 }
-
-.about-us .info .question::before {
-  content: '';
-  position: absolute;
-  width: 5px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-
-  background-color: #2ba84a;
+.about-us .info .question i::before {
+  content: 'Q.';
+  color: #2ba84a;
 }
-
 .about-us .info .answer i::before {
   content: 'A.';
-  font-size: 72px;
   color: #b6b6b7;
-  margin: 0px 20px 5px 18px;
-  display: block;
-  font-weight: 500;
+  margin: 0px 14px 5px 12px !important;
 }
-
-.about-us .info .answer::before {
-  content: '';
+.about-us .info .question::before {
+  content: ''; /*Must be empty*/
   position: absolute;
   width: 5px;
   top: 0;
   left: 0;
   bottom: 0;
 
+  background-color: #FFFFFF;
+}
+.about-us .info .question::before {
+  background-color: #2ba84a;
+}
+.about-us .info .answer::before {
   background-color: #b6b6b7;
 }
-
 .about-us .bg_white {
   background-color: #ffffff;
+}
+
+@media (max-width: 1400px) {
+  .about-us .video {
+    width: 100%;
+  }
+}
+@media (max-width: 1300px) {
+  .about-us .info .how_it_works {
+    padding: 25px 10px;
+  }
+  .about-us .info h3 {
+    font-size: 28px;
+  }
+  .about-us .info .how_it_works .steps{
+    width: 160px;
+  }
+  .about-us .info .how_it_works .step_line{
+    margin: -5px 10px -5px;
+  }
 }
 
 @media (max-width: 1025px) {
@@ -411,12 +400,21 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
+  /*
   .about-us .FAQ .block {
     font-size: 16px;
   }
+*/
   .about-us .info .FAQ {
     padding: 20px 25px;
   }
+  .about-us .video {
+    width: 85%;
+  }
+  .about-us .how_it_works .step_line {
+    margin: -6px 7px -15px;
+  }
+
 }
 @media (max-width: 900px) {
   .about-us .video {
@@ -440,7 +438,11 @@
     align-items: center;
   }
 
-  .about-us .how_it_works .step_line{
+  .about-us .info .how_it_works h3 {
+    text-align: center;
+  }
+
+  .about-us .how_it_works .step_line {
     height: 100px;
   }
 
@@ -448,17 +450,13 @@
     width: 80%;
 
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 
     box-shadow: none;
   }
 
-  .about-us .info .how_it_works .steps{
-    width: 60%;
-  }
-
   .about-us .how_it_works .step_line {
-    margin: -6px 4px -15px;
+    margin: -6px 7px -15px;
   }
   .about-us .how_it_works .step_line .large-screen {
     display: none;
@@ -469,16 +467,18 @@
 
   .about-us .info .FAQ {
     overflow-y: hidden;
-
+    padding: 10px 20px;
     height: auto;
   }
 
   .about-us .info .FAQ .block {
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     position: relative;
+
+    /*font-size: 20px*/
   }
 
-  .about-us .info .FAQ .block .question{
+  .about-us .info .FAQ .block .question {
     cursor: pointer;
   }
 
@@ -497,6 +497,9 @@
     height: 80px;
     margin-bottom: 18px;
   }
+  .about-us .info .line i::before {
+    font-size: 60px;
+  }
 
   .about-us .info .FAQ .block .answer {
     position: absolute;
@@ -511,27 +514,19 @@
     margin-bottom: 0;
   }
 
-  .about-us .FAQ .block {
-    font-size: 14px;
-  }
-
   .about-us .FAQ hr {
     display: none;
   }
-  .about-us .info .FAQ {
-    padding: 10px 15px;
-  }
-  
-  
 }
 
 @media (max-width: 500px) {
-  .about-us .info .how_it_works .steps{
-    width: 90%;
+  .about-us .info .how_it_works {
+    padding: 0;
   }
+
   .about-us .how_it_works .step_line {
-    height: 80px;
-    margin: -6px 5.5px -15px;
+    height: 90px;
+    margin: -7px 7px -6px;
   }
   .how_it_works .step .step_circle {
     width: 20px;
@@ -542,7 +537,47 @@
   .about-us .info .FAQ {
     padding: 10px;
   }
-  .about-us .info .FAQ .block span {
-    font-size: 16px !important;
+  .about-us .info .FAQ .block {
+    font-size: 16px;
+    z-index: 1;
+  }
+
+  .about-us .video {
+    padding: 5px 8px;
+    padding-right: 6px;
+    border-top: 4px solid #b7b7b7;
+    border-left: 3px solid #b7b7b7;
+    border-radius: 20px;
+  }
+  .about-us .video .camera {
+    left: 4px;
+
+    width: 2px;
+    height: 2px;
+
+    border: 1px solid #585858;
+    box-shadow: 0px 0px 0px 1px black;
+  }
+  .about-us .video_player {
+    border-radius: 12px;
+  }
+  .about-us .video .sound {
+    left: 3px;
+
+    width: 1px;
+
+    border: 0.5px solid #585858;
+    box-shadow: 0px 0px 0px 1px black;
+  }
+
+  .about-us .info .line i::before {
+    font-size: 54px;
+    margin: 0px 10px 5px 12px;
+  }
+
+}
+@media (max-width: 400px) {
+  .about-us .info .FAQ .block {
+    font-size: 14px;
   }
 }

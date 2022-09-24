@@ -1,20 +1,9 @@
 @media (max-width: 1600px) {
-}
-
-@media (max-width: 1400px) {
   h1 {
-    font-size: 64px !important;
+    font-size: 64px;
   }
-
-  p {
-    font-size: 32px !important;
-  }
-
-  a {
-    font-size: 32px !important;
-  }
-  span {
-    font-size: 32px !important;
+  h2 {
+    font-size: 56px;
   }
 }
 
@@ -23,36 +12,29 @@
     display: none;
   }
 }
+@media (max-width: 1400px) {
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+}
+
 @media (max-width: 1025px) {
   h1 {
-    font-size: 48px !important;
+    font-size: 40px;
   }
-
-  p {
-    font-size: 28px !important;
-  }
-
-  a {
-    font-size: 28px !important;
-  }
-  span {
-    font-size: 28px !important;
+  h2 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 700px) {
   h1 {
-    font-size: 36px !important;
+    font-size: 36px;
   }
-
-  p {
-    font-size: 20px !important;
-  }
-
-  a {
-    font-size: 20px !important;
-  }
-  span {
-    font-size: 20px !important;
+  h2 {
+    font-size: 28px;
   }
 }

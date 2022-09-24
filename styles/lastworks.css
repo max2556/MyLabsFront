@@ -6,6 +6,10 @@
   margin-bottom: 50px;
 }
 
+.lastworks h2.title {
+  margin-left: 15px;
+}
+
 /*Прокручивающийся штук*/
 .lastworks .scroll-plate {
   padding: 0;
@@ -16,7 +20,7 @@
 
 .lastworks .blocks {
   position: relative;
-  z-index: -1;
+  z-index: 1;
   transition: all 1s;
 
   font-size: 0;
@@ -26,7 +30,7 @@
 /*Стили блоков*/
 .lastworks .block {
   position: relative;
-  z-index: -1;
+  z-index: 1;
 
   width: calc(100% / 3 - 30px);
   height: calc(100% - 45px);
@@ -56,8 +60,21 @@
 }
 
 .lastworks .block .title {
+  width: 100%;
+
+  font-family: 'Poppins', sans-serif;
+  line-height: 48px;
+
   margin-bottom: 20px;
   white-space: pre-wrap;
+
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+}
+.lastworks .block .title:focus-visible {
+  outline: none;
 }
 
 .lastworks .block .line img {
@@ -85,7 +102,7 @@
 
 .lastworks .slider-control .buttons {
   display: inline-block;
-  margin: 0 30px;
+  margin: 0 0px;
 
   margin-top: calc((40px - 25px) / 2);
   margin-bottom: calc((40px - 25px) / 2);
@@ -97,7 +114,7 @@
 
   border-radius: 40px;
   border: 0;
-  margin-right: 25px;
+  margin-left: 25px;
 
   display: inline-block;
 
@@ -112,7 +129,7 @@
   transform: scale(1.2);
 }
 
-.lastworks .slider-control .move:last-child {
+.lastworks .slider-control .move:first-child {
   margin: 0;
 }
 
@@ -152,10 +169,15 @@
 }
 
 @media (max-width: 1575px) {
+  .lastworks .scroll-plate {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .lastworks .block {
     width: calc(50% - 30px);
   }
-  .lastworks .structure{
+  .lastworks .structure {
     width: 85%;
   }
 }
@@ -167,15 +189,54 @@
 }
 
 @media (max-width: 1025px) {
+  .lastworks .scroll-plate {
+    width: 700px;
+  }
+
   .lastworks .block .title {
     font-size: 32px;
   }
-  .lastworks .slider-control{
+  .lastworks .slider-control {
     padding: 5px 10px;
   }
-  .lastworks .structure{
+  .lastworks .structure {
     width: auto;
     margin: 50px 25px;
+  }
+  .lastworks .slider-control .buttons .move {
+    margin-left: 20px;
+  }
+  .lastworks .slider-control .buttons .move:first-child {
+    margin: 0;
+  }
+
+  .lastworks .block .line {
+    font-size: 24px;
+  }
+  .lastworks .block .line img {
+    width: 30px;
+    height: 30px;
+  }
+  .lastworks .blocks {
+    height: 300px;
+  }
+}
+
+@media (max-width: 800px) {
+  .lastworks .scroll-plate {
+    width: 400px;
+  }
+
+
+  .lastworks .structure {
+    width: 60%;
+    margin: 50px auto;
+  }
+  .lastworks .block {
+    width: calc(100% - 30px);
+  }
+  .lastworks .blocks {
+    height: 300px;
   }
 }
 
@@ -185,31 +246,48 @@
   }
 }
 
-@media (max-width: 800px) {
-  .lastworks .block {
-    width: calc(100% - 30px);
-  }
-  .lastworks .blocks {
-    height: 300px;
+@media (max-width: 580px) {
+  .lastworks .structure {
+    width: auto;
+    margin: 50px 25px;
   }
 }
 
 @media (max-width: 500px) {
-  .lastworks .structure{
+  .lastworks .scroll-plate {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .lastworks .structure {
     margin: 50px 15px;
   }
-  .lastworks .slider-control{
+  .lastworks .slider-control {
     padding: 0;
   }
-  .lastworks .slider-control .buttons{
+  .lastworks .slider-control .buttons {
     margin-left: 0px;
     margin-right: 0px;
+
+    margin-top: calc((30px - 18px) / 2);
+    margin-bottom: calc((30px - 18px) / 2);
   }
-  .lastworks .slider-control .buttons .move{
-    margin-right: 10px;
+  .lastworks .slider-control .buttons .move {
+    margin-left: 10px;
+    width: 18px;
+    height: 18px;
   }
-  .lastworks .slider-control .buttons .move:last-child{
+  .lastworks .slider-control .move.active {
+    width: 60px;
+  }
+
+  .lastworks .slider-control .buttons .move:first-child {
     margin: 0;
+  }
+
+  .lastworks .slider-control .move-arrow {
+    width: 30px;
+    height: 30px;
   }
 
   .lastworks .block {
@@ -217,5 +295,20 @@
   }
   .lastworks .block .info {
     width: calc(100% - 30px);
+  }
+
+  .lastworks .blocks {
+    height: 275px;
+  }
+
+  .lastworks .block .icon {
+    bottom: 0px;
+    width: 60px;
+  }
+}
+@media (max-width: 350px) {
+  .lastworks .block .icon {
+    bottom: 5px;
+    width: 40px;
   }
 }

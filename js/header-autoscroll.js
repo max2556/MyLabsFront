@@ -29,6 +29,7 @@ const LINKS_DICT = {}
 function addActive(el) {
   const activeClass = 'active'
 
+  if (!el) return
   HEADER_STATE.last_active = el
   el.classList.add(activeClass)
 }
@@ -38,6 +39,7 @@ function addActive(el) {
  */
 function removeActive(el) {
   const activeClass = 'active'
+  if (!el) return
 
   el.classList.remove(activeClass)
 }

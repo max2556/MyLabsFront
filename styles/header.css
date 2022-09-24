@@ -1,9 +1,14 @@
+:root {
+  --link-padding: 5px;
+  --header-height: 80px;
+}
+
 .header {
   position: fixed;
   top: 0;
   z-index: 99;
 
-  height: 90px;
+  height: var(--header-height);
   width: 100vw;
 
   background: rgb(255, 255, 255);
@@ -53,6 +58,8 @@
 }
 
 .header .icons .icon {
+  font-size: 0;
+
   display: inline-block;
   margin-right: 20px;
   height: 100%;
@@ -60,6 +67,7 @@
 
   transition: all 0.15s;
 }
+
 .header .icons svg {
   height: 100%;
 }
@@ -106,7 +114,7 @@
 }
 
 .header .link span {
-  font-size: 1.4rem !important;
+  font-size: 1.3rem !important;
 }
 
 .header .link:first-child {
@@ -126,6 +134,8 @@
 
 .header .link {
   position: relative;
+  padding-top: var(--link-padding);
+  padding-bottom: var(--link-padding);
 }
 
 .header .link.active span {
@@ -165,6 +175,7 @@
   right: 50%;
 
   border-radius: 250px; /*Просто большое число, чтобы были скругленные края*/
+  transform: translateY(calc(var(--link-padding) * -1));
 }
 
 .header .active:after,
@@ -198,11 +209,26 @@
   transform: scale(1.2);
 }
 
+.header .prevent {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  left: 0;
+  top: var(--header-height);
+  z-index: -1;
+}
+
+.header .prevent.active{
+  display: block;
+}
+
 /*media*/
 
 @media (max-width: 1024px) {
   .header {
-    height: 70px;
+    --header-height: 70px;
   }
   .header ul {
     padding: 20px 20px;
@@ -282,7 +308,7 @@
     transform: translateX(-100%);
     height: 50%;
   }
-  .header .icons .icon{
+  .header .icons .icon {
     margin-right: 15px;
   }
 }
@@ -300,7 +326,7 @@
 }
 @media (max-width: 500px) {
   .header {
-    height: 50px;
+    --header-height: 50px;
   }
   .header .links {
     width: 70%;
@@ -308,9 +334,9 @@
     height: calc(100vh - 50px);
   }
   .header .icons {
-    left: calc( 100% - (40px) );
+    left: calc(100% - (40px));
   }
-  .header .icons .icon{
+  .header .icons .icon {
     margin-right: 10px;
   }
   .header .hamburger-menu {

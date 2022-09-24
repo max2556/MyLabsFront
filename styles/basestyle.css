@@ -81,15 +81,15 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
   transition: all 0.15s;
 }
 
-.button:hover{
+.button:hover {
   background-color: #ffffff !important;
   color: #2ba84a;
   outline: 5px solid #2ba84a;
 }
-.button:active{
+.button:active {
   background-color: #ffffff !important;
   color: #2ba84a;
-  outline: 1px solid transparent  !important;
+  outline: 1px solid transparent !important;
   transition: outline 0.08s;
 }
 
@@ -97,9 +97,13 @@ padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
 font styles
 */
 h1 {
+  --base-size: 72px;
   font-size: 72px;
 }
-
+h2 {
+  --base-size: 64px;
+  font-size: 64px;
+}
 p {
   font-size: 40px;
 }
@@ -112,19 +116,15 @@ p {
 .font-regular {
   font-weight: 400;
 }
-
 .inline-block {
   display: inline-block;
 }
-
 .float-right {
   float: right;
 }
-
 .relative {
   position: relative;
 }
-
 .overflow_hidden {
   overflow: hidden;
 }
@@ -157,8 +157,7 @@ p {
 .fs_32px {
   font-size: 32px;
 }
-
-.fs_28px{
+.fs_28px {
   font-size: 28px;
 }
 .fs_24px {
@@ -168,17 +167,15 @@ p {
   font-size: 20px;
 }
 
-.green{
+.green {
   color: #2ba84a;
 }
-
 
 .clearfix:after {
   content: '';
   display: block;
   clear: both;
 }
-
 
 @media (min-width: 2000px) {
   .structure {
@@ -189,11 +186,20 @@ p {
 @media (max-width: 1025px) {
   .structure {
     width: auto;
-    margin-right: 25px;
     margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+@media (max-width: 700px) {
+  .button:hover {
+    outline: 3px solid #2ba84a;
   }
 }
 
-.blured{
+
+.main{
+  transition: 0.4s filter;
+}
+.blured {
   filter: blur(2px);
 }

@@ -43,7 +43,7 @@ class Line {
 
     let speedRange = 2
     this.deltaBias = Math.round(Math.random() * speedRange) / 1000 + 0.001 //You can change speed by changing speedRange
-    this.bias = Math.random() / 10
+    this.bias = 0
   }
 
   update() {
@@ -131,7 +131,12 @@ function getLines(number) {
     setTimeout(() => {
       getLine()
       getLines(number)
-    }, 50)
+    }, 150)
+  else {
+    /*SEPARATOR_STATE.lines.map((line, i) => {
+      line.bias = i % 2 == 0 ? line.bias + Math.random() / 10 : line.bias + 0.3 + Math.random() / 10
+    })*/
+  }
 }
 
 function onresize() {
