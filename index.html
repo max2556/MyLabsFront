@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/reset_override.css" />
 
+    <!-- Стили -->
     <link rel="stylesheet" href="./styles/basestyle.css" />
     <link rel="stylesheet" href="./styles/adaptation-base.css" />
     <link rel="stylesheet" href="./styles/header.css" />
@@ -21,6 +22,13 @@
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/lastworks.css" />
 
+    <!-- Библиотеки стилей -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+
+    <!-- Скрипты -->
     <script src="./js/homeBackground.js" defer></script>
     <script src="./js/ourskills.js" defer></script>
     <script src="./js/activable.js" defer></script>
@@ -29,6 +37,12 @@
     <script src="./js/adaptation.js" defer></script>
     <script src="./js/separatorBackground.js" defer></script>
     <script src="./js/lastworksBlock.js" defer></script>
+    
+    <!-- Библиотеки скриптов -->
+    <script src="./js/lib/WOW.js"></script>
+    <script defer>
+      new WOW().init()
+    </script>
   </head>
 
   <body>
@@ -10931,7 +10945,7 @@
 
         <section class="content structure video_holder">
           <!-- <img class="video_around" src="./assets/aboutUsVideo.svg" alt=""> -->
-          <div class="video">
+          <div class="video wow slideInRight" data-wow-duration="0.8s" data-wow-delay="0.3s">
             <video
               onloadstart="this.volume=0.2"
               controls
@@ -10948,7 +10962,7 @@
           </div>
         </section>
         <section class="content structure info">
-          <div class="how_it_works shadow bg_white">
+          <div class="how_it_works shadow bg_white wow slideInUp" data-wow-duration="0.8s">
             <h3 class="font-medium">How it works?</h3>
             <ul class="steps">
               <li class="step">
@@ -11140,7 +11154,7 @@
             </ul>
           </div>
 
-          <div class="FAQ shadow bg_white">
+          <div class="FAQ shadow bg_white wow slideInUp" data-wow-duration="0.8s">
             <h3 class="font-medium">FAQ</h3>
             <ul>
               <li class="block" hasactive="true">
@@ -11580,11 +11594,11 @@ Binary tree</textarea
           </div>
 
           <div class="links">
-            <div class="link">
+            <div class="link wow slideInRight" data-wow-duration="0.8s" data-wow-delay="0s">
               <p class="font-medium">@MyLabs</p>
               <a href="#" class="button tg">Open</a>
             </div>
-            <div class="link">
+            <div class="link wow slideInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">
               <p class="font-medium">VK: /MyLabs</p>
               <a href="#" class="button vk">Open</a>
             </div>
