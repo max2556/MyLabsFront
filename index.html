@@ -28,6 +28,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
     />
 
+
+
+    <!-- Библиотеки скриптов -->
+    <script src="./js/lib/WOW.js"></script>
+    <script defer>
+      new WOW().init()
+    </script>
+    
     <!-- Скрипты -->
     <script src="./js/homeBackground.js" defer></script>
     <script src="./js/ourskills.js" defer></script>
@@ -37,12 +45,7 @@
     <script src="./js/adaptation.js" defer></script>
     <script src="./js/separatorBackground.js" defer></script>
     <script src="./js/lastworksBlock.js" defer></script>
-    
-    <!-- Библиотеки скриптов -->
-    <script src="./js/lib/WOW.js"></script>
-    <script defer>
-      new WOW().init()
-    </script>
+    <script src="./js/faqAnimation.js" defer></script>
   </head>
 
   <body>
@@ -10945,7 +10948,7 @@
 
         <section class="content structure video_holder">
           <!-- <img class="video_around" src="./assets/aboutUsVideo.svg" alt=""> -->
-          <div class="video wow slideInRight" data-wow-duration="0.8s" data-wow-delay="0.3s">
+          <div class="video">
             <video
               onloadstart="this.volume=0.2"
               controls
@@ -10962,7 +10965,7 @@
           </div>
         </section>
         <section class="content structure info">
-          <div class="how_it_works shadow bg_white wow slideInUp" data-wow-duration="0.8s">
+          <div class="how_it_works shadow bg_white">
             <h3 class="font-medium">How it works?</h3>
             <ul class="steps">
               <li class="step">
@@ -11154,11 +11157,11 @@
             </ul>
           </div>
 
-          <div class="FAQ shadow bg_white wow slideInUp" data-wow-duration="0.8s">
+          <div class="FAQ shadow bg_white" >
             <h3 class="font-medium">FAQ</h3>
             <ul>
-              <li class="block" hasactive="true">
-                <div class="question line activable-click active">
+              <li class="block">
+                <div class="question line activable-click">
                   <i></i>
                   <span>
                     I need a Nintendo Account to use Nintendo Switch Online?
