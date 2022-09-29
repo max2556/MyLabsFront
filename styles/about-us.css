@@ -74,14 +74,12 @@
   }
 }
 
-
 .about-us .bg svg .blue_hexagons_wrapper {
   animation: blue_hexagonsX 8s ease-in-out infinite;
 }
 .about-us .bg svg .blue_hexagons {
   animation: blue_hexagonsY 5s ease-in-out alternate infinite;
 }
-
 
 @keyframes blue_hexagonsY {
   0% {
@@ -338,7 +336,7 @@
 .about-us .info .line i::before {
   content: ''; /*Place some letter*/
   font-size: 72px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0px 20px 5px 12px;
   display: block;
   font-weight: 500;
@@ -360,7 +358,7 @@
   left: 0;
   bottom: 0;
 
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .about-us .info .question::before {
   background-color: #2ba84a;
@@ -384,10 +382,10 @@
   .about-us .info h3 {
     font-size: 28px;
   }
-  .about-us .info .how_it_works .steps{
+  .about-us .info .how_it_works .steps {
     width: 160px;
   }
-  .about-us .info .how_it_works .step_line{
+  .about-us .info .how_it_works .step_line {
     margin: -5px 10px -5px;
   }
 }
@@ -411,10 +409,9 @@
   .about-us .video {
     width: 85%;
   }
-  .about-us .how_it_works .step_line {
-    margin: -6px 7px -15px;
+  .about-us .info .how_it_works .step_line {
+    margin: -5px 7px -5px;
   }
-
 }
 @media (max-width: 900px) {
   .about-us .video {
@@ -442,7 +439,7 @@
     text-align: center;
   }
 
-  .about-us .how_it_works .step_line {
+  .about-us .info .how_it_works .step_line {
     height: 100px;
   }
 
@@ -455,8 +452,11 @@
     box-shadow: none;
   }
 
-  .about-us .how_it_works .step_line {
-    margin: -6px 7px -15px;
+  .how_it_works .step .step_circle {
+    width: 16px;
+  }
+  .about-us .info .how_it_works .step_line {
+    margin: -7px 6px -7px;
   }
   .about-us .how_it_works .step_line .large-screen {
     display: none;
@@ -505,7 +505,7 @@
     position: absolute;
     top: 0;
     transition: 0.15s all;
-    z-index: -1;
+    z-index: 0;
   }
   .about-us .info .FAQ .block .question.active + .answer {
     top: 50%;
@@ -513,7 +513,7 @@
   .about-us .info .FAQ .block .question {
     margin-bottom: 0;
     padding: 5px 0px;
-
+    z-index: 1;
   }
 
   .about-us .FAQ hr {
@@ -576,7 +576,6 @@
     font-size: 54px;
     margin: 0px 10px 5px 12px;
   }
-
 }
 @media (max-width: 400px) {
   .about-us .info .FAQ .block {
