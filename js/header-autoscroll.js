@@ -71,11 +71,20 @@ function initLinks() {
  * @param {number} value точка к которой анимируем
  */
 function animateScroll(value) {
+  //Проверка на ширину экрана.
+  //CONFIG лежит в slider.js
+  if(window.innerWidth < CONFIG.screens.lowScreen){
+    //Если экран маленький -> мгновенно переходим на нужное значение
+
+    window.scrollTo(0, value);
+    return;
+  }
+  
   if (HEADER_STATE.scrollTimeoutID) {
     clearTimeout(HEADER_STATE.scrollTimeoutID)
   }
 
-  const speedMult = 3
+  const speedMult = 6
   const EPS = 10
   const baseDeltaTime = 10
 
@@ -92,8 +101,12 @@ function animateScroll(value) {
     if (
       (direction === 'down' && current < value) ||
       (direction === 'up' && current > value)
-    )
+    ) {
+      //HEADER_STATE.scrollTimeoutID = setTimeout(go, 1000/24);
       HEADER_STATE.scrollTimeoutID = window.requestAnimationFrame(go)
+    } else {
+      window.scrollTo(0, value)
+    }
   }
   HEADER_STATE.scrollTimeoutID = window.requestAnimationFrame(go)
 }
@@ -112,16 +125,10 @@ function checkScroll() {
 }
 
 function isVisible(el) {
-  let boundingRect = el.getBoundingClientRect();
+  let boundingRect = el.getBoundingClientRect()
   let targetPosition = {
-    bottom:
-      Math.min(
-        boundingRect.bottom,
-        boundingRect.bottom,
-      ) + pageYOffset,
-    top:
-      Math.max(boundingRect.top, boundingRect.top) +
-      pageYOffset,
+    bottom: Math.min(boundingRect.bottom, boundingRect.bottom) + pageYOffset,
+    top: Math.max(boundingRect.top, boundingRect.top) + pageYOffset,
   }
   let windowPosition = {
     top: window.pageYOffset,
@@ -131,4 +138,8 @@ function isVisible(el) {
     targetPosition.bottom > windowPosition.top &&
     targetPosition.top < windowPosition.bottom
   )
+}
+
+function name(params) {
+  
 }
