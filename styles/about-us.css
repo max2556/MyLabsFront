@@ -453,6 +453,8 @@
     margin-bottom: 50px;
 
     box-shadow: none;
+
+    background-color: transparent;
   }
 
   .about-us .how_it_works .step_line {
@@ -508,7 +510,7 @@
     z-index: -1;
   }
   .about-us .info .FAQ .block .question.active + .answer {
-    top: 50%;
+    top: calc(50% + 5px + 9px); /*half of .FAQ.block margin-bottom + half of padding of .FAQ.question*/
   }
   .about-us .info .FAQ .block .question {
     margin-bottom: 0;

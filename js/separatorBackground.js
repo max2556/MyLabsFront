@@ -43,7 +43,7 @@ class Line {
 
     let speedRange = 5
     this.deltaBias = Math.round(Math.random() * speedRange) / 1000 + 0.001 //You can change speed by changing speedRange
-    this.bias = 0
+    this.bias = 0.1
 
     this._width = ctx.measureText(this.string).width * 2;
   }

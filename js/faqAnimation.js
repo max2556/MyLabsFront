@@ -4,10 +4,10 @@
   first_question_check()
 
   li_block.forEach((block, i) => {
-    block.classList.add('wow', 'slideInUp')
+    block.classList.add('wow', 'slideInUpOpacity')
 
     //data-wow-duration="0s" data-wow-delay="0s"
-    const anim_len = 0.25
+    const anim_len = 1.25
 
     block.setAttribute('data-wow-offset', `0`)
     block.setAttribute('data-wow-delay', `${anim_len * 0}s`)

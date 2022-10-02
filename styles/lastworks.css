@@ -10,6 +10,116 @@
   margin-left: 15px;
 }
 
+/*ANIMATION*/
+.lastworks .bg {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+}
+.lastworks .bg .hexagons g path {
+  animation: hexagons_paths 2.5s infinite ease-in-out;
+}
+.lastworks .bg .hexagons g:nth-child(2n-1) path {
+  animation-direction: alternate-reverse;
+}
+.lastworks .bg .hexagons g:nth-child(2n) path {
+  animation-direction: alternate;
+}
+@keyframes hexagons_paths {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.lastworks .bg .hexagons g circle {
+  animation: hexagons_circles 2.5s infinite ease-in-out;
+}
+.lastworks .bg .hexagons g:nth-child(2n-1) circle {
+  animation-direction: alternate-reverse;
+}
+.lastworks .bg .hexagons g:nth-child(2n) circle {
+  animation-direction: alternate;
+}
+@keyframes hexagons_circles {
+  0% {
+    r: 5;
+    opacity: 0;
+  }
+
+  60% {
+    r: 14;
+    opacity: 0.17;
+  }
+
+  100% {
+    r: 14;
+    opacity: 0.17;
+  }
+}
+.lastworks .bg svg .blue_hexagons_wrapper {
+  animation: blue_hexagonsX 8s ease-in-out infinite;
+}
+.lastworks .bg svg .blue_hexagons {
+  animation: blue_hexagonsY 5s ease-in-out alternate infinite;
+}
+@keyframes blue_hexagonsY {
+  0% {
+    transform: translateY(0);
+    stroke-opacity: 0.17;
+  }
+
+  50% {
+    stroke-opacity: 0.26;
+  }
+
+  100% {
+    transform: translateY(-50px);
+    stroke-opacity: 0.2;
+  }
+}
+@keyframes blue_hexagonsX {
+  0% {
+    transform: translateX(0px);
+  }
+  16% {
+    transform: translateX(2px);
+  }
+  32% {
+    transform: translateX(-1px);
+  }
+  48% {
+    transform: translateX(3px);
+  }
+  80% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.lastworks .bg_mask {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+/*ANIMATION END*/
+
+
 /*Прокручивающийся штук*/
 .lastworks .scroll-plate {
   padding: 0;
@@ -226,8 +336,6 @@
   .lastworks .scroll-plate {
     width: 400px;
   }
-
-
   .lastworks .structure {
     width: 60%;
     margin: 50px auto;
