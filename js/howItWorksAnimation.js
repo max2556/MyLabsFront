@@ -14,13 +14,14 @@
 
         const size = step.getBoundingClientRect();
         const margin = i % 2 == 0 ? size.width / 2 : -1 * size.width / 2;
-
+        const top = size.height / 2;
 
 
         step.setAttribute('data-wow-offset', offset)
         step.setAttribute('data-wow-delay', `${anim_len * 0}s`)
         step.setAttribute('data-wow-duration', `${anim_len}s`)
 
-        step.setAttribute('style', `margin-left:${margin}px`)
+        step.style.top = `${-top}px`;
+        //step.setAttribute('style', `margin-left:${margin}px`)
     })
 })()
