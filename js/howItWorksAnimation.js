@@ -10,7 +10,7 @@
         //data-wow-duration="0s" data-wow-delay="0s"
         const anim_len = 1.25
         const half_height = window.innerHeight / 2;
-        const offset = 200;
+        const offset = i != (steps.length-1) ? 200 : 100;
 
         const size = step.getBoundingClientRect();
         const margin = i % 2 == 0 ? size.width / 2 : -1 * size.width / 2;

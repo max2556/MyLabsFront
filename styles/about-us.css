@@ -569,9 +569,11 @@
     }
 
     .about-us .info .FAQ .block {
-        margin-bottom: 5px;
-        position: relative;
+        --transition-down: 0.3s;
 
+        position: relative;
+        
+        margin-bottom: 5px;
         /*font-size: 20px*/
     }
 
@@ -584,7 +586,7 @@
         height: 1px;
         display: block;
         width: 100%;
-        transition: 0.25s all;
+        transition: var(--transition-down) all;
     }
 
     .about-us .info .FAQ .block[hasactive='true'] {
@@ -600,19 +602,41 @@
         font-size: 60px;
     }
 
+    .about-us .info .answer i::before {
+        margin: 0px 26px 5px 12px !important;
+    }
+
     .about-us .info .FAQ .block .answer {
+        --transition-opacity: 0.5s;
+        --transition-opacity-delay: 0.35s;
+
         position: absolute;
         top: 0;
-        transition: 0.15s all;
-        z-index: -1;
+        z-index: 1;
+
+        opacity: 0;
+        transition: var(--transition-down) all ease-in-out;
+    }
+    .about-us .info .FAQ .block .answer span{
+        transition: var(--transition-opacity) all ease-in-out;
+        transition-delay: 0ms;
+
+        opacity: 0;
+    }
+
+    .about-us .info .FAQ .block .question.active+.answer span{
+        transition-delay: var(--transition-opacity-delay);
+        opacity: 1;
     }
 
     .about-us .info .FAQ .block .question.active+.answer {
         top: calc(50% + 5px + 9px);
+        opacity: 1;
         /*half of .FAQ.block margin-bottom + half of padding of .FAQ.question*/
     }
 
     .about-us .info .FAQ .block .question {
+        z-index: 2;
         margin-bottom: 0;
         padding: 5px 0px;
     }
@@ -633,7 +657,7 @@
 
     .about-us .info .how_it_works .step_line {
         --step-line-height: 90px;
-        margin: -7px 7px -6px;
+        margin: 6px 7px 6px;
     }
 
     .how_it_works .step .step_circle {
