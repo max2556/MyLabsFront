@@ -102,16 +102,16 @@
 @keyframes blue_hexagonsY {
   0% {
     transform: translateY(0);
-    stroke-opacity: 0.17;
+    stroke-opacity: 0.27;
   }
 
   50% {
-    stroke-opacity: 0.26;
+    stroke-opacity: 0.36;
   }
 
   100% {
     transform: translateY(-50px);
-    stroke-opacity: 0.2;
+    stroke-opacity: 0.3;
   }
 }
 @keyframes blue_hexagonsX {
@@ -552,6 +552,13 @@
 
   .about-us .bg .hexagons g circle {
     animation: hexagons_circles_mobile 2.5s infinite ease-in-out;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-us .bg .mobile_bg{
+    height: 100%;
+    display: block;
   }
 }
 
