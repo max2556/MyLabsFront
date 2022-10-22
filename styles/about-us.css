@@ -74,6 +74,24 @@
   }
 }
 
+@keyframes hexagons_circles_mobile {
+  0% {
+    r: 1;
+    opacity: 0;
+  }
+
+  60% {
+    r: 4;
+    opacity: 0.17;
+  }
+
+  100% {
+    r: 5;
+    opacity: 0.17;
+  }
+}
+
+
 .about-us .bg svg .blue_hexagons_wrapper {
   animation: blue_hexagonsX 8s ease-in-out infinite;
 }
@@ -115,6 +133,10 @@
   100% {
     transform: translateX(0px);
   }
+}
+
+.about-us .bg .mobile_bg{
+  display: none;
 }
 
 .about-us .bg_mask {
@@ -519,6 +541,18 @@
   .about-us .FAQ hr {
     display: none;
   }
+
+  .about-us .bg .desktop_bg{
+    display: none;
+  }
+
+  .about-us .bg .mobile_bg{
+    display: block;
+  }
+
+  .about-us .bg .hexagons g circle {
+    animation: hexagons_circles_mobile 2.5s infinite ease-in-out;
+  }
 }
 
 @media (max-width: 500px) {
@@ -576,6 +610,7 @@
     font-size: 54px;
     margin: 0px 10px 5px 12px;
   }
+
 }
 @media (max-width: 400px) {
   .about-us .info .FAQ .block {
