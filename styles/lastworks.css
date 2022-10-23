@@ -189,20 +189,6 @@
   animation-direction: alternate;
 }
 
-@keyframes hexagons_paths {
-  0% {
-    opacity: 0;
-  }
-
-  60% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 .lastworks .bg .hexagons g circle {
   animation: hexagons_circles 2.5s infinite ease-in-out;
 }
@@ -214,82 +200,11 @@
   animation-direction: alternate;
 }
 
-@keyframes hexagons_circles {
-  0% {
-    r: 5;
-    opacity: 0;
-  }
-
-  60% {
-    r: 14;
-    opacity: 0.17;
-  }
-
-  100% {
-    r: 14;
-    opacity: 0.17;
-  }
-}
-
-@keyframes hexagons_circles_mobile {
-  0% {
-    r: 1;
-    opacity: 0;
-  }
-
-  60% {
-    r: 4;
-    opacity: 0.36;
-  }
-
-  100% {
-    r: 4.2;
-    opacity: 0.5;
-  }
-}
-
-
 .lastworks .bg svg .blue_hexagons_wrapper {
   animation: blue_hexagonsX 8s ease-in-out infinite;
 }
 .lastworks .bg svg .blue_hexagons {
   animation: blue_hexagonsY 5s ease-in-out alternate infinite;
-}
-
-@keyframes blue_hexagonsY {
-  0% {
-    transform: translateY(0);
-    stroke-opacity: 0.87;
-  }
-
-  50% {
-    stroke-opacity: 0.96;
-  }
-
-  100% {
-    transform: translateY(-50px);
-    stroke-opacity: 1;
-  }
-}
-@keyframes blue_hexagonsX {
-  0% {
-    transform: translateX(0px);
-  }
-  16% {
-    transform: translateX(2px);
-  }
-  32% {
-    transform: translateX(-1px);
-  }
-  48% {
-    transform: translateX(3px);
-  }
-  80% {
-    transform: translateX(-2px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
 }
 
 .lastworks .bg .mobile_bg{
@@ -381,6 +296,9 @@
 
   .lastworks .bg .hexagons g circle {
     animation: hexagons_circles_mobile 2.5s infinite ease-in-out;
+  }
+  .lastworks .bg svg .blue_hexagons {
+    animation: blue_hexagonsY_mobile 5s ease-in-out alternate infinite;
   }
 }
 
