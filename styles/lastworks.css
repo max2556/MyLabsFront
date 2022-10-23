@@ -10,6 +10,133 @@
   margin-left: 15px;
 }
 
+/*ANIMATION*/
+.lastworks .bg {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+}
+
+.lastworks .bg .hexagons g path {
+  animation: hexagons_paths 2.5s infinite ease-in-out;
+}
+
+.lastworks .bg .hexagons g:nth-child(2n-1) path {
+  animation-direction: alternate-reverse;
+}
+
+.lastworks .bg .hexagons g:nth-child(2n) path {
+  animation-direction: alternate;
+}
+
+@keyframes hexagons_paths {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.lastworks .bg .hexagons g circle {
+  animation: hexagons_circles 2.5s infinite ease-in-out;
+}
+
+.lastworks .bg .hexagons g:nth-child(2n-1) circle {
+  animation-direction: alternate-reverse;
+}
+
+.lastworks .bg .hexagons g:nth-child(2n) circle {
+  animation-direction: alternate;
+}
+
+@keyframes hexagons_circles {
+  0% {
+    r: 5;
+    opacity: 0;
+  }
+
+  60% {
+    r: 14;
+    opacity: 0.17;
+  }
+
+  100% {
+    r: 14;
+    opacity: 0.17;
+  }
+}
+
+.lastworks .bg svg .blue_hexagons_wrapper {
+  animation: blue_hexagonsX 8s ease-in-out infinite;
+}
+
+.lastworks .bg svg .blue_hexagons {
+  animation: blue_hexagonsY 5s ease-in-out alternate infinite;
+}
+
+@keyframes blue_hexagonsY {
+  0% {
+    transform: translateY(0);
+    stroke-opacity: 0.17;
+  }
+
+  50% {
+    stroke-opacity: 0.26;
+  }
+
+  100% {
+    transform: translateY(-50px);
+    stroke-opacity: 0.2;
+  }
+}
+
+@keyframes blue_hexagonsX {
+  0% {
+    transform: translateX(0px);
+  }
+
+  16% {
+    transform: translateX(2px);
+  }
+
+  32% {
+    transform: translateX(-1px);
+  }
+
+  48% {
+    transform: translateX(3px);
+  }
+
+  80% {
+    transform: translateX(-2px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.lastworks .bg_mask {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 1) 100%);
+}
+
+/*ANIMATION END*/
+
+
 /*Прокручивающийся штук*/
 .lastworks .scroll-plate {
   padding: 0;
@@ -46,6 +173,7 @@
 
   vertical-align: middle;
 }
+
 .lastworks .block .info {
   position: absolute;
   width: calc(100% - 45px);
@@ -53,10 +181,11 @@
 }
 
 .lastworks .block .icon {
+  --icon-width: 90px;
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 70px;
+  width: var(--icon-width);
 }
 
 .lastworks .block .title {
@@ -73,6 +202,7 @@
   resize: none;
   overflow: hidden;
 }
+
 .lastworks .block .title:focus-visible {
   outline: none;
 }
@@ -237,9 +367,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .lastworks .block {
     width: calc(50% - 30px);
   }
+
   .lastworks .structure {
     width: 85%;
   }
@@ -259,16 +391,20 @@
   .lastworks .block .title {
     font-size: 32px;
   }
+
   .lastworks .slider-control {
     padding: 5px 10px;
   }
+
   .lastworks .structure {
     width: auto;
     margin: 50px 25px;
   }
+
   .lastworks .slider-control .buttons .move {
     margin-left: 20px;
   }
+
   .lastworks .slider-control .buttons .move:first-child {
     margin: 0;
   }
@@ -276,10 +412,12 @@
   .lastworks .block .line {
     font-size: 24px;
   }
+
   .lastworks .block .line img {
     width: 30px;
     height: 30px;
   }
+
   .lastworks .blocks {
     height: 300px;
   }
@@ -307,14 +445,15 @@
     width: 400px;
   }
 
-
   .lastworks .structure {
     width: 60%;
     margin: 50px auto;
   }
+
   .lastworks .block {
     width: calc(100% - 30px);
   }
+
   .lastworks .blocks {
     height: 300px;
   }
@@ -346,12 +485,15 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .lastworks .structure {
     margin: 50px 15px;
   }
+
   .lastworks .slider-control {
     padding: 0;
   }
+
   .lastworks .slider-control .buttons {
     margin-left: 0px;
     margin-right: 0px;
@@ -359,11 +501,13 @@
     margin-top: calc((30px - 18px) / 2);
     margin-bottom: calc((30px - 18px) / 2);
   }
+
   .lastworks .slider-control .buttons .move {
     margin-left: 10px;
     width: 18px;
     height: 18px;
   }
+
   .lastworks .slider-control .move.active {
     width: 60px;
   }
@@ -380,6 +524,7 @@
   .lastworks .block {
     padding: 15px;
   }
+
   .lastworks .block .info {
     width: calc(100% - 30px);
   }
@@ -390,12 +535,21 @@
 
   .lastworks .block .icon {
     bottom: 0px;
-    width: 60px;
+    --icon-width: 85px;
   }
 }
+
 @media (max-width: 350px) {
   .lastworks .block .icon {
     bottom: 5px;
-    width: 40px;
+    --icon-width: 55px;
+  }
+
+  .lastworks .block .title {
+    font-size: 24px;
+  }
+
+  .lastworks .block .line {
+    font-size: 20px;
   }
 }
