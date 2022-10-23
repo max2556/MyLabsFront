@@ -1,4 +1,6 @@
 ;(function init() {
+  if(window.innerWidth >= 900) return;
+
   const faq_ul = document.querySelector('.about-us .info .FAQ ul')
   const li_block = faq_ul.querySelectorAll('.block') //блок, содержащий question и answer
   li_block[0].querySelector('.question').click();
