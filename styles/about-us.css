@@ -82,12 +82,12 @@
 
   60% {
     r: 4;
-    opacity: 0.17;
+    opacity: 0.36;
   }
 
   100% {
-    r: 5;
-    opacity: 0.17;
+    r: 4.2;
+    opacity: 0.5;
   }
 }
 
@@ -102,16 +102,16 @@
 @keyframes blue_hexagonsY {
   0% {
     transform: translateY(0);
-    stroke-opacity: 0.27;
+    stroke-opacity: 0.57;
   }
 
   50% {
-    stroke-opacity: 0.36;
+    stroke-opacity: 0.46;
   }
 
   100% {
     transform: translateY(-50px);
-    stroke-opacity: 0.3;
+    stroke-opacity: 0.5;
   }
 }
 @keyframes blue_hexagonsX {
