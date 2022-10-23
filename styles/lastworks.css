@@ -168,6 +168,69 @@
   float: right;
 }
 
+
+/*BACKGROUND*/
+
+.lastworks .bg {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+}
+
+.lastworks .bg .hexagons g path {
+  animation: hexagons_paths 2.5s infinite ease-in-out;
+}
+
+.lastworks .bg .hexagons g:nth-child(2n-1) path {
+  animation-direction: alternate-reverse;
+}
+.lastworks .bg .hexagons g:nth-child(2n) path {
+  animation-direction: alternate;
+}
+
+.lastworks .bg .hexagons g circle {
+  animation: hexagons_circles 2.5s infinite ease-in-out;
+}
+
+.lastworks .bg .hexagons g:nth-child(2n-1) circle {
+  animation-direction: alternate-reverse;
+}
+.lastworks .bg .hexagons g:nth-child(2n) circle {
+  animation-direction: alternate;
+}
+
+.lastworks .bg svg .blue_hexagons_wrapper {
+  animation: blue_hexagonsX 8s ease-in-out infinite;
+}
+.lastworks .bg svg .blue_hexagons {
+  animation: blue_hexagonsY 5s ease-in-out alternate infinite;
+}
+
+.lastworks .bg .mobile_bg{
+  display: none;
+}
+
+.lastworks .bg_mask {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.lastworks .video_holder * {
+  width: 100%;
+  display: block;
+}
+
+
+/*BACKGROUND END*/
+
 @media (max-width: 1575px) {
   .lastworks .scroll-plate {
     width: 900px;
@@ -222,6 +285,23 @@
   }
 }
 
+@media (max-width: 900px) {
+  .lastworks .bg .desktop_bg{
+    display: none;
+  }
+
+  .lastworks .bg .mobile_bg{
+    display: block;
+  }
+
+  .lastworks .bg .hexagons g circle {
+    animation: hexagons_circles_mobile 2.5s infinite ease-in-out;
+  }
+  .lastworks .bg svg .blue_hexagons {
+    animation: blue_hexagonsY_mobile 5s ease-in-out alternate infinite;
+  }
+}
+
 @media (max-width: 800px) {
   .lastworks .scroll-plate {
     width: 400px;
@@ -244,6 +324,13 @@
   .lastworks .block .title {
     font-size: 28px;
   }
+}
+
+@media (max-width: 600px) {
+  /*.lastworks .bg .mobile_bg{
+    height: 100%;
+    display: block;
+  }*/
 }
 
 @media (max-width: 580px) {
