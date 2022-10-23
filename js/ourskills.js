@@ -12,6 +12,21 @@ for (let i = 0; i < lines.length; i++) {
     lines[i].style.strokeDashoffset = lines[i].getTotalLength() + "px";
     lines[i].style.animationDelay = i * transitionInterval + "ms";
 }
+
+
+(function zIndexSkills(){
+    for(let skill of skills){
+        skill.addEventListener('mouseover', ()=>{
+            skill.setAttribute('style', `z-index:${3}`);
+        })
+        skill.addEventListener('mouseleave', ()=>{
+            setTimeout(()=>{
+                skill.setAttribute('style', `z-index:${1}`);
+            }, 200)
+        })
+    }
+})()
+
 function animSkills() {
     for (let i = 0; i < skills.length; i++) {
         skills[i].classList.add("active_skill");

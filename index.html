@@ -32,7 +32,15 @@
     <!-- Библиотеки скриптов -->
     <script src="./js/lib/WOW.js"></script>
     <script defer>
-      new WOW().init();
+      wow = new WOW(
+      {
+        boxClass:     'wow',      // default
+        animateClass: 'animated', // default
+        offset:       0,          // default
+        mobile:       false,       // default
+        live:         true        // default
+      })
+      wow.init();
     </script>
 
     <!-- Скрипты -->
@@ -16856,7 +16864,7 @@
                 </svg>
               </div>
               <li class="step">
-                <span>Оплата</span>
+                <span>50% предоплата</span>
                 <svg
                   class="step_circle"
                   viewBox="0 0 25 25"
@@ -17045,9 +17053,8 @@
                 <div class="answer line">
                   <i></i>
                   <span>
-                    Такое может случиться из-за двусмысленности условия самой
-                    работы, но мы всегда исправляем свои ошибки и активно
-                    участвуем в помощи с вашей работой без дополнительной платы.
+                    Такое может случиться из-за двусмысленности условия, но мы всегда исправляем свои ошибки и активно
+                    участвуем в помощи без дополнительной платы.
                   </span>
                 </div>
               </li>
@@ -17061,9 +17068,12 @@
                 </div>
                 <div class="answer line">
                   <i></i>
-                  <span> 100% предоплата </span>
+                  <span> После подтверждения заказа происходит предоплата в размере 50% и после выполнения отправка вторых 50%
+                     </span>
                 </div>
               </li>
+
+              <hr />
 
               <li class="block">
                 <div class="question line activable-click">
