@@ -371,12 +371,12 @@
 }
 
 .about-us .how_it_works .step_line {
-  --step-line-height: 166px;
+  --step-line-height: 150px;
   /*left: 9px;*/
   /*right: 9px;*/
   /*top: -42px;*/
   /*z-index: -1;*/
-  margin: -15px 9px -15px;
+  margin: -9px 9px -9px;
   height: var(--step-line-height);
   position: relative;
   overflow: hidden;

@@ -234,17 +234,19 @@
   display: inline-block;
   margin: 0 0px;
 
-  margin-top: calc((40px - 25px) / 2);
-  margin-bottom: calc((40px - 25px) / 2);
+  margin-top: calc((var(--button-size) - var(--arrow-size)) / 2);
+  margin-bottom: calc((var(--button-size) - var(--arrow-size)) / 2);
 }
 
 .lastworks .slider-control .move {
-  width: 25px;
-  height: 25px;
+  --button-margin-left: 25px;
+  --button-size: 25px;
+  width: var(--button-size);
+  height: var(--button-size);
 
   border-radius: 40px;
   border: 0;
-  margin-left: 25px;
+  margin-left: var(--button-margin-left);
 
   display: inline-block;
 
@@ -273,11 +275,13 @@
 }
 
 .lastworks .slider-control .move-arrow {
+  --arrow-size: 27px;
+
   padding: 0;
   margin: 0;
 
-  width: 40px;
-  height: 40px;
+  width: var(--arrow-size);
+  height: var(--arrow-size);
 
   background-color: transparent;
   background-image: url('../assets/LastWorks/arrowRight.svg');
@@ -402,7 +406,8 @@
   }
 
   .lastworks .slider-control .buttons .move {
-    margin-left: 20px;
+    --button-margin-left: 10px;
+    --button-size: 22px;
   }
 
   .lastworks .slider-control .buttons .move:first-child {
@@ -497,15 +502,11 @@
   .lastworks .slider-control .buttons {
     margin-left: 0px;
     margin-right: 0px;
-
-    margin-top: calc((30px - 18px) / 2);
-    margin-bottom: calc((30px - 18px) / 2);
   }
 
   .lastworks .slider-control .buttons .move {
-    margin-left: 10px;
-    width: 18px;
-    height: 18px;
+    --button-size: 18px;
+    --button-margin-left: 6px;
   }
 
   .lastworks .slider-control .move.active {
@@ -517,8 +518,7 @@
   }
 
   .lastworks .slider-control .move-arrow {
-    width: 30px;
-    height: 30px;
+    --arrow-size:22px;
   }
 
   .lastworks .block {
