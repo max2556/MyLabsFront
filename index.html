@@ -54,7 +54,9 @@
   <body>
     <header class="header clearfix">
       <div class="flex-row structure content relative">
-        <img class="logo" src="./assets/logo.svg" alt="Sorry :(" srcset="" />
+        <a class="logo" href="https://my-labs.ru">
+          <img src="./assets/logo.svg" alt="Sorry :(" srcset="" />
+        </a>
         <div class="hamburger-menu mid-screen">
           <svg
             viewBox="0 0 20 20"
@@ -78,15 +80,15 @@
 
         <nav>
           <ul class="links font-medium">
-            <li data-scrollTo="home_wrapper" class="link">
+            <li data-scrollTo="home_wrapper" class="link autoscrollable">
               <span>home page</span>
             </li>
-            <li data-scrollTo="about-us" class="link"><span>about us</span></li>
-            <li data-scrollTo="our_skills" class="link">
+            <li data-scrollTo="about-us" class="link autoscrollable"><span>about us</span></li>
+            <li data-scrollTo="our_skills" class="link autoscrollable">
               <span>our skills</span>
             </li>
-            <li data-scrollTo="review" class="link"><span>review</span></li>
-            <li data-scrollTo="contact_us" class="link">
+            <li data-scrollTo="review" class="link autoscrollable"><span>review</span></li>
+            <li data-scrollTo="contact_us" class="link autoscrollable">
               <span>contact us</span>
             </li>
           </ul>
@@ -7852,7 +7854,7 @@
                 Быстро и качественно избавим вас от проблем с учебой
               </p>
             </div>
-            <a href="#" class="button font-medium">Узнать больше</a>
+            <a data-scrollTo="about-us" href="https://my-labs.ru#about-us" class="button font-medium autoscrollable">Узнать больше</a>
           </div>
 
           <div class="image inline-block float-right">
@@ -7872,7 +7874,7 @@
           <!-- Не буду пока убирать div.block, вдруг снова поменяется дизайн-->
           <!--            и не убирай, хер с ним-->
           <div class="block font-medium">
-            <p>1984 Labs completed</p>
+            <p>52 Labs completed</p>
           </div>
         </section>
       </div>
@@ -22444,7 +22446,7 @@
 
         <div class="blocks">
           <div class="block eula">
-            <p>The site works on Moscow time: August 17, 2022 12:55</p>
+            <p>The site works on Moscow time: <div>24 October</div></p>
           </div>
 
           <div class="block contact">
@@ -22455,11 +22457,11 @@
           </div>
 
           <div class="block about">
-            <h3 class="title font-semibold">About us</h3>
+            <h3 class="title font-semibold">Information</h3>
 
-            <p class="line"><a href="#">Last works</a></p>
-            <p class="line"><a href="#">Our skills</a></p>
-            <p class="line"><a href="#">Reviews</a></p>
+            <p class="line"><a class="autoscrollable" data-scrollTo="about-us" href="https://my-labs.ru#about-us">About us</a></p>
+            <p class="line"><a class="autoscrollable" data-scrollTo="our_skills" href="https://my-labs.ru#ourskills">Our skills</a></p>
+            <p class="line"><a class="autoscrollable" data-scrollTo="lastworks" href="https://my-labs.ru#lastworks">Last works</a></p>
           </div>
         </div>
 

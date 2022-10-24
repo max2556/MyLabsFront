@@ -1,6 +1,6 @@
-const headerEl = document.querySelector('.header')
-const linksEl = headerEl.querySelector('.links')
-const links = linksEl.querySelectorAll('.link')
+const links = document.querySelectorAll('.autoscrollable')
+
+//const homepageButton = document.querySelector('.home_wrapper .content .text a.button');
 
 const animationLength = 800 //in ms;
 
@@ -64,7 +64,22 @@ function initLinks() {
       animateScroll(topValue)
     })
   }
+
+  //initOtherLinks();
 }
+/*
+function initOtherLinks() {
+  homepageButton.addEventListener('click', () => {
+    if (HEADER_STATE.last_active) removeActive(HEADER_STATE.last_active)
+    addActive(links[1])
+    let targetEl = TARGET_ELEMENTS['about-us']
+    if (!targetEl) return
+
+    let topValue = targetEl.offsetTop
+    animateScroll(topValue)
+  })
+}*/
+
 
 /**
  * Анимированный скролл к точке value - может быть element.offsetTop или любое scrollY значение
