@@ -21,13 +21,13 @@
   function text_adapt(textarea) {
     const delta = textarea.clientHeight / textarea.scrollHeight
 
-    if (delta < 0.9) {
+    if (abs(1-delta) < 0.1) {
       textarea.textContent =
         textarea.title.substring(0, textarea.title.length * delta - 3) + '...'
       set_datadelta(textarea, textarea.clientHeight / textarea.scrollHeight)
     }
     textarea.style.lineHeight =
-      parseInt(parseInt(getComputedStyle(textarea).fontSize) * 1.05) + 'px'
+      parseInt(parseInt(getComputedStyle(textarea).fontSize) * 1.1) + 'px'
   }
 
   function is_changed_delta(textarea) {
