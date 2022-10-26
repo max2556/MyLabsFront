@@ -1,0 +1,1456 @@
+<svg
+        viewBox="0 0 1920 2160"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="desktop_bg"
+>
+
+    <g class="hexagons">
+        <g>
+            <path
+                    d="M136.67 401.59L23.22 336.09L-90.23 401.59V532.59L23.22 598.09L136.67 532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M136.67 401.59V532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="23.119999999999997"
+                    cy="336.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="23.119999999999997"
+                    cy="598.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M136.67 401.59V532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M136.67 401.59L250.13 336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M136.67 532.59L250.13 598.09L363.58 532.59V401.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M363.58 401.59L250.13 336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="250.03"
+                    cy="598.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="363.48"
+                    cy="532.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M136.67 794.59L23.22 729.09L-90.23 794.59V925.59L23.22 991.09L136.67 925.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M136.67 794.59V925.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="23.119999999999997"
+                    cy="991.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="23.119999999999997"
+                    cy="729.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M136.67 794.59V925.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M136.67 794.59L250.13 729.09L363.58 794.59V925.59L250.13 991.09L136.67 925.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="250.03"
+                    cy="729.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="363.48"
+                    cy="794.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="250.03"
+                    cy="991.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="363.48"
+                    cy="925.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="250.03"
+                    cy="991.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M363.58 8.59L250.13 -56.91L136.67 8.59V139.59L250.13 205.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M363.58 8.59V139.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M363.58 139.59L250.13 205.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="136.57"
+                    cy="139.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M363.58 8.59V139.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M363.58 8.59L477.03 -56.91L590.48 8.59V139.59L477.03 205.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M363.58 139.59L477.03 205.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="590.38"
+                    cy="8.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="590.38"
+                    cy="139.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M363.58 139.59L250.13 205.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M363.58 139.59L477.03 205.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M250.13 205.09V336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M477.03 205.09V336.09L363.58 401.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M363.58 401.59L250.13 336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="476.93"
+                    cy="336.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M590.48 532.59L477.03 598.09V729.09L590.48 794.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M590.48 532.59L703.94 598.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M703.94 598.09V729.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M703.94 729.09L590.48 794.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="476.93"
+                    cy="729.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="476.93"
+                    cy="598.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M590.48 532.59V401.59L703.94 336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M590.48 532.59L703.94 598.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M703.94 598.09L817.39 532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M817.39 401.59L703.94 336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M817.39 401.59V532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="590.38"
+                    cy="401.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M703.94 729.09L590.48 794.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M703.94 729.09L817.39 794.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M590.48 794.59V925.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M590.48 925.59L703.94 991.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M703.94 991.09L817.39 925.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M817.39 794.59V925.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+        </g>
+        <g>
+            <path
+                    d="M590.48 925.59L703.94 991.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M590.48 925.59L477.03 991.09V1122.09L590.48 1187.59L703.94 1122.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="590.38"
+                    cy="1187.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="476.93"
+                    cy="1122.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="476.93"
+                    cy="991.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M703.94 991.09V1122.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M703.94 991.09L817.39 925.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M703.94 1122.09L817.39 1187.59L930.84 1122.09V991.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M817.39 925.59L930.84 991.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="817.29"
+                    cy="1187.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="930.74"
+                    cy="1122.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="930.74"
+                    cy="991.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M930.84 336.09V205.09L817.39 139.59L703.94 205.09V336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M930.84 336.09L817.39 401.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M817.39 401.59L703.94 336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="817.29"
+                    cy="139.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="930.74"
+                    cy="205.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="703.84"
+                    cy="205.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M930.84 336.09L817.39 401.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M930.84 336.09L1044.29 401.59V532.59L930.84 598.09L817.39 532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M817.39 401.59V532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1044.19"
+                    cy="401.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="930.74"
+                    cy="598.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1044.19"
+                    cy="532.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M817.39 794.59V925.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M817.39 794.59L930.84 729.09L1044.29 794.59V925.59L930.84 991.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M817.39 925.59L930.84 991.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="930.74"
+                    cy="991.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="930.74"
+                    cy="729.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1044.19"
+                    cy="925.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1044.19"
+                    cy="794.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1384.65 336.09V205.09L1271.2 139.59L1157.75 205.09V336.09L1271.2 401.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1384.65 336.09L1271.2 401.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1271.1"
+                    cy="139.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1384.55"
+                    cy="205.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1157.65"
+                    cy="336.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1157.65"
+                    cy="205.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1384.65 336.09L1271.2 401.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1384.65 336.09L1498.1 401.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1271.2 401.59V532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1271.2 532.59L1384.65 598.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1384.65 598.09L1498.1 532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1498.1 401.59V532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+        </g>
+        <g>
+            <path
+                    d="M1271.2 532.59L1157.75 598.09V729.09L1271.2 794.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1271.2 532.59L1384.65 598.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1384.65 598.09V729.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1384.65 729.09L1271.2 794.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1157.65"
+                    cy="729.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1157.65"
+                    cy="598.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1384.65 598.09V729.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1384.65 598.09L1498.1 532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1384.65 729.09L1498.1 794.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1498.1 532.59L1611.56 598.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1611.56 598.09V729.09L1498.1 794.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1611.46"
+                    cy="729.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1384.65 729.09L1271.2 794.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1384.65 729.09L1498.1 794.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1271.2 794.59V925.59L1384.65 991.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1498.1 794.59V925.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1498.1 925.59L1384.65 991.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1271.1"
+                    cy="925.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1498.1 401.59V532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1498.1 401.59L1611.56 336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1498.1 532.59L1611.56 598.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1611.56 598.09L1725.01 532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1725.01 401.59L1611.56 336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1725.01 401.59V532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+        </g>
+        <g>
+            <path
+                    d="M1498.1 925.59L1384.65 991.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1498.1 925.59L1611.56 991.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1384.65 991.09V1122.09L1498.1 1187.59L1611.56 1122.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1611.56 991.09V1122.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1384.55"
+                    cy="1122.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1498"
+                    cy="1187.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1611.56 991.09V1122.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1611.56 991.09L1725.01 925.59L1838.46 991.09V1122.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1611.56 1122.09L1725.01 1187.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1838.46 1122.09L1725.01 1187.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1724.91"
+                    cy="925.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1838.36"
+                    cy="991.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1725.01 139.59V8.59L1611.56 -56.91L1498.1 8.59V139.59L1611.56 205.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1725.01 139.59L1611.56 205.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1498"
+                    cy="8.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1498"
+                    cy="139.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1724.91"
+                    cy="8.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1725.01 139.59L1611.56 205.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1725.01 139.59L1838.46 205.09V336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1611.56 205.09V336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1838.46 336.09L1725.01 401.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1725.01 401.59L1611.56 336.09"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1838.36"
+                    cy="205.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1838.46 336.09L1725.01 401.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1838.46 336.09L1951.91 401.59V532.59L1838.46 598.09L1725.01 532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1725.01 401.59V532.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1838.36"
+                    cy="598.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1838.46 1122.09L1725.01 1187.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <path
+                    d="M1838.46 1122.09L1951.91 1187.59V1318.59L1838.46 1384.09L1725.01 1318.59V1187.59"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1724.91"
+                    cy="1318.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1838.36"
+                    cy="1384.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+        <g>
+            <path
+                    d="M1498.1 1580.59V1711.59L1611.56 1777.09L1725.01 1711.59V1580.59L1611.56 1515.09L1498.1 1580.59Z"
+                    stroke="#AADCB7"
+                    stroke-width="2"
+                    stroke-opacity="0.5"
+            ></path>
+            <circle
+                    cx="1724.91"
+                    cy="1580.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1611.46"
+                    cy="1777.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1724.91"
+                    cy="1711.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1611.46"
+                    cy="1515.09"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1498"
+                    cy="1580.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+            <circle
+                    cx="1498"
+                    cy="1711.59"
+                    r="14"
+                    fill="#2BA84A"
+                    opacity="0.17"
+            ></circle>
+        </g>
+    </g>
+
+    <g class="cir">
+        <circle
+                cx="136.57"
+                cy="401.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="136.57"
+                cy="532.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="136.57"
+                cy="925.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="136.57"
+                cy="794.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="363.48"
+                cy="8.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="363.48"
+                cy="139.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="476.93"
+                cy="205.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="363.48"
+                cy="401.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="250.03"
+                cy="336.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="590.38"
+                cy="532.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="703.84"
+                cy="598.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="817.29"
+                cy="532.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="817.29"
+                cy="401.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="590.38"
+                cy="925.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="817.29"
+                cy="794.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="703.84"
+                cy="991.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="817.29"
+                cy="925.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="703.84"
+                cy="1122.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="930.74"
+                cy="336.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1271.1"
+                cy="401.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1384.55"
+                cy="336.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1271.1"
+                cy="532.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1384.55"
+                cy="598.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1384.55"
+                cy="729.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1498"
+                cy="794.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1724.91"
+                cy="532.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1724.91"
+                cy="401.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1611.46"
+                cy="991.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1611.46"
+                cy="1122.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1611.46"
+                cy="205.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1724.91"
+                cy="139.59"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+        <circle
+                cx="1838.36"
+                cy="336.09"
+                r="14"
+                fill="#2BA84A"
+                opacity="0.17"
+        ></circle>
+    </g>
+
+    <g class="blue_hexagons_wrapper">
+        <path
+                class="blue_hexagons"
+                d="M159.26 75.37L243.26 123.87M159.26 75.37L75.25 123.87V220.87M159.26 75.37V-21.63L243.26 -70.13L327.27 -21.63V75.37M243.26 123.87V220.87M243.26 123.87L327.27 75.37M243.26 220.87L159.26 269.37M243.26 220.87L327.27 269.37M159.26 269.37L75.25 220.87M159.26 269.37V366.37M75.25 220.87L-8.76001 269.37V366.37L75.25 414.87M159.26 366.37L75.25 414.87M159.26 366.37L243.26 414.87M75.25 414.87V511.87L159.26 560.37M243.26 414.87V511.87M243.26 414.87L327.27 366.37M243.26 511.87L159.26 560.37M243.26 511.87L327.27 560.37M159.26 560.37V657.37M159.26 657.37L243.26 705.87M159.26 657.37L75.25 705.87V802.87L159.26 851.37L243.26 802.87V705.87M243.26 705.87L327.27 657.37V560.37M327.27 75.37L411.28 123.87V220.87M411.28 220.87L327.27 269.37M411.28 220.87L495.28 269.37V366.37L411.28 414.87M327.27 269.37V366.37M327.27 366.37L411.28 414.87M411.28 414.87V511.87L327.27 560.37M579.29 705.87L495.28 657.37L411.28 705.87V802.87L495.28 851.37L579.29 802.87M579.29 705.87V802.87M579.29 705.87L663.3 657.37L747.3 705.87V802.87L663.3 851.37L579.29 802.87M1083.33 414.87L999.33 366.37L915.32 414.87V511.87M1083.33 414.87V511.87M1083.33 414.87L1167.34 366.37M1083.33 511.87L999.33 560.37M1083.33 511.87L1167.34 560.37L1251.35 511.87V414.87M999.33 560.37L915.32 511.87M999.33 560.37V657.37L915.32 705.87L831.31 657.37V560.37L915.32 511.87M1167.34 -21.63L1083.33 -70.13L999.33 -21.63V75.37L1083.33 123.87L1167.34 75.37M1167.34 -21.63V75.37M1167.34 -21.63L1251.35 -70.13L1335.35 -21.63V75.37L1251.35 123.87L1167.34 75.37M1167.34 366.37L1251.35 414.87M1167.34 366.37V269.37L1251.35 220.87L1335.35 269.37V366.37L1251.35 414.87M915.32 2063.87L831.31 2015.37V1918.37L915.32 1869.87L999.32 1918.37V2015.37M915.32 2063.87L999.32 2015.37M915.32 2063.87V2112.37V2160.87L999.32 2209.37L1083.33 2160.87V2063.87L999.32 2015.37M1419.36 996.87L1335.35 948.37L1251.35 996.87V1093.87L1335.35 1142.37M1419.36 996.87V1093.87M1419.36 996.87L1503.37 948.37L1587.37 996.87V1093.87L1503.37 1142.37M1419.36 1093.87L1335.35 1142.37M1419.36 1093.87L1503.37 1142.37M1335.35 1142.37V1239.37L1419.36 1287.87L1503.37 1239.37V1142.37M1335.35 1433.37L1251.35 1384.87L1167.34 1433.37V1530.37L1251.35 1578.87L1335.35 1530.37M1335.35 1433.37V1530.37M1335.35 1433.37L1419.36 1384.87L1503.37 1433.37V1530.37L1419.36 1578.87L1335.35 1530.37M1503.37 366.37L1587.37 414.87M1503.37 366.37L1419.36 414.87V511.87M1503.37 366.37V269.37L1587.37 220.87M1587.37 414.87V511.87M1587.37 414.87L1671.38 366.37M1587.37 511.87L1503.37 560.37M1587.37 511.87L1671.38 560.37M1503.37 560.37L1419.36 511.87M1503.37 560.37V657.37M1419.36 511.87L1335.35 560.37V657.37L1419.36 705.87M1503.37 657.37L1419.36 705.87M1503.37 657.37L1587.37 705.87M1419.36 705.87V802.87L1503.37 851.37L1587.37 802.87M1587.37 705.87V802.87M1587.37 705.87L1671.38 657.37M1587.37 802.87L1671.38 851.37L1755.39 802.87V705.87M1671.38 75.37L1755.39 123.87M1671.38 75.37L1587.37 123.87V220.87M1671.38 75.37V-21.63L1755.39 -70.13L1839.39 -21.63M1755.39 123.87V220.87L1671.38 269.37M1755.39 123.87L1839.39 75.37M1671.38 269.37L1587.37 220.87M1671.38 269.37V366.37M1671.38 366.37L1755.39 414.87V511.87M1755.39 511.87L1671.38 560.37M1755.39 511.87L1839.39 560.37V657.37L1755.39 705.87M1671.38 560.37V657.37M1671.38 657.37L1755.39 705.87M1839.39 -21.63V75.37M1839.39 -21.63L1923.4 -70.13L2007.41 -21.63V75.37L1923.4 123.87L1839.39 75.37M159.26 1821.37L243.26 1869.87V1966.87L159.26 2015.37L75.25 1966.87V1869.87L159.26 1821.37ZM327.27 948.37L411.28 996.87V1093.87L327.27 1142.37L243.26 1093.87V996.87L327.27 948.37ZM159.25 1239.37L243.26 1287.87V1384.87L159.25 1433.37L75.25 1384.87V1287.87L159.25 1239.37ZM495.28 1724.37L411.28 1675.87L327.27 1724.37V1821.37L411.28 1869.87L495.28 1821.37V1724.37ZM663.3 75.37L747.3 123.87V220.87L663.3 269.37L579.29 220.87V123.87L663.3 75.37ZM663.3 1384.87L747.3 1433.37V1530.37L663.3 1578.87L579.29 1530.37V1433.37L663.3 1384.87ZM999.33 948.37L1083.33 996.87V1093.87L999.33 1142.37L915.32 1093.87V996.87L999.33 948.37ZM1755.39 1675.87L1839.39 1724.37V1821.37L1755.39 1869.87L1671.38 1821.37V1724.37L1755.39 1675.87ZM1923.4 220.87L2007.41 269.37V366.37L1923.4 414.87L1839.39 366.37V269.37L1923.4 220.87ZM1923.4 1384.87L2007.41 1433.37V1530.37L1923.4 1578.87L1839.39 1530.37V1433.37L1923.4 1384.87Z"
+                stroke="#0EC1D9"
+                stroke-opacity="0.16"
+                stroke-width="2"
+        ></path>
+    </g>
+
+    <style>
+        svg g path {
+        animation: hexagons_paths 2.5s infinite ease-in-out;
+        }
+
+        svg .hexagons g:nth-child(2n-1) path {
+        animation-direction: alternate-reverse;
+        }
+
+        svg .hexagons g:nth-child(2n) path {
+        animation-direction: alternate;
+        }
+
+        @keyframes hexagons_paths {
+        0% {
+        opacity: 0;
+        }
+
+        60% {
+        opacity: 1;
+        }
+
+        100% {
+        opacity: 1;
+        }
+        }
+
+        svg .hexagons g circle {
+        animation: hexagons_circles 2.5s infinite ease-in-out;
+        }
+
+        svg .hexagons g:nth-child(2n-1) circle {
+        animation-direction: alternate-reverse;
+        }
+
+        svg .hexagons g:nth-child(2n) circle {
+        animation-direction: alternate;
+        }
+
+        @keyframes hexagons_circles {
+        0% {
+        r: 5;
+        opacity: 0;
+        }
+
+        60% {
+        r: 14;
+        opacity: 0.17;
+        }
+
+        100% {
+        r: 14;
+        opacity: 0.17;
+        }
+        }
+
+        @keyframes hexagons_circles_mobile {
+        0% {
+        r: 1;
+        opacity: 0;
+        }
+
+        60% {
+        r: 4;
+        opacity: 0.36;
+        }
+
+        100% {
+        r: 4.2;
+        opacity: 0.5;
+        }
+        }
+
+
+        svg .blue_hexagons_wrapper {
+        animation: blue_hexagonsX 8s ease-in-out infinite;
+        }
+
+        svg .blue_hexagons {
+        animation: blue_hexagonsY 5s ease-in-out alternate infinite;
+        }
+
+        @keyframes blue_hexagonsY {
+        0% {
+        transform: translateY(0);
+        stroke-opacity: 0.27;
+        }
+
+        50% {
+        stroke-opacity: 0.36;
+        }
+
+        100% {
+        transform: translateY(-50px);
+        stroke-opacity: 0.37;
+        }
+        }
+
+        @keyframes blue_hexagonsY_mobile {
+        0% {
+        stroke-opacity: 0.87;
+        }
+
+        50% {
+        stroke-opacity: 0.86;
+        }
+
+        100% {
+        stroke-opacity: 0.9;
+        }
+        }
+
+
+        @keyframes blue_hexagonsX {
+        0% {
+        transform: translateX(0px);
+        }
+
+        16% {
+        transform: translateX(2px);
+        }
+
+        32% {
+        transform: translateX(-1px);
+        }
+
+        48% {
+        transform: translateX(3px);
+        }
+
+        80% {
+        transform: translateX(-2px);
+        }
+
+        100% {
+        transform: translateX(0px);
+        }
+        }
+    </style>
+</svg>
