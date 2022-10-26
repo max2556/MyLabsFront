@@ -25,6 +25,14 @@
   height: 100%;
 }
 
+.about-us .mobile_bg{
+  display: none;
+}
+
+.about-us .desktop_bg{
+  display: block;
+}
+
 .about-us .bg_mask {
   position: absolute;
   z-index: -1;
@@ -542,6 +550,14 @@
   }
 
   .about-us hr {
+    display: none;
+  }
+
+  .about-us .mobile_bg{
+    display: block;
+  }
+  
+  .about-us .desktop_bg{
     display: none;
   }
 }

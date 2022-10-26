@@ -250,7 +250,7 @@
     position: fixed;
     right: 0px;
     top: 70px;
-    transform: translateX(101%);
+    right: -101%;
 
     width: 300px;
     height: calc(100vh - 70px);
@@ -264,7 +264,7 @@
 
     background: white;
 
-    transition: 0.25s;
+    transition: 0.15s;
 
     -webkit-tap-highlight-color: transparent;
   }
@@ -281,7 +281,7 @@
   }
 
   .header .hamburger-menu.active + nav > ul.links {
-    transform: none;
+    right: 0;
   }
 
   .header .icons {

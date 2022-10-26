@@ -122,6 +122,10 @@
 
 /*Стили управления*/
 .lastworks .slider-control {
+  --arrow-size: 45px;
+  --button-margin-left: 25px;
+  --button-size: 25px;
+
   width: fit-content;
   margin: 0 auto;
 
@@ -134,13 +138,11 @@
   display: inline-block;
   margin: 0 0px;
 
-  margin-top: calc((var(--button-size) - var(--arrow-size)) / 2);
-  margin-bottom: calc((var(--button-size) - var(--arrow-size)) / 2);
+  margin-top: calc((var(--arrow-size) - var(--button-size)) / 2);
+  margin-bottom: calc((var(--arrow-size) - var(--button-size)) / 2);
 }
 
 .lastworks .slider-control .move {
-  --button-margin-left: 25px;
-  --button-size: 25px;
   width: var(--button-size);
   height: var(--button-size);
 
@@ -175,8 +177,6 @@
 }
 
 .lastworks .slider-control .move-arrow {
-  --arrow-size: 27px;
-
   padding: 0;
   margin: 0;
 
@@ -264,7 +264,7 @@
     margin: 50px 25px;
   }
 
-  .lastworks .slider-control .buttons .move {
+  .lastworks .slider-control{
     --button-margin-left: 10px;
     --button-size: 22px;
   }
@@ -303,7 +303,7 @@
   }
 
   .lastworks .structure {
-    width: 60%;
+    width: 70%;
     margin: 50px auto;
   }
 
@@ -355,7 +355,7 @@
     margin-right: 0px;
   }
 
-  .lastworks .slider-control .buttons .move {
+  .lastworks .slider-control{
     --button-size: 18px;
     --button-margin-left: 6px;
   }
@@ -368,8 +368,8 @@
     margin: 0;
   }
 
-  .lastworks .slider-control .move-arrow {
-    --arrow-size:22px;
+  .lastworks .slider-control{
+    --arrow-size:40px;
   }
 
   .lastworks .block {
@@ -403,4 +403,8 @@
   .lastworks .block .line {
     font-size: 20px;
   }
+  .lastworks .structure{
+    margin: 50px 8px;
+  }
+
 }
