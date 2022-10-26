@@ -34,7 +34,7 @@ function addTransitionToSvg() {
     }, 3000);
 }
 function moveLines(svg) {
-    let linesToMove = 30;
+    let linesToMove = 10;
     let lines = svg.querySelectorAll("g.lines path");
     for (let i = 0; i < linesToMove; i++) {
         let el = lines[Math.floor(Math.random() * lines.length)];

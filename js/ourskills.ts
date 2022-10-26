@@ -5,27 +5,10 @@ let transitionDur: number = 500;
 let transitionInterval: number = 1500;
 let iterationInterval: number = 1000;
 
-for (let i = 0; i < skills.length; i++) {
-    skills[i].style.animationDelay = i * transitionInterval + "ms";
-}
-
 for (let i = 0; i < lines.length; i++) {
     lines[i].style.strokeDasharray = lines[i].getTotalLength() + "px";
     lines[i].style.strokeDashoffset = lines[i].getTotalLength() + "px";
     lines[i].style.animationDelay = i * transitionInterval + "ms";
-}
-
-function animSkills(): void {
-    for (let i = 0; i < skills.length; i++) {
-        skills[i].classList.add("active_skill")
-    }
-    setTimeout(function () {
-        for (let i = 0; i < skills.length; i++) {
-            skills[i].classList.remove("active_skill")
-        }
-        setTimeout(animSkills, iterationInterval)
-    }, transitionInterval * skills.length)
-
 }
 
 function animLines(): void {
@@ -45,8 +28,7 @@ function animLines(): void {
         if (i < lines.length)
             setTimeout(setSDO, transitionInterval);
     })();
-    setTimeout(animLines, iterationInterval + transitionInterval * skills.length)
+    setTimeout(animLines, transitionInterval * (skills.length - 1))
 }
 
-animSkills();
 animLines();
