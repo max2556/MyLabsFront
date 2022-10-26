@@ -51,7 +51,7 @@ class Line {
   update() {
     this.bias += this.deltaBias
 
-    if (this.bias > 0.7) this.bias = 0.1
+    if (this.bias > 0.75) this.bias = 0.1
   }
 
   draw(ctx) {
@@ -76,7 +76,7 @@ class Line {
   updateAllLines()
   drawAllLines()
 
-  window.addEventListener('wheel', (e) => {
+  window.addEventListener('scroll', (e) => {
     SEPARATOR_STATE.isRunning = isVisible(separator);
     
   })

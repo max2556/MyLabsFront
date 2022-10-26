@@ -552,7 +552,7 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .about-us .bg .mobile_bg {
     height: 1600px;
     display: block;

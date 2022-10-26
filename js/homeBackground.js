@@ -70,6 +70,9 @@ function isVisible(el) {
     return targetPosition.bottom > windowPosition.top &&
         targetPosition.top < windowPosition.bottom;
 }
+function isMobile() {
+    return window.innerWidth <= 600;
+}
 function homeBackgroundMovements() {
     let home = document.querySelector(".home_background");
     let intervalId = setInterval(function () {

@@ -1,6 +1,8 @@
 const links_autoscrollable = document.querySelectorAll('.autoscrollable')
 const links_header = document.querySelectorAll('header .autoscrollable')
 
+const header = document.querySelector('header');
+
 
 //const homepageButton = document.querySelector('.home_wrapper .content .text a.button');
 
@@ -18,7 +20,7 @@ const LINKS_DICT = {}
   addActive(links_header[0])
   initLinks()
 
-  document.addEventListener('wheel', (e) => {
+  document.addEventListener('scroll', (e) => {
     clearTimeout(HEADER_STATE.scrollTimeoutID)
     checkScroll()
   })
@@ -129,27 +131,29 @@ function animateScroll(value) {
 }
 
 function checkScroll() {
+  const headerHeight = header.getBoundingClientRect().height;
   let target = null
   for (let block in TARGET_ELEMENTS) {
     if (!block || !TARGET_ELEMENTS[block]) continue
-    let visibility = isVisible(TARGET_ELEMENTS[block])
+    let visibility = local_isVisible(TARGET_ELEMENTS[block], headerHeight);
     if (!visibility) continue
     target = block
+    break;
   }
 
   removeActive(HEADER_STATE.last_active)
   addActive(LINKS_DICT[target])
 }
 
-function isVisible(el) {
+function local_isVisible(el, offset) {
   let boundingRect = el.getBoundingClientRect()
   let targetPosition = {
     bottom: Math.min(boundingRect.bottom, boundingRect.bottom) + pageYOffset,
     top: Math.max(boundingRect.top, boundingRect.top) + pageYOffset,
   }
   let windowPosition = {
-    top: window.pageYOffset,
-    bottom: window.pageYOffset + document.documentElement.clientHeight,
+    top: window.pageYOffset+offset,
+    bottom: window.pageYOffset + document.documentElement.clientHeight+offset,
   }
   return (
     targetPosition.bottom > windowPosition.top &&
