@@ -25,12 +25,6 @@
   height: 100%;
 }
 
-
-
-.about-us .bg .mobile_bg {
-  display: none;
-}
-
 .about-us .bg_mask {
   position: absolute;
   z-index: -1;
@@ -545,22 +539,6 @@
     z-index: 2;
     margin-bottom: 0;
     padding: 5px 0px;
-  }
-
-  .about-us .bg .desktop_bg {
-    display: none;
-  }
-
-  .about-us .bg .mobile_bg {
-    display: block;
-  }
-
-  .about-us .bg .hexagons g circle {
-    animation: hexagons_circles_mobile 2.5s infinite ease-in-out;
-  }
-
-  .about-us .bg svg .blue_hexagons {
-    animation: blue_hexagonsY_mobile 5s ease-in-out alternate infinite;
   }
 
   .about-us hr {
