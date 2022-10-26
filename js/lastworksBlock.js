@@ -19,9 +19,10 @@
   }
 
   function text_adapt(textarea) {
+    return
     const delta = textarea.clientHeight / textarea.scrollHeight
 
-    if (abs(1-delta) < 0.1) {
+    if (Math.abs(1-delta) < 0.05) {
       textarea.textContent =
         textarea.title.substring(0, textarea.title.length * delta - 3) + '...'
       set_datadelta(textarea, textarea.clientHeight / textarea.scrollHeight)
