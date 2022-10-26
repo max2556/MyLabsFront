@@ -11,6 +11,18 @@
 }
 
 /*ANIMATION*/
+
+.lastworks .bg {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+}
+
+.lastworks .bg .mobile_bg{
+  display: none;
+}
+
 .lastworks .bg_mask {
   position: absolute;
   z-index: -1;

@@ -1,4 +1,6 @@
-const links = document.querySelectorAll('.autoscrollable')
+const links_autoscrollable = document.querySelectorAll('.autoscrollable')
+const links_header = document.querySelectorAll('header .autoscrollable')
+
 
 //const homepageButton = document.querySelector('.home_wrapper .content .text a.button');
 
@@ -13,7 +15,7 @@ const TARGET_ELEMENTS = {}
 const LINKS_DICT = {}
 //Автовызывающаяся функция init()
 ;(function init() {
-  addActive(links[0])
+  addActive(links_header[0])
   initLinks()
 
   document.addEventListener('wheel', (e) => {
@@ -49,7 +51,7 @@ function removeActive(el) {
  * Каждый link получает onclick callback меняющий стили ссылок и перематывающий scroll к указанному target блоку
  */
 function initLinks() {
-  for (let link of links) {
+  for (let link of links_header) {
     LINKS_DICT[link.dataset.scrollto] = link
     TARGET_ELEMENTS[link.dataset.scrollto] = document.querySelector(
       '.' + link.dataset.scrollto,
@@ -65,20 +67,20 @@ function initLinks() {
     })
   }
 
-  //initOtherLinks();
-}
-/*
-function initOtherLinks() {
-  homepageButton.addEventListener('click', () => {
-    if (HEADER_STATE.last_active) removeActive(HEADER_STATE.last_active)
-    addActive(links[1])
-    let targetEl = TARGET_ELEMENTS['about-us']
-    if (!targetEl) return
+  for (let link of links_autoscrollable) {
+    link.addEventListener('click', () => {
+      if (HEADER_STATE.last_active) removeActive(HEADER_STATE.last_active)
+      addActive(link)
+      let targetEl = TARGET_ELEMENTS[link.dataset.scrollto]
+      if (!targetEl) return
 
-    let topValue = targetEl.offsetTop
-    animateScroll(topValue)
-  })
-}*/
+      let topValue = targetEl.offsetTop
+      animateScroll(topValue)
+    })
+  }
+
+ 
+}
 
 
 /**
