@@ -7,7 +7,14 @@ function toggleActive(el) {
   const activeClass = 'active'
   const parent = el.parentNode
 
-  el.classList.toggle(activeClass)
+  if(el.className.includes(activeClass)){
+    el.className = el.className.replace(activeClass, '');
+    el.className = el.className.trim();
+  }
+  else
+    el.className += ' '+activeClass;
+
+  //el.classList.toggle(activeClass)
   if (!parent) return
 
 
