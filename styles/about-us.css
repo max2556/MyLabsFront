@@ -352,6 +352,19 @@
   background-color: #ffffff;
 }
 
+.about-us .FAQ .sublist li {
+  margin-bottom: 10px;
+}
+
+.about-us .FAQ .sublist li:last-child {
+  margin-bottom: 0px;
+}
+
+.about-us .FAQ .sublist li::before {
+  content: '❝';
+  color: #000000cf;
+}
+
 @media (max-width: 1400px) {
   .about-us .video {
     width: 100%;
@@ -481,6 +494,7 @@
     position: relative;
 
     margin-bottom: 5px;
+    transition: margin var(--transition-down) ease-in-out;
     /*font-size: 20px*/
   }
 
@@ -498,11 +512,7 @@
 
   .about-us .info .FAQ .block[hasactive='true'] {
     z-index: 1;
-  }
-
-  .about-us .info .FAQ .block[hasactive='true']::after {
-    height: 80px;
-    margin-bottom: var(--after-margin);
+    /*js margin*/
   }
 
   .about-us .info .line i::before {
@@ -522,6 +532,7 @@
     z-index: 1;
 
     opacity: 0;
+    transform: translateY(0);
     transition: var(--transition-down) all ease-in-out;
   }
 
@@ -538,7 +549,7 @@
   }
 
   .about-us .info .FAQ .block .question.active+.answer {
-    top: calc(50% + var(--answer-margin) + var(--after-margin)/2);
+    /*transform: translateY(calc(100% + var(--answer-margin) + var(--after-margin)/2));*/
     opacity: 1;
     /*half of .FAQ.block margin-bottom + half of padding of .FAQ.question*/
   }
