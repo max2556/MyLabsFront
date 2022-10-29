@@ -77,7 +77,9 @@ function initLinks() {
       if (!targetEl) return
 
       let topValue = targetEl.offsetTop
-      animateScroll(topValue)
+
+      const hasMobile = link.classList.contains('mobile-scroll');
+      animateScroll(topValue, hasMobile)
     })
   }
 
@@ -89,10 +91,10 @@ function initLinks() {
  * Анимированный скролл к точке value - может быть element.offsetTop или любое scrollY значение
  * @param {number} value точка к которой анимируем
  */
-function animateScroll(value) {
+function animateScroll(value, mobile_flag = false) {
   //Проверка на ширину экрана.
   //CONFIG лежит в slider.js
-  if(window.innerWidth < CONFIG.screens.lowScreen){
+  if(window.innerWidth < CONFIG.screens.lowScreen && !mobile_flag){
     //Если экран маленький -> мгновенно переходим на нужное значение
 
     window.scrollTo(0, value);
