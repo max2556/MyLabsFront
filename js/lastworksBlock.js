@@ -1,41 +1,34 @@
-;(function () {
+; (function () {
   function first() {
     const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
     for (let block of blocks) {
-      const textarea = block.querySelector('textarea')
-      textarea.alt = textarea.textContent
-      textarea.title = textarea.textContent
-    }
-  }
-  function text_fix() {
-    const MAX_LINES = 2
-    const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
-
-    for (let block of blocks) {
-      const textarea = block.querySelector('textarea')
-
-      text_adapt(textarea)
+      const title = block.querySelector('.title')
+      title.alt = title.textContent
+      title.title = title.textContent
     }
   }
 
-  function text_adapt(textarea) {
-    return
-    const delta = textarea.clientHeight / textarea.scrollHeight
+  function text_adapt(titleElement) {
+    const MAX_LINES = 2;
 
-    if (Math.abs(1-delta) < 0.05) {
-      textarea.textContent =
-        textarea.title.substring(0, textarea.title.length * delta - 3) + '...'
-      set_datadelta(textarea, textarea.clientHeight / textarea.scrollHeight)
-    }
-    textarea.style.lineHeight =
-      parseInt(parseInt(getComputedStyle(textarea).fontSize) * 1.1) + 'px'
-  }
+    const titleElementSize = titleElement.getBoundingClientRect();
+    const titleElementHeight = titleElementSize.height;
+    const titleElementWidth = titleElementSize.width;
 
-  function is_changed_delta(textarea) {
-    const EPS = 0.05
-    const delta = textarea.clientHeight / textarea.scrollHeight
 
-    return Math.abs(delta - parseFloat(get_datadelta(textarea))) >= EPS
+    const fontSize = parseInt(getComputedStyle(titleElement).fontSize);
+    const averageWigth = fontSize * 0.6;
+    const textCharactersCount = titleElement.textContent.length;
+
+    const maxWidth = titleElementWidth * MAX_LINES;
+    const currentWidth = textCharactersCount * averageWigth;
+      
+    const countToRemove = Math.floor((currentWidth - maxWidth) / averageWigth) + 4;
+    if (countToRemove > 0)
+      titleElement.textContent = titleElement.title.substring(0, titleElement.textContent.length - countToRemove) + "...";
+    else
+      titleElement.textContent = titleElement.title
+
   }
 
   function set_datadelta(el, delta) {
@@ -45,17 +38,21 @@
     return el.getAttribute('delta')
   }
 
-  function resize() {
+  function adaptBlocks() {
     const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
     for (let block of blocks) {
-      const textarea = block.querySelector('textarea')
+      const title = block.querySelector('.title')
 
-      //if (is_changed_delta(textarea))
-      text_adapt(textarea)
+      //if (is_changed_delta(title))
+      text_adapt(title)
     }
   }
 
+  function resize() {
+    adaptBlocks()
+  }
+
   first()
-  text_fix()
+  adaptBlocks();
   window.addEventListener('resize', resize)
 })()
