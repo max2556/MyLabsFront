@@ -29,6 +29,14 @@
   min-width: 30px;
 }
 
+.next{
+  color: #060137
+}
+
+.next::selection{
+  color: #060137;
+}
+
 @keyframes arrow {
   0% {
     transform: translateY(0);

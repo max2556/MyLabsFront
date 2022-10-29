@@ -354,6 +354,9 @@
 
 .about-us .FAQ .sublist li {
   margin-bottom: 10px;
+
+  display: flex;
+  align-items: center;
 }
 
 .about-us .FAQ .sublist li:last-child {
@@ -361,8 +364,10 @@
 }
 
 .about-us .FAQ .sublist li::before {
-  content: '❝';
-  color: #000000cf;
+  content: '•';
+  margin-right: 10px;
+  font-size: 2.5em;
+  color: #2ba84a75;
 }
 
 @media (max-width: 1400px) {
