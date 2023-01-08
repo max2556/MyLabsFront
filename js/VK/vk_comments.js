@@ -627,6 +627,7 @@ function createComments() {
               Name: Иванов Иван
               Content: Some very important text...
               AuthorIcon: https://...
+              Attachments: [...]
           }
         */
 
@@ -636,12 +637,24 @@ function createComments() {
         result_comment["Name"] = author.name
         result_comment["Content"] = comment.text;
         result_comment["AuthorIcon"] = author.photo;
+        result_comment["Attachments"] = getAttachments(comment.attachments);
 
-        if (!result_comment.Content) continue;
+        if (!result_comment.Content && !result_comment.Attachments) continue;
         result_comments.push(result_comment);
     }
 
     return result_comments;
+}
+
+function getAttachments(attachments_array) {
+    if (!attachments_array) return null;
+    const result_attachments = [];
+    for (let attachment of attachments_array) {
+        if (attachment.type !== "photo") continue;
+
+        result_attachments.push(attachment.photo.sizes.find((size) => { return size.type === "x" }).url);
+    }
+    return result_attachments;
 }
 
 function html_render(comments_array) {
@@ -653,6 +666,23 @@ function html_render(comments_array) {
         newComment.querySelector(".icon").src = comment.AuthorIcon;
         newComment.querySelector(".fio").textContent = comment.Name;
         newComment.querySelector(".comment").textContent = comment.Content;
+
+        if (comment.Attachments)
+            for (let attachment of comment.Attachments) {
+                const newAttachmentElement = document.createElement('img');
+                newAttachmentElement.src = attachment;
+                newAttachmentElement.classList.add("attachment");
+                newAttachmentElement.onclick = ()=>{
+                    open(newAttachmentElement.src);
+                }
+                newComment.querySelector(".attachments").append(newAttachmentElement);
+            }
+        else
+        {
+            let attachmentsHolderEl = newComment.querySelector(".attachments");
+            attachmentsHolderEl.parentNode.removeChild(attachmentsHolderEl);
+        }
+
         commentsMount.append(newComment);
     }
 }
@@ -675,17 +705,19 @@ function parse_params(params) {
 }
 
 function shuffle(array) {
-    var copy = [], n = array.length, i;
+    let m = array.length, t, i;
 
     // While there remain elements to shuffle…
-    while (n) {
+    while (m) {
 
         // Pick a remaining element…
-        i = Math.floor(Math.random() * n--);
+        i = Math.floor(Math.random() * m--);
 
-        // And move it to the new array.
-        copy.push(array.splice(i, 1)[0]);
+        // And swap it with the current element.
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
     }
 
-    return copy;
+    return array;
 }
