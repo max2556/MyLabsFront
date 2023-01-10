@@ -90,6 +90,7 @@
 
 .comments .attachments .attachment {
     max-height: 150px;
+    max-width: 100%;
     margin-right: 8px;
 }
 .comments .attachments .attachment:hover {
