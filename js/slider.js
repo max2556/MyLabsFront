@@ -1,102 +1,127 @@
+window.addEventListener('load', () => {
+  buildSliders()
+})
+
+//functions of different types of scrolling
 const TYPES = {
-  step: 'step',
-  skip: 'skip',
+  step: (num, slider) => {
+    const blocks = slider.querySelector(".scroll-blocks");
+    const deltaX = -100 / STATES[slider.id].once_count
+    const movement = `translate(${num * deltaX}%,0)`
+    blocks.style.transform = movement
+    blocks.setAttribute('transform', movement)
+  },
+  skip: (num, slider) => {
+    const blocks = slider.querySelector(".scroll-blocks");
+    const deltaX = -100
+    const movement = `translate(${num * deltaX}%,0)`
+    blocks.style.transform = movement
+    blocks.setAttribute('transform', movement)
+  },
 }
+//current type of scrolling function
+const CURRENT_TYPE = TYPES.step;
+
+//configuration data. low/middle screen for adjusting
 const CONFIG = {
   screens: {
     middleScreen: 1575,
     lowScreen: 800,
   },
   autoscrollInterval: 5000,
-}
-const CURRENT_TYPE = TYPES.step
-const STATE = {
-  last_clicked: null,
-  buttons: null,
-  arrows: null,
-  autoscrollID: null,
-  slides: 0,
-  prevScreen: 0,
-  once_count: getOnceCount(),
-  prevTouch: 0,
+  prevScreen: window.innerWidth,
+  prevTouch: null
 }
 
+//States holder for all scrollers on the page
+const STATES = {};
 
+function getStateTemplate(slider) {
+  const newState = {
+    //last clicked button -> need for classList.remove(last_clicked)
+    last_clicked: null,
 
+    //all buttons of scroller
+    buttons: null,
 
-function one_slide(num) {
-  const slider = document.querySelector('.scroll-plate .blocks')
-  const deltaX = -100 / STATE.once_count
-  const movement = `translate(${num * deltaX}%,0)`
-  slider.style.transform = movement
-  slider.setAttribute('transform', movement)
+    //arrow buttons of scroller
+    arrows: null,
+
+    //autoscrollID - id number of setInterval() function. Need for clearInterval()
+    autoscrollID: null,
+
+    //count of slides
+    slides: 0,
+
+    //screen size before resize
+    once_count: getOnceCount(slider), //TODO: each scroller would have different 'once_count' -> rework
+  }
+  return newState;
 }
 
-function skip(num) {
-  const slider = document.querySelector('.scroll-plate .blocks')
-  const deltaX = -100
-  const movement = `translate(${num * deltaX}%,0)`
-  slider.style.transform = movement
-  slider.setAttribute('transform', movement)
+function buildSliders() {
+  const slidersHolder = document.querySelectorAll(".scroll-holder");
+  for (let slider of slidersHolder) {
+    slider.id = crypto.randomUUID().substring(0, 8);
+    buildSlider(slider);
+  }
 }
 
-buildSlider()
-function buildSlider() {
-  buildMainButtons()
-  prepareArrowButtons()
-  let autoscrollID = setInterval(autoscroll, CONFIG.autoscrollInterval)
-  STATE.autoscrollID = autoscrollID
+function buildSlider(slider) {
+  STATES[slider.id] = getStateTemplate(slider);
+
+  buildMainButtons(slider)
+  prepareArrowButtons(slider)
+
+  STATES[slider.id].autoscrollID = setInterval(autoscroll.bind(this, slider), CONFIG.autoscrollInterval);
 
   window.addEventListener('resize', resizeEvent)
   window.addEventListener('touchstart', touchEventStart)
   window.addEventListener('touchend', touchEventEnd)
   window.addEventListener('touchmove', touchEventMove)
 }
-function buildMainButtons() {
-  const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
 
-  let slides
+function buildMainButtons(slider) {
+  const blocks = slider.querySelectorAll('.scroll-blocks .scroll-block');
+
+  let slides;
+  let func = CURRENT_TYPE;
   switch (CURRENT_TYPE) {
     case TYPES.skip:
-      slides = Math.ceil(blocks.length / STATE.once_count)
-      prepare(skip, slides)
+      slides = Math.ceil(blocks.length / STATES[slider.id].once_count)
       break
     case TYPES.step:
     default:
-      slides = blocks.length - (STATE.once_count - 1)
-      prepare(one_slide, slides)
+      slides = blocks.length - (STATES[slider.id].once_count - 1)
       break
   }
+
+  prepare(func, slider, blocks, slides);
 }
 
-/**
- * Подготавливает слайдер в режиме переключения фиксированного количества блоков(пропускает 2 и более)
- */
-function prepare(callback, slides) {
-  const blocks = document.querySelectorAll('.scroll-plate .blocks .block')
+function prepare(callback, slider, blocks, slides) {
+  STATES[slider.id].slides = slides;
 
-  STATE.slides = slides
-
-  const buttons = generateButtons(blocks.length)
-
+  const buttons = generateButtons(slider ,blocks.length);
   for (let i = 0; i < buttons.length; i++) {
     const button = buttons[i]
     button.addEventListener('click', (event) => {
-      callback(button.id)
-      if (STATE.last_clicked) STATE.last_clicked.classList.remove('active')
-      STATE.last_clicked = button
+      callback(button.id, slider);
+      if (STATES[slider.id].last_clicked) STATES[slider.id].last_clicked.classList.remove('active')
+      STATES[slider.id].last_clicked = button
       button.classList.add('active')
 
       //Без клика - браузер считает isTrusted false
       //С кликом - true
       //Если нажатие вызвано пользователем - паузим автоскролл
-      if (event.isTrusted) pauseAutoscroll()
+      if (event.isTrusted) pauseAutoscroll(slider)
     })
     if (i >= slides) button.style.display = 'none'
   }
 
-  STATE.buttons = buttons
+  STATES[slider.id].buttons = buttons
 }
+
 
 /**
  * Создает кнопки управления слайдером
@@ -104,9 +129,8 @@ function prepare(callback, slides) {
  * @param {int} count Количество кнопок
  * @returns массив кнопок
  */
-function generateButtons(count) {
-  const buttonsParentSelector = '.slider-control .buttons'
-  const parent = document.querySelector(buttonsParentSelector)
+function generateButtons(slider, count) {
+  const parent = slider.querySelector('.buttons');
   clearChildren(parent)
   for (let i = 0; i < count; i++) {
     let newButton = document.createElement('button')
@@ -116,7 +140,7 @@ function generateButtons(count) {
     parent.append(newButton)
   }
 
-  STATE.last_clicked = parent.children[0]
+  STATES[slider.id].last_clicked = parent.children[0]
   parent.children[0].classList.add('active')
   return parent.children
 }
@@ -131,9 +155,9 @@ function clearChildren(elem) {
 /**
  * Задает логику для крайних кнопок - стрелок, смещающих положение на один в нужную сторону
  */
-function prepareArrowButtons() {
-  const leftButton = document.querySelector('.slider-control .move-arrow.left')
-  const rightButton = document.querySelector(
+function prepareArrowButtons(slider) {
+  const leftButton = slider.querySelector('.slider-control .move-arrow.left')
+  const rightButton = slider.querySelector(
     '.slider-control .move-arrow.right',
   )
 
@@ -145,32 +169,32 @@ function prepareArrowButtons() {
   }
 
   leftButton.addEventListener('click', () => {
-    let currentId = STATE.last_clicked.id
-    let newId = (STATE.slides + parseInt(currentId) - 1) % STATE.slides
-    STATE.buttons[newId].click()
+    let currentId = STATES[slider.id].last_clicked.id
+    let newId = (STATES[slider.id].slides + parseInt(currentId) - 1) % STATES[slider.id].slides
+    STATES[slider.id].buttons[newId].click()
 
-    pauseAutoscroll()
+    pauseAutoscroll(slider)
   })
 
   rightButton.addEventListener('click', () => {
-    let currentId = STATE.last_clicked.id
-    let newId = (STATE.slides + parseInt(currentId) + 1) % STATE.slides
-    STATE.buttons[newId].click()
+    let currentId = STATES[slider.id].last_clicked.id
+    let newId = (STATES[slider.id].slides + parseInt(currentId) + 1) % STATES[slider.id].slides
+    STATES[slider.id].buttons[newId].click()
 
-    pauseAutoscroll()
+    pauseAutoscroll(slider)
   })
 
-  STATE.arrows = { left: leftButton, right: rightButton }
+  STATES[slider.id].arrows = { left: leftButton, right: rightButton }
 }
 
 /**
  * Функция автоскролла, вызывается в init() каждые CONFIG.autoscrollInterval милисекунд
  */
-function autoscroll() {
-  let currentId = STATE.last_clicked.id
+function autoscroll(slider) {
+  let currentId = STATES[slider.id].last_clicked.id
   let newId = parseInt(currentId) + 1
-  if (newId >= STATE.slides) newId = 0
-  STATE.buttons[newId].click()
+  if (newId >= STATES[slider.id].slides) newId = 0
+  STATES[slider.id].buttons[newId].click()
 }
 
 /**
@@ -178,35 +202,50 @@ function autoscroll() {
  * Возобновляет его через CONFIG.autoscrollInterval
  * @returns void
  */
-function pauseAutoscroll() {
-  if (!STATE.autoscrollID) return
+function pauseAutoscroll(slider) {
+  if (!STATES[slider.id].autoscrollID) return
 
-  clearInterval(STATE.autoscrollID)
+  clearInterval(STATES[slider.id].autoscrollID)
   setTimeout(() => {
-    clearInterval(STATE.autoscrollID)
-    STATE.autoscrollID = setInterval(autoscroll, CONFIG.autoscrollInterval)
+    clearInterval(STATES[slider.id].autoscrollID)
+    STATES[slider.id].autoscrollID = setInterval(()=>{autoscroll(slider)}, CONFIG.autoscrollInterval)
   }, CONFIG.autoscrollInterval)
 }
 
 function resizeEvent() {
   if (!isChangeScreen()) return
-  pauseAutoscroll()
-  STATE.once_count = getOnceCount()
-  buildMainButtons()
+  
+  for(let id in STATES)
+  {
+    const state = STATES[id];
+    const slider = document.getElementById(id);
 
-  STATE.buttons[0].click()
-  STATE.prevScreen = window.innerWidth
+    pauseAutoscroll(slider)
+    state.once_count = getOnceCount(slider)
+    buildMainButtons(slider)
+    
+    state.buttons[0].click()
+    state.prevScreen = window.innerWidth
+  }
 }
 
-function getOnceCount() {
-  if (window.innerWidth < CONFIG.screens.lowScreen) return 1
-  if (window.innerWidth < CONFIG.screens.middleScreen) return 2
-  return 3
+//TODO: rework
+function getOnceCount(slider) {
+  let sizes = slider.getAttribute("sizes");
+  if(!sizes){
+    console.warn("No sizes on slider! Always 1");
+    return 1;
+  }
+  sizes = JSON.parse(sizes);
+
+  if (window.innerWidth < CONFIG.screens.lowScreen) return sizes[2]
+  if (window.innerWidth < CONFIG.screens.middleScreen) return sizes[1]
+  return sizes[0];
 }
 
 function isChangeScreen() {
   const current = window.innerWidth
-  const prev = STATE.prevScreen
+  const prev = CONFIG.prevScreen
 
   const middleDeltaCurrent = current - CONFIG.screens.middleScreen
   const middleDeltaPrev = prev - CONFIG.screens.middleScreen
@@ -221,21 +260,35 @@ function isChangeScreen() {
 }
 
 function touchEventStart(e) {
-  pauseAutoscroll()
+  const slider = e.path.find((element) => 
+    {
+      if(element.classList) 
+        return element.classList.contains("scroll-holder")
+      else
+        return false;
+    });
+  pauseAutoscroll(slider)
 
-  STATE.prevTouch = { x: e.touches[0].clientX, y: e.touches[0].clientY }
+  CONFIG.prevTouch = { x: e.touches[0].clientX, y: e.touches[0].clientY }
 }
 
 function touchEventMove() {
-  //pauseAutoscroll()
+  //pauseAutoscroll(slider)
 }
 
 function touchEventEnd(e) {
-  const deltaX = STATE.prevTouch.x - e.changedTouches[0].clientX
+  const slider = e.path.find((element) => 
+    {
+      if(element.classList) 
+        return element.classList.contains("scroll-holder")
+      else
+        return false;
+    });
+  const deltaX = CONFIG.prevTouch.x - e.changedTouches[0].clientX
   const isRight = deltaX > 0
   const offset = 20 //px
 
   if (Math.abs(deltaX) < offset) return
-  if (isRight) STATE.arrows.right.click()
-  else STATE.arrows.left.click()
+  if (isRight) STATES[slider.id].arrows.right.click()
+  else STATES[slider.id].arrows.left.click()
 }

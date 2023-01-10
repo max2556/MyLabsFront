@@ -1,14 +1,40 @@
-.comments p{
+.comments
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+@media (max-width: 1575px) {
+    .comments{ width: 900px;}
+}
+@media (max-width: 1025px) {
+    .comments{ width: 700px;}
+}
+@media (max-width: 800px) {
+    .comments{ width: 400px;}
+}
+@media (max-width: 500px) {
+    .comments{ width: 100%;}
+}
+
+
+.comments a,
+.comments p {
     font-size: 14px;
 
-    font-family: var(--palette-vk-font,-apple-system,BlinkMacSystemFont,'Roboto','Helvetica Neue',Geneva,"Noto Sans Armenian","Noto Sans Bengali","Noto Sans Cherokee","Noto Sans Devanagari","Noto Sans Ethiopic","Noto Sans Georgian","Noto Sans Hebrew","Noto Sans Kannada","Noto Sans Khmer","Noto Sans Lao","Noto Sans Osmanya","Noto Sans Tamil","Noto Sans Telugu","Noto Sans Thai",arial,Tahoma,verdana,sans-serif);
+    font-family: var(--palette-vk-font, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Geneva, "Noto Sans Armenian", "Noto Sans Bengali", "Noto Sans Cherokee", "Noto Sans Devanagari", "Noto Sans Ethiopic", "Noto Sans Georgian", "Noto Sans Hebrew", "Noto Sans Kannada", "Noto Sans Khmer", "Noto Sans Lao", "Noto Sans Osmanya", "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Thai", arial, Tahoma, verdana, sans-serif);
+}
+
+.comments .vk_post{
+    margin-bottom: 5px;
 }
 
 .comments .comment-holder {
     display: flex;
     flex-direction: column;
-    padding: 12px 12px;
+
     box-sizing: border-box;
+    padding: 12px 12px;
+    margin-bottom: 5px;
 
     border-radius: 3px;
     border: 1px solid #dce1e6;
@@ -29,7 +55,7 @@
     box-sizing: border-box;
 }
 
-.comment-holder .left .icon{
+.comment-holder .left .icon {
     width: var(--img-size);
     height: var(--img-size);
     border-radius: 100%;
@@ -41,7 +67,8 @@
     color: #818c99;
 }
 
-.comments p.fio {
+.comments .fio {
+    display: block;
     line-height: 19px;
     font-size: 14px;
     font-weight: 700;
@@ -52,16 +79,56 @@
     letter-spacing: 0.2px;
 }
 
-.comments .attachments{
+.comments .attachments {
     display: flex;
     max-height: 150px;
     margin: 5px 0;
 }
 
-.comments .attachments .attachment{
+.comments .attachments .attachment {
     max-height: 150px;
     margin-right: 8px;
 }
-.comments .attachments .attachment:hover{
+.comments .attachments .attachment:hover {
     cursor: pointer;
 }
+
+
+/* **************************************************
+scroller
+*************************************************** */
+.comments .scroll-plate {
+}
+.comments .scroll-holder
+{
+    position: relative;
+}
+.comments .scroll-plate .slide
+{
+    display: inline-block;
+    width: 100%;
+    white-space: normal;
+    font-size: 0;
+}
+
+.comments .slide .adjuster
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.comments .slider-control{
+    padding: 0;
+    position: absolute;
+    top: 20%;
+    width: calc(100% + 2 * var(--arrow-size));
+    left: calc(-1 * var(--arrow-size));
+}
+
+.comments .slider-control .buttons
+{
+    display: none;
+}
+
+
