@@ -101,6 +101,8 @@
 scroller
 *************************************************** */
 .comments .scroll-plate {
+    position: relative;
+    z-index: 1;
 }
 .comments .scroll-holder
 {
