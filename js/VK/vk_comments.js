@@ -12,6 +12,7 @@ call_method("wall.getComments", {
     owner_id: 270022066,
     post_id: 765,
     extended: true,
+    count: 10000
 }, "prepareComments");
 
 
@@ -152,13 +153,15 @@ function html_render(comments_array) {
             const comment = comments_array[index];
             if(!comment) break;
             
-
             const newComment = template.content.cloneNode(true); //template clone
             //fill data in placeholders
             newComment.querySelector(".icon").src = comment.AuthorIcon;
             newComment.querySelector(".fio").textContent = comment.Name;
-            newComment.querySelector(".fio").href = comment.Url;
             newComment.querySelector(".comment").textContent = comment.Content;
+            
+            const links = newComment.querySelectorAll(".vk_link");
+            for(let link of links)
+                link.href = comment.Url;
 
             if (comment.Attachments)
                 for (let attachment of comment.Attachments) {

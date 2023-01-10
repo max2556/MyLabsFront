@@ -20,12 +20,11 @@
 .comments a,
 .comments p {
     font-size: 14px;
-
     font-family: var(--palette-vk-font, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Geneva, "Noto Sans Armenian", "Noto Sans Bengali", "Noto Sans Cherokee", "Noto Sans Devanagari", "Noto Sans Ethiopic", "Noto Sans Georgian", "Noto Sans Hebrew", "Noto Sans Kannada", "Noto Sans Khmer", "Noto Sans Lao", "Noto Sans Osmanya", "Noto Sans Tamil", "Noto Sans Telugu", "Noto Sans Thai", arial, Tahoma, verdana, sans-serif);
 }
 
 .comments .vk_post{
-    margin-bottom: 5px;
+    margin-bottom: 12px;
 }
 
 .comments .comment-holder {
@@ -34,7 +33,7 @@
 
     box-sizing: border-box;
     padding: 12px 12px;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
 
     border-radius: 3px;
     border: 1px solid #dce1e6;
@@ -73,6 +72,10 @@
     font-size: 14px;
     font-weight: 700;
     color: #2a5885;
+}
+.comments .fio:hover
+{
+    text-decoration: underline;
 }
 
 .comments p.comment {
@@ -131,4 +134,8 @@ scroller
     display: none;
 }
 
+.comments .scroll-blocks
+{
+    transition: all 0.4s ease-in-out;
+}
 
