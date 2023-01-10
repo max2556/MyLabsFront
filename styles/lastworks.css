@@ -54,6 +54,13 @@
   height: 350px;
 }
 
+.lastworks .scroll-blocks
+{
+  transition: all 1s;
+  position: relative;
+  font-size: 0;
+}
+
 /*Стили блоков*/
 .lastworks .block {
   position: relative;

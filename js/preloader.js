@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = async function () {
     document.body.classList.add('loaded_hiding');
     window.setTimeout(function () {
       document.body.classList.add('loaded');
