@@ -272,8 +272,8 @@
   }
 
   .lastworks .slider-control{
-    --button-margin-left: 10px;
-    --button-size: 22px;
+    --button-margin-left: 7px;
+    --button-size: 20px;
   }
 
   .lastworks .slider-control .buttons .move:first-child {
