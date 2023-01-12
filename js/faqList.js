@@ -2,10 +2,12 @@
     const faq_holder = document.querySelector('.about-us .FAQ');
     const block_elements = faq_holder.querySelectorAll('.block');
     const question_elements = faq_holder.querySelectorAll('.question');
+    const middle_screen_size = 900;
 
 
     for(let question of question_elements){
         question.onclick = () => {
+            if(window.innerWidth > middle_screen_size) return;
             const parent = question.parentElement;
             const answer = parent.querySelector('.answer');
 

@@ -62,7 +62,7 @@ function getStateTemplate(slider) {
 function buildSliders() {
   const slidersHolder = document.querySelectorAll(".scroll-holder");
   for (let slider of slidersHolder) {
-    slider.id = crypto.randomUUID().substring(0, 8);
+    slider.id = Math.floor((Math.random()*15728639)+1048576).toString(16);
     buildSlider(slider);
   }
 }
@@ -76,9 +76,9 @@ function buildSlider(slider) {
   STATES[slider.id].autoscrollID = setInterval(autoscroll.bind(this, slider), CONFIG.autoscrollInterval);
 
   window.addEventListener('resize', resizeEvent)
-  window.addEventListener('touchstart', touchEventStart)
-  window.addEventListener('touchend', touchEventEnd)
-  window.addEventListener('touchmove', touchEventMove)
+  slider.addEventListener('touchstart', touchEventStart)
+  slider.addEventListener('touchend', touchEventEnd)
+  slider.addEventListener('touchmove', touchEventMove)
 }
 
 function buildMainButtons(slider) {
@@ -260,15 +260,10 @@ function isChangeScreen() {
 }
 
 function touchEventStart(e) {
-  const slider = e.path.find((element) => 
-    {
-      if(element.classList) 
-        return element.classList.contains("scroll-holder")
-      else
-        return false;
-    });
-  pauseAutoscroll(slider)
+  e.stopPropagation();
 
+  const slider = e.currentTarget;
+  pauseAutoscroll(slider)
   CONFIG.prevTouch = { x: e.touches[0].clientX, y: e.touches[0].clientY }
 }
 
@@ -277,13 +272,9 @@ function touchEventMove() {
 }
 
 function touchEventEnd(e) {
-  const slider = e.path.find((element) => 
-    {
-      if(element.classList) 
-        return element.classList.contains("scroll-holder")
-      else
-        return false;
-    });
+  e.stopPropagation();
+
+  const slider = e.currentTarget;
   const deltaX = CONFIG.prevTouch.x - e.changedTouches[0].clientX
   const isRight = deltaX > 0
   const offset = 20 //px
