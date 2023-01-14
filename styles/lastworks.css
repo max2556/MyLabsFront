@@ -397,7 +397,7 @@
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   .lastworks .block .icon {
     bottom: 5px;
     --icon-width: 55px;
@@ -411,7 +411,12 @@
     font-size: 20px;
   }
   .lastworks .structure{
-    margin: 50px 8px;
+    margin: 50px 6px;
+  }
+  .lastworks .slider-control
+  {
+    --button-size: 15px;
+    --arrow-size: 32px
   }
 
 }
