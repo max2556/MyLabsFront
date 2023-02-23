@@ -1,0 +1,206 @@
+/*
+white: #FFFFFF
+black: #060137
+green: #2BA84A
+cyan: #06B7CF
+grey: #DAD9DE
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+
+  margin: 0;
+  padding: 0;
+
+  /*
+    Базовое значения для использования rem значений
+    Хотя не уверен, что буду использовать
+    */
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+
+  color: #060137;
+}
+
+/*
+Какой-то кринж ебучий
+padding: 60px  VS  padding: 5%   VS   отдельно top, bottom, left, right
+*/
+.structure {
+  box-sizing: border-box;
+  font-size: 2rem;
+  width: 70%;
+  margin: 150px auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-align-self-center {
+  align-self: center;
+}
+
+/*
+Дефолтный шаблон кнопки
+*/
+.button {
+  display: block;
+
+  box-sizing: border-box;
+  padding: 15px 50px;
+
+  white-space: nowrap;
+  width: min-content;
+
+  font-size: 40px;
+
+  border-radius: 1rem;
+
+  outline: none;
+  background-color: #2ba84a;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+
+  transition: all 0.15s;
+}
+
+.button:hover {
+  background-color: #ffffff !important;
+  color: #2ba84a;
+  outline: 5px solid #2ba84a;
+}
+.button:active {
+  background-color: #ffffff !important;
+  color: #2ba84a;
+  outline: 1px solid transparent !important;
+  transition: outline 0.08s;
+}
+
+/*
+font styles
+*/
+h1 {
+  --base-size: 72px;
+  font-size: 72px;
+}
+h2 {
+  --base-size: 64px;
+  font-size: 64px;
+}
+p {
+  font-size: 40px;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-regular {
+  font-weight: 400;
+}
+.inline-block {
+  display: inline-block;
+}
+.float-right {
+  float: right;
+}
+.relative {
+  position: relative;
+}
+.overflow_hidden {
+  overflow: hidden;
+}
+
+.background {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.transition_disabled,
+.transition_disabled * {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+.fs_64px {
+  font-size: 64px;
+}
+.fs_48px {
+  font-size: 48px;
+}
+.fs_32px {
+  font-size: 32px;
+}
+.fs_28px {
+  font-size: 28px;
+}
+.fs_24px {
+  font-size: 24px;
+}
+.fs_20px {
+  font-size: 20px;
+}
+
+.green {
+  color: #2ba84a;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+@media (min-width: 2000px) {
+  .structure {
+    width: 1300px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .structure {
+    width: auto;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+@media (max-width: 700px) {
+  .button:hover {
+    outline: 3px solid #2ba84a;
+  }
+}
+
+.main {
+  transition: 0.4s filter;
+}
+.blured {
+  filter: blur(2px);
+}
+
+

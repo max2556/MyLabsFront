@@ -1,0 +1,68 @@
+.separator {
+  position: relative;
+  width: 100vw;
+
+  color: #ffffff;
+  font-size: 2rem;
+
+  /*
+  background: url('../assets/separator.png') no-repeat;
+  background-size: cover;*/
+
+  background-color: #060137;
+}
+
+.separator .background {
+  z-index: 0;
+}
+
+.separator::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.43);
+  z-index: 0;
+}
+
+.separator .content {
+  width: 100%;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.separator .block {
+  font-size: 2.5rem;
+}
+
+.separator .block p {
+  text-align: center;
+  line-height: 1;
+}
+
+@media (max-width: 1400px) {
+  p {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .separator .content {
+    width: auto;
+  }
+
+  p {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 700px) {
+  p {
+    font-size: 24px;
+  }
+}
