@@ -109,7 +109,8 @@ function createComments() {
         result_comment["Content"] = comment.text;
         result_comment["AuthorIcon"] = author.photo;
         result_comment["Attachments"] = getAttachments(comment.attachments);
-        result_comment["Url"] = `${REPLY_BASE_URL}?reply=${comment.id}`
+        result_comment["Url"] = `${REPLY_BASE_URL}?reply=${comment.id}`;
+        result_comment["date"] = buildDateString(comment.date);
 
         if (!result_comment.Content && !result_comment.Attachments) continue;
         result_comments.push(result_comment);
@@ -143,7 +144,7 @@ function html_render(comments_array) {
         const newSlide = document.createElement('div');
         newSlide.classList.add('slide');
         mountEl.append(newSlide);
-        
+
         const adjusterEl = document.createElement("div");
         adjusterEl.classList.add('adjuster');
         newSlide.append(adjusterEl);
@@ -151,16 +152,17 @@ function html_render(comments_array) {
         for (let i = 0; i < commentsInSlide; ++i) {
             const index = slide * commentsInSlide + i;
             const comment = comments_array[index];
-            if(!comment) break;
-            
+            if (!comment) break;
+
             const newComment = template.content.cloneNode(true); //template clone
             //fill data in placeholders
             newComment.querySelector(".icon").src = comment.AuthorIcon;
             newComment.querySelector(".fio").textContent = comment.Name;
             newComment.querySelector(".comment").textContent = comment.Content;
-            
+            newComment.querySelector(".date").textContent = comment.date;
+
             const links = newComment.querySelectorAll(".vk_link");
-            for(let link of links)
+            for (let link of links)
                 link.href = comment.Url;
 
             if (comment.Attachments)
@@ -216,4 +218,16 @@ function shuffle(array) {
     }
 
     return array;
+}
+
+function buildDateString(rawDate) {
+    const fixedDate = new Date(rawDate*1000);
+    const months = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
+    const getMinutes = (v) => {
+        let str = "0" + v.getMinutes();
+        if(str.length != 2) str = str.substring(1);
+        return str;
+    }
+    const getTime = (v) => `${v.getHours()}:${getMinutes(v)}`;
+    return `${fixedDate.getDate()} ${months[fixedDate.getMonth()]} ${fixedDate.getFullYear()} в ${getTime(fixedDate)}`;
 }
