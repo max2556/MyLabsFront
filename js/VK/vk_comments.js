@@ -24,7 +24,7 @@ call_method("wall.getComments", {
 
 function getUserIDs() {
     let result = "";
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < raw_comments.profiles.length; i++) {
         let user = raw_comments.profiles[i];
         if (user)
             result += user.id + ',';
